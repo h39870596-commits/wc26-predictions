@@ -1,9 +1,54 @@
 [
- {"date": "2026-06-11", "title": "小组赛第1轮 · 揭幕日", "state": "done", "items": [
-   {"label": "🇲🇽 墨西哥 vs 南非 🇿🇦", "predicted": null, "actual": "2-0", "hit": "na", "note": "模型于 6/12 生成,该场为模型输入数据,不计入预测复盘"},
-   {"label": "🇰🇷 韩国 vs 捷克 🇨🇿", "predicted": null, "actual": "2-1", "hit": "na", "note": "模型于 6/12 生成,该场为模型输入数据,不计入预测复盘"}],
-  "summary": "复盘自 6 月 12 日发布的预测起计,此前场次仅作记录。"},
- {"date": "2026-06-12", "title": "小组赛第1轮", "state": "pending", "items": [
-   {"label": "🇨🇦 加拿大 vs 波黑 🇧🇦", "predicted": "2-0", "actual": null, "note": "深度版预测 · 主胜概率 52% · 置信度 61%"},
-   {"label": "🇺🇸 美国 vs 巴拉圭 🇵🇾", "predicted": "1-0", "actual": null, "note": "深度版预测 · 主胜概率 46% · 置信度 59%"}]}
+ {
+  "date": "2026-06-11",
+  "title": "小组赛第1轮 · 揭幕日",
+  "state": "done",
+  "items": [
+   {
+    "label": "🇲🇽 墨西哥 vs 南非 🇿🇦",
+    "predicted": null,
+    "actual": "2-0",
+    "hit": "na",
+    "note": "模型于 6/12 生成,该场为模型输入数据,不计入预测复盘",
+    "label_en": "🇲🇽 Mexico vs South Africa 🇿🇦",
+    "note_en": "Model generated on June 12; this match served as model input and is excluded from the prediction review"
+   },
+   {
+    "label": "🇰🇷 韩国 vs 捷克 🇨🇿",
+    "predicted": null,
+    "actual": "2-1",
+    "hit": "na",
+    "note": "模型于 6/12 生成,该场为模型输入数据,不计入预测复盘",
+    "label_en": "🇰🇷 South Korea vs Czechia 🇨🇿",
+    "note_en": "Model generated on June 12; this match served as model input and is excluded from the prediction review"
+   }
+  ],
+  "summary": "复盘自 6 月 12 日发布的预测起计,此前场次仅作记录。",
+  "title_en": "Group stage · Matchday 1 — Opening day",
+  "summary_en": "The review tracks predictions published from June 12 onward; earlier matches are recorded for reference only."
+ },
+ {
+  "date": "2026-06-12",
+  "title": "小组赛第1轮",
+  "state": "pending",
+  "items": [
+   {
+    "label": "🇨🇦 加拿大 vs 波黑 🇧🇦",
+    "predicted": "2-0",
+    "actual": null,
+    "note": "深度版预测 · 主胜概率 52% · 置信度 61%",
+    "label_en": "🇨🇦 Canada vs Bosnia & Herzegovina 🇧🇦",
+    "note_en": "In-depth prediction · Home win probability 52% · Confidence 61%"
+   },
+   {
+    "label": "🇺🇸 美国 vs 巴拉圭 🇵🇾",
+    "predicted": "1-0",
+    "actual": null,
+    "note": "深度版预测 · 主胜概率 46% · 置信度 59%",
+    "label_en": "🇺🇸 United States vs Paraguay 🇵🇾",
+    "note_en": "In-depth prediction · Home win probability 46% · Confidence 59%"
+   }
+  ],
+  "title_en": "Group stage · Matchday 1"
+ }
 ]

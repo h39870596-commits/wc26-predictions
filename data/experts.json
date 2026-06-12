@@ -1,0 +1,136 @@
+{
+ "meta": {
+  "generated": "2026-06-12",
+  "note": "观点引自公开报道,链接为原始来源;仅代表原作者。"
+ },
+ "experts": [
+  {
+   "name": "Opta超级计算机 (Opta Supercomputer)",
+   "org": "Opta / Stats Perform (The Analyst)",
+   "date": "2026-06-01",
+   "pick": "西班牙(夺冠概率16.1%)",
+   "view_zh": "Opta超级计算机在赛前进行了2.5万次全程模拟,西班牙以16.1%的夺冠概率高居榜首,法国(13.0%)、英格兰(11.2%)与卫冕冠军阿根廷(10.4%)紧随其后。模型同时指出,西班牙是唯一一支晋级八强概率过半(52.1%)的球队;自1998年法国之后再无东道主捧杯,本届美国夺冠概率仅1.2%、墨西哥约1.0%。",
+   "view_en": "Opta's supercomputer ran 25,000 pre-tournament simulations and makes Spain the favorite at 16.1%, ahead of France (13.0%), England (11.2%) and holders Argentina (10.4%). Spain is the only side rated more likely than not to reach the quarter-finals (52.1%), while no host has won since France in 1998 — the USA sits at just 1.2% and Mexico around 1.0%.",
+   "source": "https://theanalyst.com/articles/who-will-win-2026-fifa-world-cup-predictions-opta-supercomputer",
+   "name_en": "Opta Supercomputer",
+   "org_en": "Opta / Stats Perform (The Analyst)",
+   "pick_en": "Spain (16.1% title prob)"
+  },
+  {
+   "name": "内特·西尔弗 (Nate Silver) — PELE模型",
+   "org": "Silver Bulletin",
+   "date": "2026-06-12",
+   "pick": "西班牙与法国并列头号热门(各约16%)",
+   "view_zh": "数据分析名家内特·西尔弗的PELE评级模型对本届世界杯进行了10万次模拟,综合球员身价、东道主优势与攻防倾向\"Tilt\"指标后,将西班牙评为综合实力最强的球队,西班牙与法国以约16%的夺冠概率并列头号热门,英格兰紧随其后。西尔弗特别强调本届赛事格局空前均衡,没有一家独大的超级热门。",
+   "view_en": "Nate Silver's PELE rating system played out 100,000 simulated World Cups, blending player market values, home-field advantage and an attacking-vs-defensive 'Tilt' metric. It rates Spain the top team overall, with Spain and France starting as co-favorites at around 16% each and England just behind — and Silver stresses unusual parity across the field this year.",
+   "source": "https://www.natesilver.net/p/world-cup-2026-odds-predictions",
+   "name_en": "Nate Silver — PELE model",
+   "org_en": "Silver Bulletin",
+   "pick_en": "Spain & France co-favorites (~16% each)"
+  },
+  {
+   "name": "EA Sports FC 26官方模拟",
+   "org": "EA Sports (The World's Game模式)",
+   "date": "2026-06-11",
+   "pick": "西班牙(决赛2-1胜英格兰)",
+   "view_zh": "EA Sports用FC 26的\"The World's Game\"模式完整模拟了全部104场比赛,预测西班牙将在7月19日大都会球场的决赛中2-1击败英格兰夺冠。EA此前已连续四届猜中世界杯冠军——2010年西班牙、2014年德国、2018年法国、2022年阿根廷,这一\"预言\"自带话题度。",
+   "view_en": "EA Sports simulated all 104 fixtures of the tournament in FC 26's 'The World's Game' mode and predicts Spain will beat England 2-1 in the July 19 final at MetLife Stadium. EA enters the summer on a streak of four straight correct World Cup calls — Spain 2010, Germany 2014, France 2018 and Argentina 2022.",
+   "source": "https://respawn.outlookindia.com/gaming/gaming-news/ea-sports-makes-2026-fifa-world-cup-prediction",
+   "name_en": "EA Sports FC 26 official sim",
+   "org_en": "EA Sports (The World's Game mode)",
+   "pick_en": "Spain (2-1 over England in the final)"
+  },
+  {
+   "name": "阿兰·希勒 (Alan Shearer)",
+   "org": "BBC Sport(前英格兰队长)",
+   "date": "2026-06-10",
+   "pick": "法国",
+   "view_zh": "前英格兰队长希勒在BBC的赛前预测中选择法国捧杯,但附带一个前提:\"法国能赢,但有个先决条件——队内不能起内讧。\"在BBC全体嘉宾的预测中,法国以9票成为最多人选择的冠军。",
+   "view_en": "Former England captain Alan Shearer tips France in the BBC's pre-tournament predictions, with one condition: 'France, but there's a caveat that comes with it — only if there is no in-house fighting.' France topped the overall BBC pundit tally with nine champion picks.",
+   "source": "https://www.aol.com/articles/win-world-cup-bbc-pundits-052500288.html",
+   "name_en": "Alan Shearer",
+   "org_en": "BBC Sport (ex-England captain)",
+   "pick_en": "France"
+  },
+  {
+   "name": "韦恩·鲁尼 (Wayne Rooney)",
+   "org": "BBC Sport(前英格兰前锋)",
+   "date": "2026-06-10",
+   "pick": "英格兰(决赛胜西班牙)",
+   "view_zh": "鲁尼在BBC预测中力挺三狮军团:\"英格兰和西班牙会会师决赛,希望最终是英格兰捧杯。\"在BBC嘉宾团中,英格兰共获得7张冠军选票,仅次于法国。",
+   "view_en": "Rooney backs the Three Lions in the BBC's predictions: 'England and Spain will make the final, and hopefully England will win it.' England drew seven champion picks from the BBC panel, second only to France.",
+   "source": "https://www.aol.com/articles/win-world-cup-bbc-pundits-052500288.html",
+   "name_en": "Wayne Rooney",
+   "org_en": "BBC Sport (ex-England striker)",
+   "pick_en": "England (beat Spain in the final)"
+  },
+  {
+   "name": "米卡·理查兹 (Micah Richards)",
+   "org": "BBC Sport(前英格兰后卫)",
+   "date": "2026-06-10",
+   "pick": "西班牙",
+   "view_zh": "理查兹是BBC嘉宾团中少数押注西班牙的人:\"我的直觉是,最后夺冠的会是一支特别擅长控球的球队,这让我倾向西班牙。\"这与各家数据模型的判断不谋而合,却是BBC人类专家中的少数派观点。",
+   "view_en": "Richards is one of the few BBC pundits siding with Spain: 'I just feel it's going to be a team who are really good at keeping the ball and that points me in the direction of Spain.' His call aligns with the data models but is a minority view among the BBC's human experts.",
+   "source": "https://www.aol.com/articles/win-world-cup-bbc-pundits-052500288.html",
+   "name_en": "Micah Richards",
+   "org_en": "BBC Sport (ex-England defender)",
+   "pick_en": "Spain"
+  },
+  {
+   "name": "罗贝尔·皮雷 (Robert Pirès)",
+   "org": "1998年世界杯冠军成员(via AFP/雅虎体育)",
+   "date": "2026-06-11",
+   "pick": "法国",
+   "view_zh": "98年世界杯冠军成员皮雷坚定看好法国:\"我相信我的球队,我们阵容很棒,整体性很强……我们有登贝莱、姆巴佩、奥利塞、谢尔基。\"在他看来,法国攻击群的厚度足以支撑队史第三冠。",
+   "view_en": "France's 1998 world champion Robert Pirès is all-in on Les Bleus: 'I believe in my team. We have a great squad. The collective is very good... We have Dembele and Mbappe, Olise, Cherki.' For Pirès, France's attacking depth is enough to deliver a third star.",
+   "source": "https://sports.yahoo.com/articles/world-cup-2026-supercomputer-backs-092557446.html",
+   "name_en": "Robert Pirès",
+   "org_en": "France '98 world champion (via AFP/Yahoo Sports)",
+   "pick_en": "France"
+  },
+  {
+   "name": "马尔科·马特拉齐 (Marco Materazzi)",
+   "org": "2006年世界杯冠军成员(via AFP/雅虎体育)",
+   "date": "2026-06-11",
+   "pick": "阿根廷(看好摩洛哥爆冷)",
+   "view_zh": "2006年世界杯冠军马特拉齐谨慎地把票投给卫冕冠军:\"也许是阿根廷,因为他们刚拿了上届世界杯。但葡萄牙、西班牙都非常强硬。摩洛哥也可能是个大惊喜。\"他的表态折射出本届冠军悬念之大。",
+   "view_en": "Italy's 2006 winner Marco Materazzi leans toward the holders, with hedges: 'Maybe Argentina, because they won the last World Cup. But Portugal, Spain, they are very good and tough. Morocco too, maybe it is a big surprise.' His ambivalence captures how open this tournament looks.",
+   "source": "https://sports.yahoo.com/articles/world-cup-2026-supercomputer-backs-092557446.html",
+   "name_en": "Marco Materazzi",
+   "org_en": "Italy '06 world champion (via AFP/Yahoo Sports)",
+   "pick_en": "Argentina (Morocco as dark horse)"
+  }
+ ],
+ "consensus_zh": "经核实的模型与专家观点高度集中在西班牙和法国两强:Opta超级计算机(16.1%)、内特·西尔弗的PELE模型(约16%,与法国并列)和EA Sports官方模拟均把西班牙放在第一位。但人类名宿阵营明显更偏向法国——BBC嘉宾团9票法国、7票英格兰,西班牙仅得1票,希勒、皮雷等都选法国,鲁尼、托马斯·弗兰克则力挺英格兰。卫冕冠军阿根廷在模型中仅列第四(10.4%),为梅西时代的谢幕之旅增添了\"逆袭\"叙事。",
+ "consensus_en": "Verified models and experts cluster around a Spain-France duopoly: the Opta supercomputer (16.1%), Nate Silver's PELE model (~16%, level with France) and EA Sports' official simulation all rank Spain first. Human pundits lean the other way — the BBC panel gave France nine champion picks to England's seven, with Spain getting just one, as Shearer and Pirès back France while Rooney and Thomas Frank champion England. Holders Argentina sit only fourth in the models at 10.4%, framing Messi's farewell run as an underdog defense.",
+ "storylines": [
+  {
+   "title_zh": "48队104场:史上最大规模世界杯开幕",
+   "title_en": "48 Teams, 104 Matches: The Biggest World Cup Ever Kicks Off",
+   "body_zh": "本届世界杯由美国、加拿大、墨西哥三国联办,首次扩军至48队,12个小组共踢104场,新增32强淘汰赛轮次。揭幕战6月11日在墨西哥城进行,决赛定于7月19日在新泽西的大都会球场(赛时更名为纽约新泽西球场)上演,赛程横跨五周余。",
+   "body_en": "Co-hosted by the USA, Canada and Mexico, this is the first 48-team World Cup: 12 groups, 104 matches and a brand-new round of 32. The tournament opened in Mexico City on June 11 and culminates on July 19 at MetLife Stadium in New Jersey — renamed New York New Jersey Stadium for the tournament — after a run of more than five weeks.",
+   "source": "https://www.aljazeera.com/sports/2026/6/11/world-cup-2026-full-match-schedule-groups-teams-and-start-times"
+  },
+  {
+   "title_zh": "最后一舞:梅西与C罗的第六届世界杯",
+   "title_en": "The Last Dance: Messi and Ronaldo's Sixth World Cup",
+   "body_zh": "年近39岁的梅西与41岁的C罗双双迎来个人第六届世界杯——这是前无古人的纪录。梅西以卫冕冠军身份回归,而C罗仍在追逐生涯唯一缺失的世界杯;若葡萄牙夺冠,他将成为史上最年长的捧杯球员。奥乔亚、诺伊尔、莫德里奇等一批40岁老将也大概率在此谢幕。",
+   "body_en": "Lionel Messi, nearly 39, and Cristiano Ronaldo, 41, are both playing a record sixth World Cup. Messi returns as a defending champion; Ronaldo is still chasing the one trophy missing from his career and would become the oldest player ever to lift it if Portugal win. A cohort of 40-year-olds — Ochoa, Neuer, Modric — is likely taking a final bow too.",
+   "source": "https://www.goal.com/en/lists/last-dance-lionel-messi-cristiano-ronaldo-veteran-stars-final-world-cup-2026/blt9cad8441d19627ce"
+  },
+  {
+   "title_zh": "东道主魔咒:1998年后再无主队捧杯",
+   "title_en": "The Host Curse: No Home Winner Since 1998",
+   "body_zh": "自1998年法国之后,再没有东道主在本土捧起世界杯。Opta模型给美国队的夺冠概率仅为1.2%,墨西哥约1.0%,加拿大不足1%;不过墨西哥头名出线的概率不低,主场之力仍可能把至少一支东道主送进淘汰赛深处。",
+   "body_en": "No host nation has lifted the trophy on home soil since France in 1998. Opta's model gives the USA just a 1.2% title chance, Mexico around 1.0% and Canada under 1% — though Mexico are strongly favored to top their group, and home support could still carry at least one host deep into the knockouts.",
+   "source": "https://theanalyst.com/articles/who-will-win-2026-fifa-world-cup-predictions-opta-supercomputer"
+  },
+  {
+   "title_zh": "黑马观察:挪威领衔搅局者",
+   "title_en": "Dark-Horse Watch: Norway Leads the Disruptors",
+   "body_zh": "在四大热门之外,Opta模型把荷兰(3.6%)和挪威(3.5%)列为概率最高的搅局者,哥伦比亚(2.1%)与摩洛哥(1.9%)紧随其后。值得一提的是,仅35.9%的模拟产生了全新的世界杯冠军——历史的惯性依然偏向传统豪强。",
+   "body_en": "Beyond the big four, Opta's model rates the Netherlands (3.6%) and Norway (3.5%) as the most dangerous outsiders, with Colombia (2.1%) and Morocco (1.9%) next in line. Notably, only 35.9% of simulations produced a first-time World Cup winner — history still bends toward the established powers.",
+   "source": "https://theanalyst.com/articles/who-will-win-2026-fifa-world-cup-predictions-opta-supercomputer"
+  }
+ ]
+}

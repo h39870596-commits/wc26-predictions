@@ -141,15 +141,15 @@
     }
    },
    "final": {
-    "analysis_zh": "市场以FanDuel主胜-125定价，去水后隐含主胜52.5%、平27%、客胜20.5%，与身价€1.99亿对€1.46亿（约1.36倍）的差距方向一致。东道主坐镇BMO球场迎来主场首秀（世界杯容量45,736人，临时加座17,756后首次形成全封闭碗形），零旅途消耗；27–28°C午后多云间晴，湖畔西风阵风40+km/h对高球和传中有实际影响，不利于波黑深守后由哲科打支点反击的高球套路——40岁队长哲科肩伤虽获主帅确认可出战但首发未定，塔巴科维奇出场可能性低。加拿大失去戴维斯（腿筋伤确认缺阵），但已被赔率消化，布坎南、戴维、拉林仍可多点冲击。小2.5球-150指向低进球；历史上两队仅2次友谊赛交手加拿大未尝胜绩（1平1负），波黑近5场D-D-W-W-D不败、附加赛点球淘汰意大利，深守韧性足，闷平为主要变数，综合判加拿大低比分胜出。",
+    "analysis_zh": "多源市场数据隐含主胜52.5%、平27%、客胜20.5%，与身价€1.99亿对€1.46亿（约1.36倍）的差距方向一致。东道主坐镇BMO球场迎来主场首秀（世界杯容量45,736人，临时加座17,756后首次形成全封闭碗形），零旅途消耗；27–28°C午后多云间晴，湖畔西风阵风40+km/h对高球和传中有实际影响，不利于波黑深守后由哲科打支点反击的高球套路——40岁队长哲科肩伤虽获主帅确认可出战但首发未定，塔巴科维奇出场可能性低。加拿大失去戴维斯（腿筋伤确认缺阵），但市场预期已消化该缺阵，布坎南、戴维、拉林仍可多点冲击。市场总进球预期同样指向低进球；历史上两队仅2次友谊赛交手加拿大未尝胜绩（1平1负），波黑近5场D-D-W-W-D不败、附加赛点球淘汰意大利，深守韧性足，闷平为主要变数，综合判加拿大低比分胜出。",
     "confidence": 61,
     "factors": [
      {
-      "name": "盘口信号",
-      "home": "-125，去水隐含52.5%",
-      "away": "+360，去水隐含20.5%",
+      "name": "市场预期",
+      "home": "隐含胜率 52.5%",
+      "away": "隐含胜率 20.5%",
       "edge": "home",
-      "note": "小2.5球-150，市场看低比分主胜"
+      "note": "市场预期低比分主胜"
      },
      {
       "name": "主场与旅途",
@@ -231,6 +231,68 @@
      "「塔巴科维奇基本缺席」修正为档案原表述「出场可能性低」；并补充哲科已获主帅巴尔巴雷斯确认可出战、仅首发未定。",
      "伤病note「双方核心攻击点均受损」改为「双方均有核心球员受伤病影响」：戴维斯为左后卫而非攻击点，表述失准。",
      "盘口（-125/+360、去水52.5%/27%/20.5%、小2.5球-150）、身价（€1.99亿对€1.46亿、1.36倍、均龄27.0/26.5）、近5场战绩（D-W-D-D-W与D-D-W-W-D、附加赛点球淘汰意大利）、戴维斯腿筋伤确认缺阵、临时加座17,756等均与档案一致，予以保留。"
+    ]
+   },
+   "en": {
+    "headline": "Hosts open with a low-scoring win",
+    "lean": "Canada favored to win at home, with a narrow low-scoring victory the most likely outcome — but beware Bosnia's deep block grinding out a goalless draw.",
+    "analysis": "Market consensus implies roughly a 52.5% win probability for Canada, 27% for the draw and 20.5% for Bosnia and Herzegovina — pointing the same way as the squad-value gap of €199m to €146m (about 1.36x). The hosts open their home campaign at BMO Field (World Cup capacity 45,736, forming a fully enclosed bowl for the first time after 17,756 temporary seats were added) with zero travel burden. Conditions of 27–28°C under partly cloudy afternoon skies come with lakeside westerly gusts of 40+ km/h, which will genuinely affect long balls and crosses — unhelpful for Bosnia's deep-block counterattacking game built on aerial service into target man Edin Dzeko. The 40-year-old captain has been cleared to play through a shoulder injury by his head coach, though his place in the starting XI remains undecided, and Tabakovic is unlikely to feature. Canada are without Alphonso Davies (hamstring, confirmed out), but the market has already absorbed that news, and Buchanan, Jonathan David and Larin still offer multiple points of attack. Market expectations point to a low-scoring game; historically the sides have met only twice, both friendlies, with Canada winless (one draw, one loss), and Bosnia arrive unbeaten in five (D-D-W-W-D) after knocking out Italy on penalties in the playoff — their deep-defending resilience makes a grindy draw the main risk. On balance, the call is a low-scoring Canada win.",
+    "factors": [
+     {
+      "name": "Market consensus",
+      "home": "Implied win prob 52.5%",
+      "away": "Implied win prob 20.5%",
+      "note": "Market expects a low-scoring home win"
+     },
+     {
+      "name": "Home & travel",
+      "home": "Host nation playing at home, zero travel burden",
+      "away": "Transatlantic trip to Toronto",
+      "note": "BMO Field holds 45,736 for the World Cup; morale high for the home debut"
+     },
+     {
+      "name": "Head-to-head",
+      "home": "Winless in 2 meetings (1 draw, 1 loss); 0-6 all-time at World Cups",
+      "away": "Unbeaten vs Canada (1 win, 1 draw)",
+      "note": "Only two friendlies — 2013 (Bosnia 1-0) and 2019 (0-0); this is their first competitive meeting, so limited predictive value"
+     },
+     {
+      "name": "Squad value",
+      "home": "€199m (avg age 27.0)",
+      "away": "€146m (avg age 26.5)",
+      "note": "Canada about 1.36x Bosnia's value — an edge, but not a chasm"
+     },
+     {
+      "name": "Weather",
+      "home": "Ground-based quick attacks largely unaffected by wind",
+      "away": "Aerial service into target man Dzeko disrupted by gusts",
+      "note": "27°C, partly cloudy; westerly gusts of 40+ km/h will genuinely affect long balls and crosses"
+     },
+     {
+      "name": "Venue",
+      "home": "BMO Field (Toronto Stadium for the World Cup), capacity 45,736",
+      "away": "Open-air, wind-exposed lakeside away ground",
+      "note": "17,756 temporary seats added, forming a fully enclosed bowl for the first time"
+     },
+     {
+      "name": "Injuries",
+      "home": "Alphonso Davies (hamstring) confirmed out",
+      "away": "Dzeko (shoulder) cleared to play but start undecided; Tabakovic unlikely to feature",
+      "note": "Both sides have key players affected by injury"
+     },
+     {
+      "name": "Recent form",
+      "home": "Unbeaten in last 5 (D-W-D-D-W)",
+      "away": "Last 5: D-D-W-W-D; knocked out Italy on penalties in the playoff",
+      "note": "Both sides unbeaten — plenty of draws, plenty of resilience"
+     }
+    ],
+    "env": [
+     "🌡 27°C",
+     "☁️ Partly cloudy",
+     "💨 W wind 19–20 km/h, gusts 40+ km/h",
+     "🏟 Open-air · Hybrid grass",
+     "👥 45,736"
     ]
    }
   },
@@ -384,7 +446,7 @@
     }
    },
    "final": {
-    "analysis_zh": "市场与硬指标同向:DraftKings去水后美国45.6%、平29.5%、巴拉圭24.9%;身价€3.8565亿对€1.5365亿约2.5倍,历史交锋9次美国5胜2平2负(2025年11月刚以2-1击败巴拉圭),Opta给美国40.1%胜率,70,240人东道主首秀是最大加成。临场无变数:21:00开球约21°C、降水0%、风约2mph,下沉式场馆几乎无风,美国3月已在SoFi实测过世界杯草皮,场地适应占先。双方伤停全无、零停赛,美国26人齐整,恩西索已完整合练并有望首发。巴拉圭近5场3胜2负(6月刚4-0大胜尼加拉瓜),赛前报道称其8场不败(含胜巴西、阿根廷、乌拉圭),但该说法与近5场明细中负摩洛哥、负美国的记录存在出入;库巴斯+博巴迪利亚双后腰防守韧性犹存,叠加小球-180为市场大热,比分难以打开,故取美国低比分小胜,平局为次高概率。",
+    "analysis_zh": "市场与硬指标同向:多源市场数据隐含美国45.6%、平29.5%、巴拉圭24.9%;身价€3.8565亿对€1.5365亿约2.5倍,历史交锋9次美国5胜2平2负(2025年11月刚以2-1击败巴拉圭),Opta给美国40.1%胜率,70,240人东道主首秀是最大加成。临场无变数:21:00开球约21°C、降水0%、风约2mph,下沉式场馆几乎无风,美国3月已在SoFi实测过世界杯草皮,场地适应占先。双方伤停全无、零停赛,美国26人齐整,恩西索已完整合练并有望首发。巴拉圭近5场3胜2负(6月刚4-0大胜尼加拉瓜),赛前报道称其8场不败(含胜巴西、阿根廷、乌拉圭),但该说法与近5场明细中负摩洛哥、负美国的记录存在出入;库巴斯+博巴迪利亚双后腰防守韧性犹存,叠加市场对低进球的一致预期,比分难以打开,故取美国低比分小胜,平局为次高概率。",
     "confidence": 59,
     "factors": [
      {
@@ -430,11 +492,11 @@
       "note": "双方零停赛,伤停影响近零"
      },
      {
-      "name": "盘口信号",
-      "home": "+110 去水45.6%",
-      "away": "+285 去水24.9%",
+      "name": "市场预期",
+      "home": "隐含胜率 45.6%",
+      "away": "隐含胜率 24.9%",
       "edge": "home",
-      "note": "小球-180大热,指向低比分"
+      "note": "市场一致预期低比分"
      },
      {
       "name": "主场与旅途",
@@ -473,6 +535,68 @@
      "巴拉圭\"首次接触新混合草\"在档案中无依据(档案仅载明美国3月在SoFi测试过世界杯草皮,未提及巴拉圭),改为\"档案无其适应该草皮记录\"。",
      "按档案原文措辞微调:\"场内无风\"改为\"场内几乎无风\"(档案:下沉30米+顶棚覆盖=场内几乎无风);\"体能零负担\"改为\"体能几乎无负担\"(档案:对球员体能几乎无负担)。",
      "analysis_zh同步删除\"五维70.8对67.0\"与\"环境分95对69\"两处无据表述,补入有档案依据的历史交锋战绩与Opta胜率;天气、赔率、身价、伤停、容量等其余数字均与档案核对一致,予以保留。"
+    ]
+   },
+   "en": {
+    "headline": "Hosts to edge a low-scoring win",
+    "lean": "USA favored for a low-scoring home win; Paraguay's unbeaten resilience keeps the draw firmly in play.",
+    "analysis": "Market consensus and the hard numbers point the same way: implied probabilities of roughly 45.6% for the USA, 29.5% for the draw and 24.9% for Paraguay; a squad-value gap of €385.65m to €153.65m (about 2.5x); a 5-2-2 USA edge across nine all-time meetings (including a 2-1 win over Paraguay in November 2025); Opta giving the USA a 40.1% win probability; and the biggest boost of all — a host-nation debut in front of 70,240. Match-night conditions hold no surprises: around 21°C at the 9 pm kickoff, a 0% chance of rain and winds of about 2 mph, with the sunken stadium design leaving almost no wind inside. The USA already road-tested the World Cup pitch at SoFi in March, so they hold the edge in surface familiarity. Neither side has injury or suspension concerns — the USA's full 26-man squad is available, and Enciso is back in full training and could start. Paraguay have won three of their last five (including a 4-0 rout of Nicaragua in June); pre-match reports cite an eight-game unbeaten run (with wins over Brazil, Argentina and Uruguay), though that claim sits at odds with the recent-form detail showing losses to Morocco and the USA. With the Cubas–Bobadilla double pivot still providing defensive resilience and the market firmly expecting a low-scoring game, goals should be hard to come by — hence a narrow, low-scoring USA win, with the draw the next most likely outcome.",
+    "factors": [
+     {
+      "name": "Weather",
+      "home": "21°C, 0% rain, wind 2 mph",
+      "away": "Same conditions for both sides",
+      "note": "Mild, dry night game — virtually no physical toll"
+     },
+     {
+      "name": "Venue",
+      "home": "Tested the SoFi pitch in March",
+      "away": "No record of familiarity with this surface",
+      "note": "Sunk 30 m below grade with almost no wind inside; USA hold the familiarity edge"
+     },
+     {
+      "name": "Squad value",
+      "home": "€385.65m",
+      "away": "€153.65m",
+      "note": "About 2.5x; Pulisic and Balogun valued at €40m each"
+     },
+     {
+      "name": "Underlying strength",
+      "home": "Opta win probability 40.1%; 5 wins in 9 meetings",
+      "away": "2 wins, 2 draws, 5 losses head-to-head",
+      "note": "USA beat Paraguay 2-1 in November 2025; first World Cup meeting in 96 years"
+     },
+     {
+      "name": "Recent form",
+      "home": "2 wins, 3 losses in last 5",
+      "away": "3 wins, 2 losses in last 5",
+      "note": "Pre-match reports cite an 8-game unbeaten run for Paraguay (incl. wins over Brazil, Argentina and Uruguay), though that conflicts with the last-5 detail showing two losses"
+     },
+     {
+      "name": "Injuries",
+      "home": "All 26 players available",
+      "away": "Enciso back in full training after injury",
+      "note": "No suspensions on either side; injury impact near zero"
+     },
+     {
+      "name": "Market consensus",
+      "home": "Implied win prob 45.6%",
+      "away": "Implied win prob 24.9%",
+      "note": "Market strongly expects a low-scoring game"
+     },
+     {
+      "name": "Home & travel",
+      "home": "Host nation, 70,240-seat home crowd",
+      "away": "Visitors on the road",
+      "note": "Host-nation World Cup debut; a 70,240-seat atmosphere is imposing"
+     }
+    ],
+    "env": [
+     "🌡 21°C",
+     "☁️ Partly cloudy, no rain",
+     "💨 Near calm, 2–5 km/h",
+     "🏟 ETFE canopy, open sides · Hybrid grass",
+     "👥 70,240"
     ]
    }
   }

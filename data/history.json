@@ -1,0 +1,413 @@
+{
+ "meta": {
+  "generated": "2026-06-12",
+  "note": "1930–2022 历届数据,多源核验;来源见 sources。"
+ },
+ "champions": [
+  {
+   "year": 1930,
+   "host_zh": "乌拉圭",
+   "host_en": "Uruguay",
+   "winner_zh": "乌拉圭",
+   "winner_en": "Uruguay",
+   "runner_zh": "阿根廷",
+   "runner_en": "Argentina",
+   "score": "4-2"
+  },
+  {
+   "year": 1934,
+   "host_zh": "意大利",
+   "host_en": "Italy",
+   "winner_zh": "意大利",
+   "winner_en": "Italy",
+   "runner_zh": "捷克斯洛伐克",
+   "runner_en": "Czechoslovakia",
+   "score": "2-1 (a.e.t.)"
+  },
+  {
+   "year": 1938,
+   "host_zh": "法国",
+   "host_en": "France",
+   "winner_zh": "意大利",
+   "winner_en": "Italy",
+   "runner_zh": "匈牙利",
+   "runner_en": "Hungary",
+   "score": "4-2"
+  },
+  {
+   "year": 1950,
+   "host_zh": "巴西",
+   "host_en": "Brazil",
+   "winner_zh": "乌拉圭",
+   "winner_en": "Uruguay",
+   "runner_zh": "巴西",
+   "runner_en": "Brazil",
+   "score": "2-1"
+  },
+  {
+   "year": 1954,
+   "host_zh": "瑞士",
+   "host_en": "Switzerland",
+   "winner_zh": "西德",
+   "winner_en": "West Germany",
+   "runner_zh": "匈牙利",
+   "runner_en": "Hungary",
+   "score": "3-2"
+  },
+  {
+   "year": 1958,
+   "host_zh": "瑞典",
+   "host_en": "Sweden",
+   "winner_zh": "巴西",
+   "winner_en": "Brazil",
+   "runner_zh": "瑞典",
+   "runner_en": "Sweden",
+   "score": "5-2"
+  },
+  {
+   "year": 1962,
+   "host_zh": "智利",
+   "host_en": "Chile",
+   "winner_zh": "巴西",
+   "winner_en": "Brazil",
+   "runner_zh": "捷克斯洛伐克",
+   "runner_en": "Czechoslovakia",
+   "score": "3-1"
+  },
+  {
+   "year": 1966,
+   "host_zh": "英格兰",
+   "host_en": "England",
+   "winner_zh": "英格兰",
+   "winner_en": "England",
+   "runner_zh": "西德",
+   "runner_en": "West Germany",
+   "score": "4-2 (a.e.t.)"
+  },
+  {
+   "year": 1970,
+   "host_zh": "墨西哥",
+   "host_en": "Mexico",
+   "winner_zh": "巴西",
+   "winner_en": "Brazil",
+   "runner_zh": "意大利",
+   "runner_en": "Italy",
+   "score": "4-1"
+  },
+  {
+   "year": 1974,
+   "host_zh": "西德",
+   "host_en": "West Germany",
+   "winner_zh": "西德",
+   "winner_en": "West Germany",
+   "runner_zh": "荷兰",
+   "runner_en": "Netherlands",
+   "score": "2-1"
+  },
+  {
+   "year": 1978,
+   "host_zh": "阿根廷",
+   "host_en": "Argentina",
+   "winner_zh": "阿根廷",
+   "winner_en": "Argentina",
+   "runner_zh": "荷兰",
+   "runner_en": "Netherlands",
+   "score": "3-1 (a.e.t.)"
+  },
+  {
+   "year": 1982,
+   "host_zh": "西班牙",
+   "host_en": "Spain",
+   "winner_zh": "意大利",
+   "winner_en": "Italy",
+   "runner_zh": "西德",
+   "runner_en": "West Germany",
+   "score": "3-1"
+  },
+  {
+   "year": 1986,
+   "host_zh": "墨西哥",
+   "host_en": "Mexico",
+   "winner_zh": "阿根廷",
+   "winner_en": "Argentina",
+   "runner_zh": "西德",
+   "runner_en": "West Germany",
+   "score": "3-2"
+  },
+  {
+   "year": 1990,
+   "host_zh": "意大利",
+   "host_en": "Italy",
+   "winner_zh": "西德",
+   "winner_en": "West Germany",
+   "runner_zh": "阿根廷",
+   "runner_en": "Argentina",
+   "score": "1-0"
+  },
+  {
+   "year": 1994,
+   "host_zh": "美国",
+   "host_en": "United States",
+   "winner_zh": "巴西",
+   "winner_en": "Brazil",
+   "runner_zh": "意大利",
+   "runner_en": "Italy",
+   "score": "0-0 (3-2 pens)"
+  },
+  {
+   "year": 1998,
+   "host_zh": "法国",
+   "host_en": "France",
+   "winner_zh": "法国",
+   "winner_en": "France",
+   "runner_zh": "巴西",
+   "runner_en": "Brazil",
+   "score": "3-0"
+  },
+  {
+   "year": 2002,
+   "host_zh": "韩国/日本",
+   "host_en": "South Korea/Japan",
+   "winner_zh": "巴西",
+   "winner_en": "Brazil",
+   "runner_zh": "德国",
+   "runner_en": "Germany",
+   "score": "2-0"
+  },
+  {
+   "year": 2006,
+   "host_zh": "德国",
+   "host_en": "Germany",
+   "winner_zh": "意大利",
+   "winner_en": "Italy",
+   "runner_zh": "法国",
+   "runner_en": "France",
+   "score": "1-1 (5-3 pens)"
+  },
+  {
+   "year": 2010,
+   "host_zh": "南非",
+   "host_en": "South Africa",
+   "winner_zh": "西班牙",
+   "winner_en": "Spain",
+   "runner_zh": "荷兰",
+   "runner_en": "Netherlands",
+   "score": "1-0 (a.e.t.)"
+  },
+  {
+   "year": 2014,
+   "host_zh": "巴西",
+   "host_en": "Brazil",
+   "winner_zh": "德国",
+   "winner_en": "Germany",
+   "runner_zh": "阿根廷",
+   "runner_en": "Argentina",
+   "score": "1-0 (a.e.t.)"
+  },
+  {
+   "year": 2018,
+   "host_zh": "俄罗斯",
+   "host_en": "Russia",
+   "winner_zh": "法国",
+   "winner_en": "France",
+   "runner_zh": "克罗地亚",
+   "runner_en": "Croatia",
+   "score": "4-2"
+  },
+  {
+   "year": 2022,
+   "host_zh": "卡塔尔",
+   "host_en": "Qatar",
+   "winner_zh": "阿根廷",
+   "winner_en": "Argentina",
+   "runner_zh": "法国",
+   "runner_en": "France",
+   "score": "3-3 (4-2 pens)"
+  }
+ ],
+ "titles": [
+  {
+   "team_zh": "巴西",
+   "team_en": "Brazil",
+   "count": 5,
+   "years": "1958, 1962, 1970, 1994, 2002"
+  },
+  {
+   "team_zh": "德国(含西德)",
+   "team_en": "Germany (incl. West Germany)",
+   "count": 4,
+   "years": "1954, 1974, 1990, 2014"
+  },
+  {
+   "team_zh": "意大利",
+   "team_en": "Italy",
+   "count": 4,
+   "years": "1934, 1938, 1982, 2006"
+  },
+  {
+   "team_zh": "阿根廷",
+   "team_en": "Argentina",
+   "count": 3,
+   "years": "1978, 1986, 2022"
+  },
+  {
+   "team_zh": "乌拉圭",
+   "team_en": "Uruguay",
+   "count": 2,
+   "years": "1930, 1950"
+  },
+  {
+   "team_zh": "法国",
+   "team_en": "France",
+   "count": 2,
+   "years": "1998, 2018"
+  },
+  {
+   "team_zh": "英格兰",
+   "team_en": "England",
+   "count": 1,
+   "years": "1966"
+  },
+  {
+   "team_zh": "西班牙",
+   "team_en": "Spain",
+   "count": 1,
+   "years": "2010"
+  }
+ ],
+ "scorers": [
+  {
+   "player": "Miroslav Klose",
+   "player_zh": "米罗斯拉夫·克洛泽",
+   "team_en": "Germany",
+   "team_zh": "德国",
+   "goals": 16,
+   "span": "2002–2014"
+  },
+  {
+   "player": "Ronaldo",
+   "player_zh": "罗纳尔多",
+   "team_en": "Brazil",
+   "team_zh": "巴西",
+   "goals": 15,
+   "span": "1998–2006"
+  },
+  {
+   "player": "Gerd Müller",
+   "player_zh": "盖德·穆勒",
+   "team_en": "West Germany",
+   "team_zh": "西德",
+   "goals": 14,
+   "span": "1970–1974"
+  },
+  {
+   "player": "Just Fontaine",
+   "player_zh": "朱斯特·方丹",
+   "team_en": "France",
+   "team_zh": "法国",
+   "goals": 13,
+   "span": "1958"
+  },
+  {
+   "player": "Lionel Messi",
+   "player_zh": "利昂内尔·梅西",
+   "team_en": "Argentina",
+   "team_zh": "阿根廷",
+   "goals": 13,
+   "span": "2006–2022"
+  },
+  {
+   "player": "Pelé",
+   "player_zh": "贝利",
+   "team_en": "Brazil",
+   "team_zh": "巴西",
+   "goals": 12,
+   "span": "1958–1970"
+  },
+  {
+   "player": "Kylian Mbappé",
+   "player_zh": "基利安·姆巴佩",
+   "team_en": "France",
+   "team_zh": "法国",
+   "goals": 12,
+   "span": "2018–2022"
+  },
+  {
+   "player": "Sándor Kocsis",
+   "player_zh": "山多尔·柯奇什",
+   "team_en": "Hungary",
+   "team_zh": "匈牙利",
+   "goals": 11,
+   "span": "1954"
+  }
+ ],
+ "facts": [
+  {
+   "label_zh": "东道主夺冠",
+   "label_en": "Host-nation titles",
+   "value_zh": "历史上东道主共6次捧杯:乌拉圭(1930)、意大利(1934)、英格兰(1966)、西德(1974)、阿根廷(1978)、法国(1998)",
+   "value_en": "Host nations have lifted the trophy 6 times: Uruguay (1930), Italy (1934), England (1966), West Germany (1974), Argentina (1978) and France (1998)"
+  },
+  {
+   "label_zh": "2026年全新规模",
+   "label_en": "2026: a new scale",
+   "value_zh": "首届48队、104场比赛的世界杯,由美国、加拿大、墨西哥三国16座城市联合承办(美国11城、墨西哥3城、加拿大2城)",
+   "value_en": "The first 48-team, 104-match World Cup, staged across 16 cities in the USA (11), Mexico (3) and Canada (2) — the first edition hosted by three nations"
+  },
+  {
+   "label_zh": "赛程与场地",
+   "label_en": "Dates and venues",
+   "value_zh": "2026年6月11日至7月19日;揭幕战由墨西哥队在墨西哥城阿兹特克体育场打响,决赛定于新泽西州东卢瑟福的大都会人寿体育场",
+   "value_en": "June 11 – July 19, 2026; Mexico played the opening match at Estadio Azteca, with the final set for MetLife Stadium in East Rutherford, New Jersey"
+  },
+  {
+   "label_zh": "卫冕冠军",
+   "label_en": "Defending champions",
+   "value_zh": "阿根廷——2022年卡塔尔决赛3-3战平法国后点球4-2取胜,夺得队史第3冠,也是1986年后的首冠",
+   "value_en": "Argentina — beat France 4-2 on penalties after a 3-3 thriller in the 2022 final in Qatar, claiming a third title and first since 1986"
+  },
+  {
+   "label_zh": "单届总进球纪录",
+   "label_en": "Most goals in one edition",
+   "value_zh": "2022年卡塔尔世界杯64场共打入172球(场均2.69球),创单届世界杯进球纪录",
+   "value_en": "Qatar 2022 produced 172 goals in 64 matches (2.69 per game), the most of any World Cup edition"
+  },
+  {
+   "label_zh": "单场最大分差",
+   "label_en": "Biggest single-match win",
+   "value_zh": "1982年匈牙利10-1萨尔瓦多,9球净胜创世界杯决赛圈单场最大分差",
+   "value_en": "Hungary's 10-1 rout of El Salvador in 1982 remains the biggest margin of victory in World Cup finals history"
+  },
+  {
+   "label_zh": "全勤球队",
+   "label_en": "Ever-present team",
+   "value_zh": "巴西是唯一参加过全部22届世界杯的球队,2026年将迎来第23次决赛圈之旅",
+   "value_en": "Brazil is the only nation to appear at all 22 World Cups, with 2026 marking a 23rd consecutive finals"
+  },
+  {
+   "label_zh": "单届个人进球纪录",
+   "label_en": "Single-tournament scoring record",
+   "value_zh": "法国人方丹1958年仅用6场轰入13球,这一单届纪录保持至今",
+   "value_en": "France's Just Fontaine scored 13 goals in just six matches in 1958 — a single-tournament record that still stands"
+  },
+  {
+   "label_zh": "决赛帽子戏法",
+   "label_en": "Hat-tricks in finals",
+   "value_zh": "世界杯决赛史上仅两人上演帽子戏法:赫斯特(1966)与姆巴佩(2022);姆巴佩还以4球成为决赛场上进球最多的球员",
+   "value_en": "Only two players have scored a World Cup final hat-trick: Geoff Hurst (1966) and Kylian Mbappé (2022); Mbappé's four final-match goals are the most by any player"
+  },
+  {
+   "label_zh": "墨西哥三度办赛",
+   "label_en": "Mexico's hosting hat-trick",
+   "value_zh": "墨西哥成为首个三次承办/合办世界杯的国家(1970、1986、2026)",
+   "value_en": "Mexico becomes the first country to host or co-host the World Cup three times (1970, 1986, 2026)"
+  }
+ ],
+ "sources": [
+  "https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_finals",
+  "https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_top_goalscorers",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
+  "https://en.wikipedia.org/wiki/FIFA_World_Cup_records_and_statistics",
+  "https://en.wikipedia.org/wiki/2022_FIFA_World_Cup"
+ ]
+}

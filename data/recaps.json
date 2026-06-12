@@ -1,0 +1,167 @@
+{
+ "meta": {
+  "generated": "2026-06-12",
+  "note": "已赛场次复盘;每个比赛日完赛后追加。"
+ },
+ "matches": [
+  {
+   "date": "2026-06-11",
+   "home": "Mexico",
+   "away": "South Africa",
+   "score": "2-0",
+   "attendance": "80,824",
+   "narrative_zh": "世界杯揭幕战,墨西哥在阿兹台克球场2-0完胜南非,终结了队史揭幕战不胜的魔咒。第9分钟,基尼奥内斯抢断对方门将的冒失出球率先破门;第67分钟,希门尼斯头球接阿尔瓦拉多传中锁定胜局,苦等12年迎来世界杯处子球。80824名观众同时见证了历史:西托莱(49分钟)、兹瓦内(84分钟,VAR介入)与蒙特斯(补时)相继染红,揭幕战史上首现三张红牌。墨西哥控球率60%,预期进球1.44对0.07,全面压制对手。",
+   "narrative_en": "Mexico opened the 2026 World Cup with a commanding 2-0 win over South Africa before 80,824 at the Estadio Azteca — their first-ever victory in a World Cup opening match. Julián Quiñones pounced on a loose pass from the goalkeeper to score in the 9th minute, and Raúl Jiménez, after a 12-year wait, headed in Roberto Alvarado's left-footed cross in the 67th for his first career World Cup goal. The night turned ugly late: Sphephelo Sithole (49') and Themba Zwane (84', after a VAR review) saw red for South Africa, and Mexico's César Montes followed in stoppage time — the first World Cup opener ever to produce three red cards. Mexico dominated with 60% possession and a 1.44-0.07 edge in expected goals.",
+   "events": [
+    {
+     "min": "9",
+     "type": "goal",
+     "text_zh": "基尼奥内斯抢断南非门将的冒失出球,冷静推射首开纪录,打入本届世界杯第一球",
+     "text_en": "Julián Quiñones pounces on a loose pass from South Africa's goalkeeper and slots home the tournament's first goal"
+    },
+    {
+     "min": "49",
+     "type": "red",
+     "text_zh": "西托莱在反击中放倒古铁雷斯被直接红牌罚下,南非十人应战",
+     "text_en": "Sphephelo Sithole is sent off for cutting down Brian Gutiérrez on a breakaway, reducing South Africa to ten men"
+    },
+    {
+     "min": "67",
+     "type": "goal",
+     "text_zh": "希门尼斯头球打进阿尔瓦拉多的左脚传中,苦等12年终获世界杯处子球,2-0",
+     "text_en": "Raúl Jiménez heads in Roberto Alvarado's left-footed cross for his first career World Cup goal, 2-0"
+    },
+    {
+     "min": "84",
+     "type": "var",
+     "text_zh": "兹瓦内挥手击中阿尔瓦拉多面部,经VAR介入后被红牌罚下,南非只剩九人",
+     "text_en": "Themba Zwane sees red after a VAR review for catching Alvarado in the face, leaving South Africa with nine"
+    },
+    {
+     "min": "90+2",
+     "type": "red",
+     "text_zh": "蒙特斯补时阶段蓄意撞人被罚下——世界杯揭幕战历史上首次出现三张红牌",
+     "text_en": "César Montes is dismissed in stoppage time for a deliberate body check — a record third red card in a World Cup opening match"
+    }
+   ],
+   "stats": [
+    {
+     "name_zh": "控球率",
+     "name_en": "Possession",
+     "home": "60%",
+     "away": "40%"
+    },
+    {
+     "name_zh": "射正",
+     "name_en": "Shots on target",
+     "home": "4",
+     "away": "2"
+    },
+    {
+     "name_zh": "预期进球",
+     "name_en": "Expected goals (xG)",
+     "home": "1.44",
+     "away": "0.07"
+    },
+    {
+     "name_zh": "角球",
+     "name_en": "Corners",
+     "home": "3",
+     "away": "1"
+    }
+   ],
+   "turning_zh": "第49分钟西托莱在反击中犯规被直接罚下是全场分水岭——刚过半场便少打一人的南非自此再无反扑之力,墨西哥从容掌控节奏直至终场。",
+   "turning_en": "Sphephelo Sithole's 49th-minute red card, conceded halting a breakaway just after the restart, was the breaking point — down a man, South Africa never threatened a comeback.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_A",
+    "https://sports.yahoo.com/articles/mexico-defeats-south-africa-world-212611015.html",
+    "https://sports.yahoo.com/articles/mexico-vs-south-africa-box-173456470.html",
+    "https://www.pbs.org/newshour/world/mexico-hosts-south-africa-in-opening-match-as-world-cup-begins",
+    "https://www.cbssports.com/soccer/news/mexico-vs-south-africa-live-updates-world-cup-2026-score-result/live/",
+    "https://www.foxsports.com/stories/soccer/best-of-2026-world-cup-day-1-mexico-south-korea"
+   ]
+  },
+  {
+   "date": "2026-06-11",
+   "home": "South Korea",
+   "away": "Czechia",
+   "score": "2-1",
+   "attendance": "44,985",
+   "narrative_zh": "韩国队在瓜达拉哈拉的阿克伦球场上演逆转,2-1击败时隔20年重返世界杯的捷克。第59分钟,克雷伊奇接考法尔长掷界外球头球首开纪录;第67分钟,黄仁范虚晃摆脱防守兜射扳平,又在第80分钟助攻替补登场的吴贤揆完成反超,成为1994年以来首位在世界杯单场传射建功的韩国球员。捷克第77分钟苏切克的进球因越位被吹掉。韩国全场控球率62%,射门15比7,预期进球1.84对0.81,数据全面占优,44985名观众见证了这场翻盘。",
+   "narrative_en": "South Korea came from behind to beat Czechia 2-1 at the Estadio Akron in Zapopan, spoiling the Czechs' first World Cup appearance since 2006. Ladislav Krejčí headed in Vladimír Coufal's long throw on 59 minutes — Czechia's first World Cup goal in 20 years — but Hwang In-beom answered in the 67th with a deft finish inside the post. After Tomáš Souček's 77th-minute effort was ruled out for offside, substitute Oh Hyeon-gyu, on for captain Son Heung-min, swept in Hwang's pass on 80 minutes to complete the turnaround. Hwang became the first South Korean since 1994 to score and assist in a single World Cup game, and Korea's 62% possession and 1.84-0.81 xG edge in front of 44,985 fans reflected their control.",
+   "events": [
+    {
+     "min": "56",
+     "type": "save",
+     "text_zh": "孙兴慜获得黄金机会,被捷克门将科瓦日神勇扑出",
+     "text_en": "Matěj Kovář produces a fine save to deny Son Heung-min a golden opportunity"
+    },
+    {
+     "min": "59",
+     "type": "goal",
+     "text_zh": "克雷伊奇接考法尔长掷界外球头球破门,捷克打入2006年以来的首粒世界杯进球",
+     "text_en": "Ladislav Krejčí heads in Vladimír Coufal's long throw — Czechia's first World Cup goal since 2006"
+    },
+    {
+     "min": "67",
+     "type": "goal",
+     "text_zh": "黄仁范虚晃摆脱两名防守球员后兜射近角入网,韩国扳平",
+     "text_en": "Hwang In-beom fakes past two defenders and curls a deft finish inside the post to level for South Korea"
+    },
+    {
+     "min": "69",
+     "type": "substitution",
+     "text_zh": "关键换人:吴贤揆替下队长孙兴慜,改变了韩国队前插的节奏",
+     "text_en": "Oh Hyeon-gyu replaces captain Son Heung-min, immediately changing the timing of Korea's runs in behind"
+    },
+    {
+     "min": "77",
+     "type": "disallowed",
+     "text_zh": "苏切克破门被判越位在先,捷克扳平进球无效",
+     "text_en": "Tomáš Souček has a would-be equalizer ruled out for offside"
+    },
+    {
+     "min": "80",
+     "type": "goal",
+     "text_zh": "吴贤揆接黄仁范助攻左脚推射破门,韩国2-1完成逆转",
+     "text_en": "Substitute Oh Hyeon-gyu turns in Hwang In-beom's pass with his left foot to complete the comeback, 2-1"
+    }
+   ],
+   "stats": [
+    {
+     "name_zh": "控球率",
+     "name_en": "Possession",
+     "home": "62%",
+     "away": "38%"
+    },
+    {
+     "name_zh": "射门",
+     "name_en": "Total shots",
+     "home": "15",
+     "away": "7"
+    },
+    {
+     "name_zh": "射正",
+     "name_en": "Shots on target",
+     "home": "6",
+     "away": "4"
+    },
+    {
+     "name_zh": "预期进球",
+     "name_en": "Expected goals (xG)",
+     "home": "1.84",
+     "away": "0.81"
+    }
+   ],
+   "turning_zh": "第69分钟换下队长孙兴慜、换上吴贤揆的决定成为胜负手——生力军改变了韩国队身后插上的节奏,登场11分钟后便接黄仁范助攻打入制胜球。",
+   "turning_en": "The bold 69th-minute call to withdraw captain Son Heung-min for Oh Hyeon-gyu swung the game — the substitute's runs stretched Czechia's back line, and eleven minutes later he turned in Hwang In-beom's pass for the winner.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_A",
+    "https://www.skysports.com/football/news/12098/13552607/world-cup-2026-south-korea-2-1-czech-republic-in-beom-hwang-inspires-comeback-win-after-ladislav-krejci-goal",
+    "https://www.aljazeera.com/sports/2026/6/12/south-korea-vs-czechia-world-cup-2026-oh-hyeon-gyu-hwang-in-beom",
+    "https://www.sofascore.com/news/south-korea-2-1-czechia-hwang-in-beom-shines",
+    "https://www.foxsports.com/stories/soccer/best-of-2026-world-cup-day-1-mexico-south-korea"
+   ]
+  }
+ ]
+}
