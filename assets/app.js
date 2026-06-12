@@ -391,6 +391,7 @@ window.WCPay = {
 };
 function renderPayModal() {
   const sel = state.paySel;
+  const price = sel === 'season' ? P.season.price : P.day.price;
   $('#payBody').innerHTML =
     '<div class="mi">🤝</div><h3>' + L('赞助支持 WC26', 'Sponsor WC26') + '</h3>' +
     '<div class="sub">' + L('赞助用于支持数据调研与运营成本,回馈为当日预测内容查看权益 · 非投注服务,不构成任何投注建议', 'Sponsorship covers research & running costs; the perk is access to matchday forecasts · not a betting service, no betting advice') + '</div>' +
@@ -400,13 +401,42 @@ function renderPayModal() {
       '<div class="prod' + (sel === 'season' ? ' sel' : '') + '" data-prod="season"><span class="rec">' + L('推荐', 'BEST') + '</span><div class="pn">🏆 ' + L('全程赞助', 'Season Sponsor') + '</div><div class="pp num">' + esc(P.season.price) + ' <small>/ ' + L('整届赛事', 'tournament') + '</small></div>' +
         '<div class="pd">' + L('赛事期间每天查看当日全部预测报告,按日更新推送——未来赛果不会提前展示。', 'Every matchday’s full reports through the final, unlocked day by day — future calls are never shown in advance.') + '</div></div>' +
     '</div>' +
-    '<div class="demo-note">' + L('演示环境:点击支付将模拟成功,不产生真实扣款。正式版接入微信支付 / 支付宝商户收单后生效(接入说明见 README)。', 'Demo mode: payment is simulated, nothing is charged. Production requires the WeChat Pay / Alipay merchant integration (see README).') + '</div>' +
-    '<div class="payrow">' +
-      '<button class="paybtn wx" data-ch="wechat">' + L('微信支付', 'WeChat Pay') + '</button>' +
-      '<button class="paybtn ali" data-ch="alipay">' + L('支付宝', 'Alipay') + '</button>' +
+    /* 真实收款码区:把收款码图片放到 assets/qr-wechat.png / assets/qr-alipay.png 即自动展示 */
+    '<div class="qr-zone" id="qrZone">' +
+      '<div class="qr-head">' + L('扫码赞助 ', 'Scan to sponsor ') + '<b class="num">' + esc(price) + '</b>' + L('(金额请与所选档位一致)', ' (match the selected tier)') + '</div>' +
+      '<div class="qr-grid">' +
+        '<div class="qr-card"><img class="qr-img" src="assets/qr-wechat.png" alt="WeChat Pay QR"><div class="qr-label" style="color:#09BB07">' + L('微信收款码', 'WeChat Pay') + '</div></div>' +
+        '<div class="qr-card"><img class="qr-img" src="assets/qr-alipay.png" alt="Alipay QR"><div class="qr-label" style="color:#1677FF">' + L('支付宝收款码', 'Alipay') + '</div></div>' +
+      '</div>' +
+      '<div class="steps">' + L('1️⃣ 选择档位,扫码支付对应金额(微信 / 支付宝任选)<br>2️⃣ 点击下方「提交支付凭证」,附上支付单号或截图说明<br>3️⃣ 站长确认收款后回复解锁码,在下方输入即开通', '1️⃣ Pick a tier and pay the matching amount via either QR<br>2️⃣ Tap “Submit payment proof” below with your transaction ID<br>3️⃣ You’ll receive an unlock code — enter it below to activate') + '</div>' +
+      '<button class="linklike" id="payToFb">📧 ' + L('提交支付凭证 / 领取解锁码', 'Submit payment proof / get unlock code') + '</button>' +
     '</div>' +
+    /* 解锁码兑换 */
+    '<div class="redeem-row">' +
+      '<input id="rdInput" class="fb-input" style="margin:0" placeholder="' + L('已有解锁码?如 WC26-XXXXX-XXXXX', 'Have a code? e.g. WC26-XXXXX-XXXXX') + '">' +
+      '<button class="btn-gold" id="rdBtn" style="padding:9px 20px;font-size:13px;flex-shrink:0">' + L('开通', 'Redeem') + '</button>' +
+    '</div>' +
+    (WC.pay && WC.pay.demo ?
+      '<div class="demo-note">' + L('演示模式开启中:下方按钮为模拟支付,不产生真实扣款;收款码图片配置好并关闭演示后,此区域将移除。', 'Demo mode: the buttons below simulate payment, nothing is charged. They disappear once real QR codes are configured and demo is switched off.') + '</div>' +
+      '<div class="payrow">' +
+        '<button class="paybtn wx" data-ch="wechat">' + L('微信支付(模拟)', 'WeChat Pay (demo)') + '</button>' +
+        '<button class="paybtn ali" data-ch="alipay">' + L('支付宝(模拟)', 'Alipay (demo)') + '</button>' +
+      '</div>' : '') +
     '<div class="comp-note">' + L('赞助属自愿支持行为;内容为统计模型输出的数据分析报告,仅供研究参考,不构成投注建议;查看权益开通后不支持退款。', 'Sponsorship is voluntary support; content is model-generated data analysis for research reference only, not betting advice; access is non-refundable once granted.') + '</div>' +
     '<button class="close" id="payClose">' + L('暂不赞助', 'Not now') + '</button>';
+  /* 收款码图缺失时隐藏对应卡片;两张都缺则整个二维码区隐藏(CSP 禁内联事件,这里挂监听) */
+  const cards = Array.from(document.querySelectorAll('#payBody .qr-card'));
+  cards.forEach(card => {
+    const img = card.querySelector('.qr-img');
+    img.addEventListener('error', () => {
+      card.style.display = 'none';
+      if (cards.every(c => c.style.display === 'none')) { const z = $('#qrZone'); if (z) z.style.display = 'none'; }
+    });
+  });
+}
+async function sha256hex(s) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, '0')).join('');
 }
 function openPay(pre) { if (pre) state.paySel = pre; renderPayModal(); $('#payModal').classList.add('on'); }
 function closePay() { $('#payModal').classList.remove('on'); }
@@ -416,6 +446,31 @@ $('#payModal').addEventListener('click', async e => {
   if (e.target.closest('#payClose')) return closePay();
   const prod = e.target.closest('.prod');
   if (prod) { state.paySel = prod.dataset.prod; renderPayModal(); return; }
+  if (e.target.closest('#payToFb')) {
+    closePay();
+    openFb(L('我已完成赞助转账,请发我解锁码。\n档位:单日 / 全程(请保留一个)\n支付方式:微信 / 支付宝(请保留一个)\n支付单号或转账时间:', 'I have sponsored via QR — please send my unlock code.\nTier: day / season\nMethod: WeChat / Alipay\nTransaction ID or time: '));
+    return;
+  }
+  if (e.target.closest('#rdBtn')) {
+    const inp = $('#rdInput');
+    const raw = (inp ? inp.value : '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (!raw) { toast(L('请先输入解锁码', 'Enter a code first')); return; }
+    let hash;
+    try { hash = await sha256hex(raw); } catch (err) { toast(L('校验不可用(需 HTTPS 环境)', 'Verification needs HTTPS')); return; }
+    const C = WC.codes || {};
+    if ((C.season || []).indexOf(hash) >= 0) {
+      storeSet('wc26_season', '1');
+      closePay(); toast('🎉 ' + L('感谢赞助!<span class="g">全程查看权益已开启</span>', 'Thank you! <span class="g">Season access unlocked</span>'));
+      renderChrome(); renderToday(); bindReveal();
+    } else if ((C.day || []).indexOf(hash) >= 0) {
+      if (WC.today) storeSet('wc26_day', WC.today.date);
+      closePay(); toast('🎉 ' + L('感谢赞助!<span class="g">今日预测已开启</span>', 'Thank you! <span class="g">Today’s forecasts unlocked</span>'));
+      renderChrome(); renderToday(); bindReveal();
+    } else {
+      toast(L('解锁码无效,请检查输入', 'Invalid code — please check and retry'));
+    }
+    return;
+  }
   const btn = e.target.closest('.paybtn');
   if (btn) {
     const product = state.paySel;
@@ -456,7 +511,11 @@ function renderFbModal() {
     '<div class="comp-note">' + L('邮件方式会打开你的邮件应用,发送前可编辑;请勿包含敏感个人信息。', 'Email opens your mail app and is editable before sending. Please avoid sensitive personal info.') + '</div>' +
     '<button class="close" id="fbClose">' + L('关闭', 'Close') + '</button>';
 }
-function openFb() { renderFbModal(); $('#fbModal').classList.add('on'); }
+function openFb(prefill) {
+  renderFbModal();
+  if (prefill && $('#fbText')) $('#fbText').value = prefill;
+  $('#fbModal').classList.add('on');
+}
 function closeFb() { $('#fbModal').classList.remove('on'); }
 $('#fbModal').addEventListener('click', async e => {
   if (e.target === e.currentTarget || e.target.closest('#fbClose')) return closeFb();

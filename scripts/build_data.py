@@ -31,6 +31,7 @@ review = load('data/review.json')
 history = load('data/history.json', optional=True)
 experts = load('data/experts.json', optional=True)
 recaps = load('data/recaps.json', optional=True)
+codes = load('data/codes.json', optional=True)  # 解锁码 SHA-256 哈希(scripts/gen_codes.py 生成)
 
 # ---------- 去博彩化兜底:公开字段不得出现盘口/赔率措辞 ----------
 def sanitize_text(s):
@@ -163,10 +164,11 @@ if md_files:
 
 data = {
     'meta': {'updated': datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).strftime('%Y-%m-%d %H:%M') + ' (UTC+8)'},
-    'pay': {'demo': True, 'products': {
+    'pay': {'demo': True, 'products': {  # 收款码图就位后把 demo 改为 False,模拟支付按钮即消失
         'day': {'price': '¥9.9'},
         'season': {'price': '¥98'},
     }},
+    'codes': codes or {'day': [], 'season': []},
     'teams': teams,
     'schedule': schedule,
     'pred': {'finals': finals},
