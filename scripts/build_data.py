@@ -10,8 +10,9 @@
      并在 data/review.json 追加新的一天(predicted 填深度版比分);
   4. 运行: python3 scripts/build_data.py
 
-付费模型:每日仅精选 1 场发布付费 AI 预测报告(置信度最高的一场,可在 matchday 文件用
-"featured_no" 覆盖);其余场次只输出免费要素分析,精确预测赛后在复盘中公开。
+赞助模型:当日全部场次均输出付费(赞助可见)AI 预测报告;单日赞助看今天,全程赞助每天
+自动解锁当天。逐场未来推演(groupMatches/tables/thirds/ko)不出库,只输出 finals 供
+「模型展望」展示——任何人都不会提前看到未来逐场比分。
 """
 import json, re, glob, os, datetime
 
@@ -83,10 +84,7 @@ schedule = [{'no': m['no'], 'date': m['date'], 'group': m['group'], 'home': m['h
              'status': 'played' if m.get('actual') else 'upcoming', 'actual': m.get('actual')}
             for m in wc['schedule']]
 
-# ---------- full prediction (season-pass content) ----------
-group_matches = {g: [{'no': x['no'], 'date': x['date'], 'home': x['home'], 'away': x['away'],
-                      'hs': x['hs'], 'as': x['as'], 'actual': x['actual']} for x in ms]
-                 for g, ms in pred['groupMatches'].items()}
+# ---------- model outlook (只出 finals,逐场推演不出库) ----------
 finals = dict(pred['finals'])
 finals['golden_boot'] = dict(finals['golden_boot'])
 finals['golden_boot'].setdefault('player_zh', '姆巴佩')
@@ -122,10 +120,6 @@ md_files = sorted(glob.glob(os.path.join(ROOT, 'data/matchday-*.json')))
 if md_files:
     md = json.load(open(md_files[-1]))
     date = md['matchday']
-    # 每日精选:featured_no 显式指定,否则取置信度最高的一场
-    featured_no = md.get('featured_no')
-    if featured_no is None:
-        featured_no = max(md['results'], key=lambda r: r['final'].get('confidence', 0))['match']['no']
     actuals = {x['no']: x.get('actual') for x in wc['schedule']}
     matches = []
     for r in md['results']:
@@ -155,16 +149,15 @@ if md_files:
             'free': {'headline': fin['headline_zh'], 'lean': fin['lean_zh']},
             'sources': fin.get('sources_used') or [],
         }
-        # 付费报告只随精选场次出库;其余场次的精确预测留在 data/ 源文件,赛后经 review 公开
-        if m['no'] == featured_no:
-            entry['paid'] = {'score': fin['score'],
-                             'probs': {k: round(fin['probs'][k]) for k in ('home', 'draw', 'away')},
-                             'confidence': round(fin['confidence']), 'analysis': fin['analysis_zh']}
+        # 当日全部场次均出赞助可见的预测报告
+        entry['paid'] = {'score': fin['score'],
+                         'probs': {k: round(fin['probs'][k]) for k in ('home', 'draw', 'away')},
+                         'confidence': round(fin['confidence']), 'analysis': fin['analysis_zh']}
         if r.get('en'):
             entry['en'] = sanitize(r['en'])
         matches.append(entry)
     mm, dd = date[5:7].lstrip('0'), date[8:10].lstrip('0')
-    today = {'date': date, 'label': mm + ' 月 ' + dd + ' 日 · 比赛日', 'featured': featured_no, 'matches': matches,
+    today = {'date': date, 'label': mm + ' 月 ' + dd + ' 日 · 比赛日', 'matches': matches,
              'note': '深度分析由当日多源联网调研生成并经事实核查,文中事实均可在「调研来源」中溯源;预测为模型输出,仅供研究参考,不构成任何投注建议。',
              'note_en': 'In-depth analysis is generated from same-day multi-source web research and fact-checked; every claim is traceable in Research Sources. Predictions are model output for research reference only — not betting advice.'}
 
@@ -176,10 +169,7 @@ data = {
     }},
     'teams': teams,
     'schedule': schedule,
-    'pred': {'groupMatches': group_matches, 'tables': pred['tables'],
-             'thirds': {'ranking': pred['thirds']['ranking'],
-                        'qualified': [t['group'] for t in pred['thirds']['qualified']]},
-             'ko': pred['ko'], 'finals': finals},
+    'pred': {'finals': finals},
     'today': today,
     'review': sanitize(review),
     'recaps': sanitize((recaps or {}).get('matches', [])),
@@ -192,6 +182,6 @@ out = 'window.WC = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':'
 with open(os.path.join(ROOT, 'assets/data.js'), 'w') as f:
     f.write(out)
 print('assets/data.js written,', len(out), 'bytes; today =', (today or {}).get('date'),
-      '; featured =', (today or {}).get('featured'),
+      '; paid matches =', len([m for m in (today or {}).get('matches', []) if 'paid' in m]),
       '; recaps =', len(data['recaps']),
       '; experts =', len((data['analytics']['experts'] or {}).get('experts', [])))

@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 安全策略:GitHub Pages 无法自定义响应头,以下用 meta 尽量收紧。
+     脚本仅允许本站与已声明的统计域名(无内联脚本);frame-ancestors 在 meta 中无效,
+     由 assets/app.js 内的 frame-busting 兜底防点击劫持。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://gc.zgo.at https://hm.baidu.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.goatcounter.com https://hm.baidu.com; connect-src 'self' https://formspree.io https://*.goatcounter.com https://hm.baidu.com; font-src 'self'; base-uri 'none'; form-action 'self' https://formspree.io">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>WC26 AI 数据分析 · 2026世界杯 AI 大数据预测与赛事数据分析</title>
 <meta name="description" id="metaDesc" content="WC26 AI 数据分析:基于人工智能与大数据的 2026 美加墨世界杯赛事数据分析平台。AI 五维建模、球队实力评分、历史数据统计、比赛复盘与专家观点,全部结论来源可溯。非博彩网站,不提供任何投注功能。">
 <style>
@@ -56,7 +61,6 @@ h1 .y{background:linear-gradient(110deg,var(--gold) 35%,#F4E3A4 50%,var(--gold) 
 .tab{appearance:none;border:none;background:transparent;color:#B8B3A4;font-size:14.5px;font-weight:700;padding:11px 18px;border-radius:12px 12px 0 0;cursor:pointer;position:relative;transition:color .25s,background .25s}
 .tab:hover{color:#fff}
 .tab.on{background:var(--paper);color:var(--ink)}
-.tab .lock{font-size:11px;margin-left:4px}
 .tab .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ca);margin-left:6px;animation:pulse 1.6s ease-in-out infinite;vertical-align:2px}
 .notice{background:#F2EFE7;border-bottom:1px solid var(--line);font-size:12px;color:#6a6557;padding:8px 0;text-align:center}
 .notice .wrap{padding:0 20px}
@@ -77,10 +81,8 @@ section{padding:34px 0 6px}
 .day-sub{color:var(--muted);font-size:13px}
 .mcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:22px;overflow:hidden;transition:transform .25s,box-shadow .25s}
 .mcard:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,20,20,.08)}
-.mcard.featured{border-color:#E0CB85;box-shadow:0 6px 24px rgba(201,162,39,.12)}
 .mtop{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);flex-wrap:wrap}
 .gtag{color:#fff;border-radius:6px;padding:1px 8px;font-weight:800;font-size:12px}
-.feat-tag{background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:#fff;border-radius:6px;padding:1px 9px;font-weight:800;font-size:11.5px}
 .stat-pill{margin-left:auto;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 10px;background:#F2EFE7;color:var(--muted)}
 .stat-pill.live{background:var(--ca);color:#fff}
 .mteams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:20px 20px 8px}
@@ -101,7 +103,6 @@ section{padding:34px 0 6px}
 .fac .edge.h{color:var(--mx)}.fac .edge.a{color:var(--us)}
 .fac .note{grid-column:1/4;text-align:center;font-size:11px;color:var(--muted);margin-top:-2px}
 .lean{margin:12px 20px;background:var(--gold-soft);border:1px solid #E5D8AC;border-radius:10px;padding:10px 16px;font-size:13.5px;color:#5d5230;font-weight:600}
-.no-feat{margin:0 20px 18px;background:#F7F5F0;border:1px dashed var(--line);border-radius:10px;padding:10px 16px;font-size:12.5px;color:var(--muted)}
 .paid-zone{margin:0 20px 18px;border:1.5px dashed var(--gold);border-radius:12px;padding:16px 18px;position:relative}
 .paid-zone.unlocked{border-style:solid;animation:popIn .5s ease}
 .pz-title{font-size:12px;letter-spacing:.2em;color:var(--gold-deep);font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -146,8 +147,6 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}
 .gtable th:nth-child(2){text-align:left}
 .gtable td{padding:6px;text-align:right;border-bottom:1px solid #F1EEE6}
 .gtable td:nth-child(2){text-align:left;font-weight:600;white-space:nowrap}
-.gtable tr.q12 td{background:#F4F8F2}
-.gtable tr.q12 td:first-child{box-shadow:inset 3px 0 0 var(--mx)}
 .gtable tr.q3y td{background:#FBF7EA}
 .gtable tr.q3y td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
 .gtable .pts{font-weight:800}
@@ -185,6 +184,16 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}
 .scard .st{font-weight:800;font-size:14.5px;margin-bottom:6px}
 .scard .sb{font-size:12.5px;color:#55514a;line-height:1.8}
 .scard .src-link{display:inline-block;margin-top:8px}
+.honors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(205px,100%),1fr));gap:12px}
+.hcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;text-align:center;transition:transform .2s}
+.hcard:hover{transform:translateY(-3px)}
+.hcard.gold{background:linear-gradient(160deg,#171511,#2a2310);border-color:#4d3f17;color:#fff}
+.hcard .hl{font-size:11px;letter-spacing:.25em;color:var(--gold-deep);font-weight:800}
+.hcard.gold .hl{color:var(--gold)}
+.hcard .hf{font-size:34px;margin:6px 0 2px}
+.hcard .hn{font-size:19px;font-weight:900}
+.hcard .hs{font-size:12px;color:var(--muted);margin-top:3px}
+.hcard.gold .hs{color:#C9C4B6}
 
 /* ---------- review & recaps ---------- */
 .rev-day{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:18px;overflow:hidden}
@@ -223,72 +232,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}
 .turn{margin:8px 20px 14px;background:var(--gold-soft);border:1px solid #E5D8AC;border-radius:10px;padding:10px 14px;font-size:12.5px;color:#5d5230}
 .rstats{padding:0 20px 10px}
 
-/* ---------- full (simulation) ---------- */
-.gate{background:linear-gradient(150deg,#171511,#262012);border-radius:var(--r);color:#fff;padding:38px 30px;text-align:center;position:relative;overflow:hidden}
-.gate .big{font-size:44px;animation:floatY 7s ease-in-out infinite;display:inline-block}
-.gate h3{font-size:22px;font-weight:900;margin:8px 0 6px}
-.gate p{color:#C9C4B6;font-size:13px;max-width:560px;margin:0 auto 8px}
-.gate ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 20px}
-.gate li{font-size:12px;border:1px solid #4d4736;border-radius:999px;padding:4px 14px;color:#E0DBCB}
-.gate .mini{font-size:11px;color:#8d887a;margin-top:12px}
-.blurband{margin-top:26px;filter:blur(7px);user-select:none;pointer-events:none;opacity:.6;font-weight:900;font-size:22px;letter-spacing:.18em}
-.sandbox{background:#FBF7EA;border:1px solid #E5D8AC;border-radius:var(--r);padding:12px 18px;font-size:12.5px;color:#5d5230;margin-bottom:18px}
-.champ-strip{background:linear-gradient(135deg,#1c1a14,#26200f);border:1px solid #4d3f17;border-radius:var(--r);padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:#fff;margin-bottom:22px}
-.champ-cup{font-size:34px;filter:drop-shadow(0 2px 8px rgba(201,162,39,.45))}
-.champ-label{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700}
-.champ-name{font-size:25px;font-weight:900;margin-top:1px}
-.champ-final{margin-left:auto;text-align:right;font-size:12.5px;color:#C9C4B6}
-.champ-final b{color:#fff;font-size:14.5px}
-.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(430px,100%),1fr));gap:16px}
-.gcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.ghead{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
-.gbadge{width:30px;height:30px;border-radius:8px;color:#fff;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center}
-.ghead .gt{font-weight:800;font-size:15px}
-.ghead .gs{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right}
-.gm{padding:4px 16px 12px}
-.gm-row{display:flex;align-items:center;gap:8px;padding:7px 0 1px;font-size:13px}
-.gm-date{color:var(--muted);font-size:11px;width:40px;flex-shrink:0}
-.gm-team{flex:1;text-align:right;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gm-team.away{text-align:left}
-.gm-score{background:#15140F;color:#fff;border-radius:7px;padding:1px 9px;font-weight:800;font-size:12.5px;flex-shrink:0}
-.gm-row.actual .gm-score{background:var(--gold-deep)}
-.tag-live{font-size:10px;color:#fff;background:var(--ca);border-radius:4px;padding:1px 5px;flex-shrink:0;font-weight:700}
-.gm-why{font-size:11px;color:var(--muted);padding:1px 0 5px 48px;border-bottom:1px dashed #EFEBE0}
-.gm:last-child .gm-why:last-child{border-bottom:none}
-.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:4px 16px 12px;max-width:700px;overflow-x:auto}
-.bracket-scroll{overflow-x:auto;padding-bottom:8px}
-.bracket{display:flex;gap:14px;min-width:1040px;align-items:stretch}
-.round{display:flex;flex-direction:column;justify-content:space-around;gap:9px;flex:1;min-width:195px}
-.rhead{text-align:center;font-size:11.5px;letter-spacing:.18em;color:var(--gold-deep);font-weight:800;padding:3px 0 1px}
-.rhead small{display:block;letter-spacing:0;color:var(--muted);font-weight:500}
-.ko{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:12.5px;transition:transform .2s,box-shadow .2s}
-.ko:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(20,20,20,.08)}
-.ko .kd{font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px}
-.ko .kt{display:flex;align-items:center;gap:6px;padding:2px 0}
-.ko .kt .n{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#6d6a60}
-.ko .kt .s{font-weight:800;color:#6d6a60}
-.ko .kt.win .n{color:var(--ink);font-weight:800}
-.ko .kt.win .s{color:var(--gold-deep);font-weight:800}
-.ko .note{font-size:10px;color:var(--gold-deep);font-weight:700;margin-top:2px}
-.ko.final-card{border:2px solid var(--gold);box-shadow:0 6px 22px rgba(201,162,39,.18)}
-.ko.third-card{border-style:dashed}
-.honors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(205px,100%),1fr));gap:12px}
-.hcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;text-align:center;transition:transform .2s}
-.hcard:hover{transform:translateY(-3px)}
-.hcard.gold{background:linear-gradient(160deg,#171511,#2a2310);border-color:#4d3f17;color:#fff}
-.hcard .hl{font-size:11px;letter-spacing:.25em;color:var(--gold-deep);font-weight:800}
-.hcard.gold .hl{color:var(--gold)}
-.hcard .hf{font-size:34px;margin:6px 0 2px}
-.hcard .hn{font-size:19px;font-weight:900}
-.hcard .hs{font-size:12px;color:var(--muted);margin-top:3px}
-.hcard.gold .hs{color:#C9C4B6}
-.legend{display:flex;gap:16px;margin-top:12px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
-.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}
-details.method{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:4px 18px;margin-bottom:20px}
-details.method summary{cursor:pointer;font-weight:700;font-size:13.5px;padding:10px 0;color:var(--gold-deep)}
-details.method p{font-size:12.5px;color:var(--muted);padding-bottom:12px}
-
-/* ---------- pay modal ---------- */
+/* ---------- modals (sponsor / feedback) ---------- */
 .modal-bg{position:fixed;inset:0;background:rgba(10,10,8,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
 .modal-bg.on{display:flex;animation:fadeUp .25s ease}
 .modal{background:#fff;border-radius:18px;max-width:430px;width:100%;padding:24px 24px 18px;text-align:center;animation:popIn .35s ease;max-height:92vh;overflow-y:auto}
@@ -313,6 +257,8 @@ details.method p{font-size:12.5px;color:var(--muted);padding-bottom:12px}
 .modal .demo-note{font-size:11px;color:var(--ca);background:#FDF0EF;border-radius:8px;padding:7px 10px;margin-bottom:10px}
 .modal .comp-note{font-size:10.5px;color:var(--muted);margin-bottom:8px;line-height:1.6}
 .modal .close{appearance:none;border:none;background:none;color:var(--muted);font-size:12.5px;cursor:pointer;padding:6px}
+.fb-text,.fb-input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:13px;margin:6px 0 3px;background:#FCFBF8;color:var(--ink);resize:vertical}
+.fb-text:focus,.fb-input:focus{outline:none;border-color:var(--gold)}
 .toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(80px);background:#15140F;color:#fff;border-radius:999px;padding:10px 22px;font-size:13.5px;font-weight:700;z-index:60;opacity:0;transition:.4s cubic-bezier(.2,.7,.3,1)}
 .toast.on{transform:translateX(-50%) translateY(0);opacity:1}
 .toast .g{color:var(--gold)}
@@ -323,7 +269,9 @@ footer .wrap{padding:26px 20px 30px}
 footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:10px;padding-top:12px;border-top:1px solid #2c2c28}
 footer p{line-height:1.8}
 footer b{color:#D8D3C4}
-footer .compliance{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:11px;color:#8d887a}
+footer .compliance{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:11px;color:#8d887a;align-items:center}
+.linklike{appearance:none;border:none;background:none;color:#8d887a;font-size:11px;cursor:pointer;padding:0;text-decoration:underline}
+.linklike:hover{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -349,7 +297,6 @@ footer .compliance{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font
   <div class="view on" id="v-today"></div>
   <div class="view" id="v-data"></div>
   <div class="view" id="v-review"></div>
-  <div class="view" id="v-full"></div>
 </main>
 
 <footer>
@@ -359,502 +306,12 @@ footer .compliance{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font
 <div class="modal-bg" id="payModal">
   <div class="modal" id="payBody"></div>
 </div>
+<div class="modal-bg" id="fbModal">
+  <div class="modal" id="fbBody"></div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script src="assets/data.js"></script>
-<script>
-/* ================= helpers ================= */
-const $ = s => document.querySelector(s);
-const T = n => WC.teams[n] || {};
-const esc = s => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-const safeUrl = u => /^https?:\/\//i.test(String(u || '')) ? u : '#';
-const storeGet = k => { try { return window.localStorage.getItem(k); } catch (e) { return null; } };
-const storeSet = (k, v) => { try { window.localStorage.setItem(k, v); } catch (e) {} };
-const storeDel = k => { try { window.localStorage.removeItem(k); } catch (e) {} };
-
-/* legacy demo key → season */
-if (storeGet('wc26_unlocked') === '1') { storeSet('wc26_season', '1'); storeDel('wc26_unlocked'); }
-
-const state = {
-  lang: storeGet('wc26_lang') || ((navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en'),
-  view: 'today',
-  paySel: 'season',
-  payBusy: false,
-};
-const L = (zh, en) => state.lang === 'zh' ? zh : en;
-const tn = n => state.lang === 'zh' ? (T(n).zh || n) : n;
-const fl = n => esc(T(n).flag || '');
-const fmtD = d => d.slice(5).replace('-', '.');
-const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const dLong = d => { const m = +d.slice(5, 7), dd = +d.slice(8, 10); return state.lang === 'zh' ? (m + ' 月 ' + dd + ' 日') : (MON[m - 1] + ' ' + dd); };
-const CITY_ZH = {'Mexico City':'墨西哥城','Guadalajara':'瓜达拉哈拉','Zapopan':'瓜达拉哈拉','Monterrey':'蒙特雷','Guadalupe (Monterrey)':'蒙特雷','Atlanta':'亚特兰大','Toronto':'多伦多','Toronto, Canada':'多伦多','Vancouver':'温哥华','Seattle':'西雅图','Santa Clara':'旧金山湾区','San Francisco Bay':'旧金山湾区','Inglewood':'洛杉矶','Inglewood (Los Angeles), USA':'洛杉矶','Los Angeles':'洛杉矶','East Rutherford':'纽约/新泽西','New York/New Jersey':'纽约/新泽西','Foxborough':'波士顿','Boston':'波士顿','Philadelphia':'费城','Houston':'休斯敦','Arlington':'达拉斯','Dallas':'达拉斯','Miami Gardens':'迈阿密','Miami':'迈阿密','Kansas City':'堪萨斯城'};
-const CITY_EN = {'Zapopan':'Guadalajara','Guadalupe (Monterrey)':'Monterrey','Toronto, Canada':'Toronto','Inglewood':'Los Angeles','Inglewood (Los Angeles), USA':'Los Angeles','East Rutherford':'New York/New Jersey','Foxborough':'Boston','Santa Clara':'SF Bay Area','San Francisco Bay':'SF Bay Area','Miami Gardens':'Miami','Arlington':'Dallas'};
-const city = c => state.lang === 'zh' ? (CITY_ZH[c] || c) : (CITY_EN[c] || c);
-const GC = ['var(--mx)','var(--us)','var(--ca)'];
-const DIM_Z = ['实力','状态','阵容','底蕴','环境'];
-const DIM_E = ['Strength','Form','Squad','Pedigree','Env'];
-const DIM_S = ['STR','FRM','SQD','PED','ENV'];
-const dimN = i => L(DIM_Z[i], DIM_E[i]);
-/* flags for historical nations (incl. teams not in WC26) */
-const XFLAG = {'Brazil':'🇧🇷','Germany':'🇩🇪','West Germany':'🇩🇪','Italy':'🇮🇹','Argentina':'🇦🇷','Uruguay':'🇺🇾','France':'🇫🇷','England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Spain':'🇪🇸','Netherlands':'🇳🇱','Hungary':'🇭🇺','Sweden':'🇸🇪','Croatia':'🇭🇷','Czechoslovakia':'🇨🇿','Poland':'🇵🇱','Portugal':'🇵🇹'};
-const xfl = n => { n = String(n || ''); return XFLAG[n] || XFLAG[n.split('(')[0].trim()] || esc(T(n).flag || ''); };
-const vEn = s => {
-  if (!s) return s;
-  let m = /€([\d.]+)亿/.exec(s);
-  if (m) return '€' + (parseFloat(m[1]) * 100).toFixed(1).replace(/\.0$/, '') + 'M';
-  m = /€([\d.]+)万/.exec(s);
-  if (m) return '€' + (parseFloat(m[1]) / 100).toFixed(1).replace(/\.0$/, '') + 'M';
-  return s;
-};
-const kickEn = s => s ? s.replace('当地', 'Local').replace(/\s*·?\s*北京时间/, ' · Beijing ').replace(/(\d{1,2})月(\d{1,2})日/g, (_, a, b) => MON[+a - 1] + ' ' + b) : '';
-const P = (WC.pay && WC.pay.products) || { day: { price: '¥9.9' }, season: { price: '¥98' } };
-
-const ent = () => storeGet('wc26_season') === '1' ? 'season'
-  : (WC.today && storeGet('wc26_day') === WC.today.date ? 'day' : null);
-
-const played = WC.schedule.filter(m => m.actual);
-
-/* ================= chrome (hero/tabs/notice/footer) ================= */
-function renderChrome() {
-  document.documentElement.lang = L('zh-CN', 'en');
-  document.title = L('WC26 AI 数据分析 · 2026世界杯 AI 大数据预测与赛事数据分析', 'WC26 AI Analytics · 2026 World Cup AI predictions & data analysis');
-  const md = $('#metaDesc');
-  if (md) md.content = L('WC26 AI 数据分析:基于人工智能与大数据的 2026 美加墨世界杯赛事数据分析平台。AI 五维建模、球队实力评分、历史数据统计、比赛复盘与专家观点,全部结论来源可溯。非博彩网站,不提供任何投注功能。',
-    'WC26 AI Analytics: an AI & big-data analytics platform for the 2026 FIFA World Cup. Five-dimension team modelling, power ratings, historical stats, match recaps and expert views — fully sourced. Not a betting site.');
-  $('#kicker').textContent = 'FIFA WORLD CUP 26™ · ' + L('美国 / 加拿大 / 墨西哥', 'USA / CANADA / MEXICO');
-  $('#langBtn').textContent = state.lang === 'zh' ? 'EN' : '中文';
-  $('#h1t').innerHTML = 'WC26 <span class="y">' + L('AI 数据分析', 'AI Analytics') + '</span>';
-  $('#heroSub').textContent = L('人工智能 × 大数据驱动的世界杯赛事数据分析平台:多智能体联网调研、多源事实核查,全部结论可溯源。',
-    'An AI & big-data World Cup analytics platform: multi-agent web research with multi-source fact-checking — every claim traceable.');
-  $('#badges').innerHTML = [
-    '🤖 ' + L('AI 模型驱动', 'AI-model driven'),
-    '📊 ' + L('大数据 · 多源核查', 'Big data · cross-checked'),
-    '🔍 ' + L('来源可溯', 'Traceable sources'),
-    '🚫 ' + L('非博彩 · 拒绝赌球', 'Not a betting site'),
-  ].map(b => '<span class="badge">' + b + '</span>').join('');
-  $('#heroMeta').innerHTML = '<span>' + L('AI 五维建模 · 48 队 · 104 场', 'AI 5-dim model · 48 teams · 104 matches') + '</span>' +
-    '<span>' + L('已赛 ', 'Played ') + '<b class="num">' + played.length + '</b>' + L(' 场', '') + '</span>' +
-    '<span>' + L('更新 ', 'Updated ') + '<b class="num">' + esc(WC.meta.updated) + '</b></span>';
-  const tabs = [
-    ['today', L('今日预测', "Today's Forecast") + '<span class="dot"></span>'],
-    ['data', L('数据分析', 'Analytics')],
-    ['review', L('赛果复盘', 'Results & Review')],
-    ['full', L('全程推演', 'Full Simulation') + (ent() === 'season' ? '' : '<span class="lock">🔒</span>')],
-  ];
-  $('#tabs').innerHTML = tabs.map(t => '<button class="tab' + (state.view === t[0] ? ' on' : '') + '" data-v="' + t[0] + '">' + t[1] + '</button>').join('');
-  $('#noticeTxt').innerHTML = '🛡 ' + L('本站为 <b>AI 大数据体育数据分析平台</b>:所有内容由统计模型与公开数据生成,仅供研究与观赛参考 · 不提供任何投注功能,不构成投注建议 · 拒绝赌球,理性观赛',
-    'This is an <b>AI sports data-analytics platform</b>: all content is generated by statistical models from public data, for research & viewing reference only · No betting features, no betting advice · Watch responsibly');
-  $('#footWrap').innerHTML =
-    '<p><b>' + L('免责声明', 'Disclaimer') + '</b> ' + L('本站为 AI 大数据体育数据分析平台。所有预测与分析均由统计模型与公开资料生成,仅供研究参考与观赛娱乐,不构成任何投注建议;本站不提供任何形式的投注、竞猜功能。请理性观赛,拒绝赌球。已赛比分为真实赛果,事实性资料带来源标注,截至页面更新时间。付费功能当前为演示模式,未接入真实支付。',
-      'This site is an AI sports data-analytics platform. All predictions and analysis are generated by statistical models from public data, for research and entertainment only — never betting advice. No betting or wagering features are offered. Completed scores are real results; factual material is source-annotated as of the page update time. Payments are currently in demo mode.') + '</p>' +
-    '<div class="compliance">' +
-      '<span>📊 ' + L('数据来源公开可溯', 'Open, traceable data sources') + '</span>' +
-      '<span>🚫 ' + L('不提供投注渠道', 'No betting channels') + '</span>' +
-      '<span>📄 ' + L('付费为数据分析内容服务', 'Paid tiers are data-analytics content') + '</span>' +
-      '<span>🧠 ' + L('18+ 理性观赛', 'Watch responsibly') + '</span>' +
-    '</div>' +
-    '<div class="fin"><span>WC26 AI ' + L('数据分析', 'ANALYTICS') + ' · FIFA WORLD CUP 26™</span>' +
-    '<span>' + L('数据更新 ', 'Updated ') + esc(WC.meta.updated) + ' · ' + L('AI 多智能体联网调研生成', 'Generated by multi-agent AI research') + '</span></div>';
-}
-
-/* ================= tabs / reveal ================= */
-$('#tabs').addEventListener('click', e => {
-  const b = e.target.closest('.tab');
-  if (!b) return;
-  state.view = b.dataset.v;
-  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === b));
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
-  const v = $('#v-' + state.view);
-  v.classList.add('on');
-  bindReveal(v);
-  animateBars(v);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-$('#langBtn').addEventListener('click', () => {
-  state.lang = state.lang === 'zh' ? 'en' : 'zh';
-  storeSet('wc26_lang', state.lang);
-  renderAll();
-});
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 });
-function bindReveal(root) { (root || document).querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el)); }
-function animateBars(root) { setTimeout(() => (root || document).querySelectorAll('.bar i').forEach(b => { b.style.width = b.dataset.w + '%'; }), 80); }
-
-/* ================= today ================= */
-function statusPill(st) {
-  if (st === 'played') return '<span class="stat-pill">' + L('已完赛', 'FT') + '</span>';
-  if (st === 'live') return '<span class="stat-pill live">' + L('进行中', 'LIVE') + '</span>';
-  return '<span class="stat-pill">' + L('未开赛', 'Upcoming') + '</span>';
-}
-function probBars(p, home, away) {
-  const rows = [[L(esc(tn(home)) + ' 胜', esc(tn(home)) + ' win'), p.home, 'var(--mx)'], [L('战平', 'Draw'), p.draw, '#B8B3A4'], [L(esc(tn(away)) + ' 胜', esc(tn(away)) + ' win'), p.away, 'var(--us)']];
-  return '<div class="probs">' + rows.map(r =>
-    '<div class="prob"><span>' + r[0] + '</span><span class="bar"><i data-w="' + r[1] + '" style="background:' + r[2] + '"></i></span><b class="num">' + r[1] + '%</b></div>').join('') + '</div>';
-}
-function renderToday() {
-  const el = $('#v-today'), td = WC.today;
-  let h = '<section><div class="sec-kicker">MATCH DAY · AI FORECAST</div><div class="sec-title">' + L('今日赛场 · AI 深度预测', "Today's Matches · AI Deep Forecast") + '</div>' +
-    '<p class="sec-desc">' + L('AI 多智能体当日联网调研:综合天气温度、场馆条件、阵容身价、硬实力、近期状态、伤病情况与市场数据等全要素建模分析;事实经多源核查,来源可溯。',
-      'Same-day multi-agent AI research: weather, venue, squad value, raw strength, form, injuries and market data — modelled end to end, fact-checked across sources, fully traceable.') + '</p>';
-  if (!td || !td.matches || !td.matches.length) {
-    h += '<div class="gen-note">' + L('今日暂无比赛或深度分析生成中,请稍后刷新。', 'No matches today, or the analysis is still generating — check back soon.') + '</div></section>';
-    el.innerHTML = h; return;
-  }
-  let fm = td.matches.find(m => m.no === td.featured) || td.matches.find(m => m.paid) || td.matches[0];
-  h += '<div class="day-head reveal"><span class="day-pill num">' + (state.lang === 'zh' ? esc(td.label) : dLong(td.date) + ' · Matchday') + '</span>' +
-    '<span class="day-sub">' + L('共 ' + td.matches.length + ' 场 · 时间为当地时间 · 每日精选 1 场发布 AI 预测报告', td.matches.length + ' matches · local kick-off times · one featured AI report per day') + '</span></div>';
-  td.matches.forEach((m, i) => {
-    const f = m.free || {}, en = m.en || {}, isFeat = m === fm;
-    const headline = state.lang === 'zh' ? f.headline : (en.headline || f.headline);
-    const lean = state.lang === 'zh' ? f.lean : (en.lean || f.lean);
-    const env = state.lang === 'zh' ? m.env : ((en.env && en.env.length) ? en.env : m.env);
-    h += '<div class="mcard reveal' + (isFeat ? ' featured' : '') + '" style="transition-delay:' + i * .12 + 's">' +
-      '<div class="mtop"><span class="gtag" style="background:' + GC[i % 3] + '">' + L(m.group + ' 组', 'Group ' + m.group) + '</span>' +
-      (isFeat ? '<span class="feat-tag">⭐ ' + L('今日精选', 'Featured') + '</span>' : '') +
-      '<span class="num">⏱ ' + esc(state.lang === 'zh' ? m.kickoff_zh : kickEn(m.kickoff_zh)) + '</span><span>🏟 ' + esc(m.stadium) + ' · ' + esc(city(m.city)) + '</span>' + statusPill(m.status) + '</div>' +
-      '<div class="mteams">' +
-        '<div class="mteam"><div class="f">' + fl(m.home) + '</div><div class="n">' + esc(tn(m.home)) + '</div><div class="v num">FIFA #' + T(m.home).rank + (m.value && m.value.home ? ' · ' + L('身价 ', '') + esc(state.lang === 'zh' ? m.value.home : vEn(m.value.home)) : '') + '</div></div>' +
-        '<div class="mvs">VS' + (headline ? '<span class="hl">' + esc(headline) + '</span>' : '') + '</div>' +
-        '<div class="mteam"><div class="f">' + fl(m.away) + '</div><div class="n">' + esc(tn(m.away)) + '</div><div class="v num">FIFA #' + T(m.away).rank + (m.value && m.value.away ? ' · ' + L('身价 ', '') + esc(state.lang === 'zh' ? m.value.away : vEn(m.value.away)) : '') + '</div></div>' +
-      '</div>';
-    if (env && env.length) h += '<div class="envrow">' + env.map(e => '<span class="env">' + esc(e) + '</span>').join('') + '</div>';
-    if (m.factors && m.factors.length) {
-      h += '<div class="facwrap"><div class="fhead">FACTORS · ' + L('全要素对比', 'Full factor comparison') + '</div>' + m.factors.map((fc, fi) => {
-        const fe = (en.factors && en.factors[fi]) || {};
-        const name = state.lang === 'zh' ? fc.name : (fe.name || fc.name);
-        const hv = state.lang === 'zh' ? fc.home : (fe.home || fc.home);
-        const av = state.lang === 'zh' ? fc.away : (fe.away || fc.away);
-        const note = state.lang === 'zh' ? fc.note : (fe.note || fc.note);
-        const eh = fc.edge === 'home', ea = fc.edge === 'away';
-        return '<div class="fac"><span class="l ' + (eh ? 'edge h' : '') + '">' + esc(hv) + (eh ? ' ●' : '') + '</span><span class="c">' + esc(name) + '</span><span class="r ' + (ea ? 'edge a' : '') + '">' + (ea ? '● ' : '') + esc(av) + '</span>' + (note ? '<span class="note">' + esc(note) + '</span>' : '') + '</div>';
-      }).join('') + '</div>';
-    }
-    if (lean) h += '<div class="lean">📌 ' + L('免费速览:', 'Free read: ') + esc(lean) + '</div>';
-    if (isFeat) {
-      h += '<div class="paid-zone' + (ent() ? ' unlocked' : '') + '"><div class="pz-title">AI PREDICTION REPORT · ' + L('AI 预测报告', 'AI Prediction Report') +
-        (ent() ? '<span class="ent-tag">' + (ent() === 'season' ? L('全程订阅已激活', 'Season pass active') : L('单日解锁 · 当日有效', 'Day pass · today only')) + '</span>' : '') + '</div>';
-      if (ent() && m.paid) {
-        const p = m.paid;
-        const analysis = state.lang === 'zh' ? p.analysis : (en.analysis || p.analysis);
-        h += '<div class="pz-score"><span class="sc num">' + esc(tn(m.home)) + ' ' + esc(p.score) + ' ' + esc(tn(m.away)) + '</span><span class="cf">' + L('模型置信度', 'Model confidence') + '<br><b class="num">' + p.confidence + '%</b></span></div>' +
-          probBars(p.probs, m.home, m.away) +
-          '<div class="analysis">' + esc(analysis) + '</div>' +
-          '<div class="pz-foot">' + L('本报告为统计模型输出,仅供研究参考,不构成任何投注建议。', 'Model output for research reference only — not betting advice.') + '</div>';
-      } else {
-        h += '<div class="pz-locked"><div class="blur-score num">2 - 1</div><p>' + L('精确比分 · 胜平负概率 · 模型置信度 · 深度数据分析报告', 'Exact score · outcome probabilities · model confidence · full data-analysis report') + '</p>' +
-          '<div class="pz-actions"><button class="btn-gold pay-open" data-prod="day">🔓 ' + L('单日解锁 ', 'Unlock today ') + esc(P.day.price) + '</button>' +
-          '<button class="btn-ghost pay-open" data-prod="season">' + L('订阅全程 ', 'Season pass ') + esc(P.season.price) + '</button></div></div>';
-      }
-      h += '</div>';
-    } else {
-      h += '<div class="no-feat">🔎 ' + L('今日精选场次为「' + esc(tn(fm.home)) + ' vs ' + esc(tn(fm.away)) + '」。本场提供上方免费要素分析;模型精确预测不予发售,赛后将在「赛果复盘」公开对照。',
-        "Today's featured report covers " + esc(tn(fm.home)) + ' vs ' + esc(tn(fm.away)) + '. This match gets the free factor analysis above; its exact model call is not for sale and will be published in Results & Review after full time.') + '</div>';
-    }
-    if (m.sources && m.sources.length) h += '<details class="srcs"><summary>' + L('调研来源 ', 'Research sources · ') + m.sources.length + L(' 条', '') + '</summary>' + m.sources.map(s => '<a href="' + esc(safeUrl(s)) + '" target="_blank" rel="noopener">' + esc(s) + '</a>').join('') + '</details>';
-    h += '</div>';
-  });
-  const note = state.lang === 'zh' ? td.note : (td.note_en || td.note);
-  if (note) h += '<p class="sec-desc" style="font-size:12px">' + esc(note) + '</p>';
-  h += '</section>';
-  el.innerHTML = h;
-  animateBars(el);
-}
-
-/* ================= analytics ================= */
-function radarSVG(dims) {
-  const cx = 56, cy = 52, R = 40, N = 5;
-  const pt = (i, r) => { const a = -Math.PI / 2 + i * 2 * Math.PI / N; return (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1); };
-  let s = '<svg width="112" height="104" viewBox="0 0 112 104">';
-  for (const f of [1, .66, .33]) s += '<polygon points="' + [0,1,2,3,4].map(i => pt(i, R * f)).join(' ') + '" fill="none" stroke="#E4E0D4" stroke-width="1"/>';
-  for (let i = 0; i < N; i++) s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + pt(i, R).replace(',', '" y2="') + '" stroke="#EEEAE0" stroke-width="1"/>';
-  s += '<polygon points="' + dims.map((v, i) => pt(i, R * v / 100)).join(' ') + '" fill="rgba(201,162,39,.22)" stroke="var(--gold-deep)" stroke-width="1.8"/>';
-  const lp = [[56,8],[102,41],[88,100],[24,100],[10,41]];
-  const lbl = state.lang === 'zh' ? DIM_Z : DIM_S;
-  lbl.forEach((l, i) => s += '<text x="' + lp[i][0] + '" y="' + lp[i][1] + '" font-size="' + (state.lang === 'zh' ? 9 : 8) + '" fill="#9a9484" text-anchor="middle">' + l + '</text>');
-  return s + '</svg>';
-}
-function countUps(root) {
-  root.querySelectorAll('[data-cnt]').forEach(el => {
-    const target = parseFloat(el.dataset.cnt); const t0 = performance.now();
-    const step = t => { const k = Math.min(1, (t - t0) / 900); el.textContent = (target * (1 - Math.pow(1 - k, 3))).toFixed(1); if (k < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  });
-}
-function renderData() {
-  const el = $('#v-data');
-  const A = WC.analytics || {};
-  const entries = Object.entries(WC.teams);
-  const sorted = entries.slice().sort((a, b) => b[1].overall - a[1].overall);
-
-  /* --- team ratings --- */
-  let h = '<section><div class="sec-kicker">TEAM RATINGS · AI MODEL</div><div class="sec-title">' + L('球队实力评分', 'Team Power Ratings') + '</div>' +
-    '<p class="sec-desc">' + L('三个独立 AI 评分视角(量化数据 / 状态体能 / 战术专家)对 48 队五维打分取均值,加权得到综合评分;评分随赛事进程滚动校准。',
-      'Three independent AI scoring lenses (quant data / fitness & form / tactics) rate all 48 teams on five dimensions; the weighted average gives the overall rating, recalibrated as the tournament unfolds.') + '</p>';
-  h += '<div class="method-chips reveal">' + [
-    [L('硬实力', 'Strength'), '30%'], [L('当前状态', 'Form'), '25%'], [L('阵容厚度', 'Squad depth'), '20%'], [L('大赛底蕴', 'Pedigree'), '15%'], [L('环境适应', 'Environment'), '10%'],
-  ].map(c => '<span class="mchip">' + c[0] + ' <b>' + c[1] + '</b></span>').join('') + '<span class="mchip">' + L('3 视角独立评分取均值', '3 lenses, averaged') + '</span></div>';
-  const top8 = sorted.slice(0, 8);
-  h += '<div class="contenders">' + top8.map(([n, t], i) =>
-    '<div class="cont reveal" style="transition-delay:' + i * .05 + 's">' + radarSVG(t.dims) +
-    '<div class="info"><div class="nm">' + esc(t.flag) + ' ' + esc(tn(n)) + '</div><div class="meta num">FIFA #' + t.rank + (t.mkt ? ' · ' + L('市场夺冠预期 ', 'Mkt title prob ') + esc(t.mkt) : '') + '</div><div class="ov num" data-cnt="' + t.overall + '">0</div><div class="ovl">' + L('综合评分', 'OVERALL') + '</div></div></div>').join('') + '</div>';
-  h += '<div class="rate-card reveal"><table class="gtable"><tr><th>#</th><th>' + L('球队', 'Team') + '</th><th>' + L('组', 'Grp') + '</th><th>FIFA</th>' +
-    (state.lang === 'zh' ? DIM_Z : DIM_S).map(d => '<th>' + d + '</th>').join('') + '<th>' + L('综合', 'OVR') + '</th></tr>' +
-    sorted.map(([n, t], i) => '<tr' + (i < 3 ? ' class="q3y"' : '') + '><td class="num">' + (i + 1) + '</td><td>' + t.flag + ' ' + esc(tn(n)) + '</td><td>' + t.group + '</td><td class="num">' + t.rank + '</td>' +
-      t.dims.map(d => '<td class="num dim">' + d + '</td>').join('') + '<td class="num ov">' + t.overall.toFixed(1) + '</td></tr>').join('') + '</table></div>';
-
-  /* --- tournament analysis --- */
-  h += '<div class="subsec reveal"><div class="sec-kicker">TOURNAMENT ANALYSIS</div><div class="sec-title">' + L('世界杯赛事分析', 'Tournament Analysis') + '</div>' +
-    '<p class="sec-desc">' + L('基于 AI 评分模型的赛事格局量化分析:小组强度指数、争冠集团与市场预期对比。', 'Quantified tournament landscape from the AI rating model: group strength index, title race and market expectations.') + '</p>';
-  const groups = {};
-  entries.forEach(([n, t]) => { (groups[t.group] = groups[t.group] || []).push([n, t]); });
-  const gAvg = Object.keys(groups).sort().map(g => ({ g, teams: groups[g], avg: groups[g].reduce((s, x) => s + x[1].overall, 0) / groups[g].length }));
-  gAvg.sort((a, b) => b.avg - a.avg);
-  const maxAvg = gAvg[0].avg, minAvg = gAvg[gAvg.length - 1].avg;
-  h += '<div class="two-col"><div class="hcardx"><div class="fhead">' + L('小组强度指数(平均综合评分)', 'GROUP STRENGTH INDEX (avg overall)') + '</div>' +
-    gAvg.map((x, i) => '<div class="hbar"><span><b>' + x.g + '</b> <span class="sub">' + x.teams.map(t => t[1].flag).join(' ') + '</span>' + (i === 0 ? ' <span class="sub">☠️ ' + L('死亡之组', 'Group of death') + '</span>' : '') + '</span>' +
-      '<span class="bar"><i data-w="' + Math.round(20 + (x.avg - minAvg) / (maxAvg - minAvg + .01) * 80) + '" style="background:' + (i === 0 ? 'var(--ca)' : 'var(--gold)') + '"></i></span><span class="val num">' + x.avg.toFixed(1) + '</span></div>').join('') + '</div>';
-  h += '<div class="hcardx"><div class="fhead">' + L('争冠集团 · 模型评分 × 市场预期', 'TITLE RACE · model vs market') + '</div><table class="gtable"><tr><th>#</th><th>' + L('球队', 'Team') + '</th><th>' + L('综合', 'OVR') + '</th><th>FIFA</th><th>' + L('市场夺冠预期', 'Mkt title prob') + '</th></tr>' +
-    sorted.slice(0, 10).map(([n, t], i) => '<tr><td class="num">' + (i + 1) + '</td><td>' + esc(t.flag) + ' ' + esc(tn(n)) + '</td><td class="num pts">' + t.overall.toFixed(1) + '</td><td class="num">' + t.rank + '</td><td class="num">' + (esc(t.mkt) || '—') + '</td></tr>').join('') + '</table></div></div>';
-  const stories = (A.experts && A.experts.storylines) || [];
-  if (stories.length) {
-    h += '<div style="height:18px"></div><div class="scards">' + stories.map(s =>
-      '<div class="scard reveal"><div class="st">' + esc(L(s.title_zh, s.title_en)) + '</div><div class="sb">' + esc(L(s.body_zh, s.body_en)) + '</div>' +
-      (s.source ? '<a class="src-link" href="' + esc(safeUrl(s.source)) + '" target="_blank" rel="noopener">' + L('来源', 'Source') + ' ↗</a>' : '') + '</div>').join('') + '</div>';
-  }
-  h += '</div>';
-
-  /* --- history --- */
-  const H = A.history;
-  if (H) {
-    h += '<div class="subsec reveal"><div class="sec-kicker">HISTORY DATA</div><div class="sec-title">' + L('历史数据统计', 'Historical Statistics') + '</div>' +
-      '<p class="sec-desc">' + L('1930–2022 共 22 届世界杯的核验数据:冠军谱系、夺冠榜、历史射手榜与关键纪录,数据来源见底部。', 'Verified data across all 22 World Cups, 1930–2022: champions, title counts, all-time scorers and key records — sources below.') + '</p>';
-    if (H.facts && H.facts.length) h += '<div class="facts-grid">' + H.facts.map(f =>
-      '<div class="fact reveal"><div class="fl">' + esc(L(f.label_zh, f.label_en)) + '</div><div class="fv">' + esc(L(f.value_zh, f.value_en)) + '</div></div>').join('') + '</div>';
-    h += '<div class="two-col" style="margin-top:14px"><div class="hcardx"><div class="fhead">' + L('夺冠次数榜', 'TITLES BY NATION') + '</div>' +
-      (H.titles || []).map(t => '<div class="hbar"><span>' + xfl(t.team_en) + ' <b>' + esc(L(t.team_zh, t.team_en)) + '</b></span><span class="bar"><i data-w="' + (t.count / 5 * 100) + '" style="background:var(--gold)"></i></span><span class="val num">× ' + t.count + '</span></div>' +
-        '<div class="hbar" style="padding:0 0 6px"><span></span><span class="sub" style="grid-column:2/4">' + esc(t.years) + '</span></div>').join('') + '</div>';
-    h += '<div class="hcardx"><div class="fhead">' + L('世界杯历史射手榜', 'ALL-TIME TOP SCORERS') + '</div>' +
-      (H.scorers || []).map(s => '<div class="hbar"><span>' + xfl(s.team_en) + ' <b>' + esc(L(s.player_zh, s.player)) + '</b> <span class="sub num">' + esc(s.span) + '</span></span>' +
-        '<span class="bar"><i data-w="' + (s.goals / 16 * 100) + '" style="background:var(--us)"></i></span><span class="val num">' + s.goals + L(' 球', '') + '</span></div>').join('') + '</div></div>';
-    if (H.champions && H.champions.length) {
-      h += '<div style="height:18px"></div><div class="fhead">' + L('历届冠军 1930–2022', 'CHAMPIONS 1930–2022') + '</div><div class="champ-grid">' +
-        H.champions.map(c => '<div class="champ-cell reveal"><div class="yr num">' + c.year + '</div><div class="wn">' + xfl(c.winner_en) + ' ' + esc(L(c.winner_zh, c.winner_en)) + '</div>' +
-          '<div class="rs num">' + esc(c.score) + ' · ' + esc(L(c.runner_zh, c.runner_en)) + '</div><div class="rs">' + L('主办:', 'Host: ') + esc(L(c.host_zh, c.host_en)) + '</div></div>').join('') + '</div>';
-    }
-    if (H.sources && H.sources.length) h += '<details class="srcs"><summary>' + L('数据来源 ', 'Data sources · ') + H.sources.length + L(' 条', '') + '</summary>' + H.sources.map(s => '<a href="' + esc(safeUrl(s)) + '" target="_blank" rel="noopener">' + esc(s) + '</a>').join('') + '</details>';
-    h += '</div>';
-  }
-
-  /* --- expert views --- */
-  const X = A.experts;
-  if (X) {
-    h += '<div class="subsec reveal"><div class="sec-kicker">EXPERT VIEWS</div><div class="sec-title">' + L('专家观点', 'Expert Views') + '</div>' +
-      '<p class="sec-desc">' + L('引自公开报道的分析师、名宿与量化模型观点,全部附原始来源链接;观点仅代表原作者。', 'Analyst, pundit and quant-model views quoted from public reporting, each linked to its original source; views belong to their authors.') + '</p>';
-    h += '<div class="consensus reveal"><div class="cl">CONSENSUS · ' + L('共识扫描', 'Consensus scan') + '</div>' + esc(L(X.consensus_zh, X.consensus_en)) +
-      '<br><span style="color:#A8A498;font-size:12px">' + L('本站模型当前推演冠军:', 'Our model currently simulates the champion as: ') + esc(tn(WC.pred.finals.champion)) + L('(详见「全程推演」)', ' (see Full Simulation)') + '</span></div>';
-    h += '<div class="xgrid">' + (X.experts || []).map((x, i) =>
-      '<div class="xcard reveal" style="transition-delay:' + i * .05 + 's"><div class="xq">“' + esc(L(x.view_zh, x.view_en)) + '”</div>' +
-      '<div class="xwho"><b>' + esc(state.lang === 'zh' ? x.name : (x.name_en || x.name)) + '</b> · ' + esc(state.lang === 'zh' ? x.org : (x.org_en || x.org)) + ' · <span class="num">' + esc(x.date) + '</span>' +
-      (x.pick ? '<span class="xpick">🏆 ' + esc(state.lang === 'zh' ? x.pick : (x.pick_en || x.pick)) + '</span>' : '') +
-      (x.source ? '<a class="src-link" href="' + esc(safeUrl(x.source)) + '" target="_blank" rel="noopener">' + L('来源', 'Source') + ' ↗</a>' : '') + '</div></div>').join('') + '</div></div>';
-  }
-  h += '</section>';
-  el.innerHTML = h;
-  countUps(el);
-  animateBars(el);
-}
-
-/* ================= review & recaps ================= */
-const EVT_ICON = { goal: '⚽', red: '🟥', yellow: '🟨', var: '📺', pen: '🎯', sub: '🔁', substitution: '🔁', disallowed: '🚫', save: '🧤' };
-function renderReview() {
-  const el = $('#v-review');
-  let h = '<section><div class="sec-kicker">RESULTS & REVIEW</div><div class="sec-title">' + L('赛果与预测复盘', 'Results & Prediction Review') + '</div>' +
-    '<p class="sec-desc">' + L('每个比赛日结束后,真实赛果在此更新,并与前日发布的 AI 预测逐场对照;所有模型预测(含未发售场次)赛后全部公开,保证可核验。',
-      'After each matchday, real results land here and are checked against the previously published AI calls; every model prediction — sold or not — is published after full time for verifiability.') + '</p>';
-  h += '<div class="res-list">' + played.map(m =>
-    '<div class="res reveal"><span class="d num">' + fmtD(m.date) + '</span><span>' + fl(m.home) + ' <b>' + esc(tn(m.home)) + '</b></span><span class="sc num">' + esc(m.actual) + '</span><span><b>' + esc(tn(m.away)) + '</b> ' + fl(m.away) + '</span></div>').join('') + '</div>';
-
-  /* --- match recaps --- */
-  const recaps = WC.recaps || [];
-  if (recaps.length) {
-    h += '<div class="subsec"><div class="sec-kicker">MATCH REVIEW</div><div class="sec-title" style="font-size:18px">' + L('比赛复盘', 'Match Recaps') + '</div>';
-    recaps.forEach(r => {
-      h += '<div class="recap reveal"><div class="recap-head">' +
-        '<span class="f">' + fl(r.home) + '</span><span class="n">' + esc(tn(r.home)) + '</span><span class="sc num">' + esc(r.score) + '</span><span class="n">' + esc(tn(r.away)) + '</span><span class="f">' + fl(r.away) + '</span>' +
-        '<span class="meta num">' + dLong(r.date) + (r.attendance ? '<br>👥 ' + esc(r.attendance) : '') + '</span></div>';
-      h += '<div class="recap-body">' + esc(L(r.narrative_zh, r.narrative_en)) + '</div>';
-      if (r.events && r.events.length) h += '<div class="tl">' + r.events.map(e =>
-        '<div class="tl-row"><span class="tl-min num">' + esc(e.min) + '’</span><span>' + (EVT_ICON[e.type] || '·') + ' ' + esc(L(e.text_zh, e.text_en)) + '</span></div>').join('') + '</div>';
-      if (r.stats && r.stats.length) h += '<div class="rstats">' + r.stats.map(s =>
-        '<div class="fac"><span class="l num">' + esc(s.home) + '</span><span class="c">' + esc(L(s.name_zh, s.name_en)) + '</span><span class="r num">' + esc(s.away) + '</span></div>').join('') + '</div>';
-      if (r.turning_zh || r.turning_en) h += '<div class="turn">🔄 <b>' + L('转折点', 'Turning point') + '</b> · ' + esc(L(r.turning_zh, r.turning_en)) + '</div>';
-      if (r.sources && r.sources.length) h += '<details class="srcs"><summary>' + L('报道来源 ', 'Report sources · ') + r.sources.length + L(' 条', '') + '</summary>' + r.sources.map(s => '<a href="' + esc(safeUrl(s)) + '" target="_blank" rel="noopener">' + esc(s) + '</a>').join('') + '</details>';
-      h += '</div>';
-    });
-    h += '</div>';
-  }
-
-  /* --- prediction vs result --- */
-  h += '<div style="height:26px"></div><div class="sec-kicker">PREDICTION vs RESULT</div><div class="sec-title" style="font-size:18px">' + L('AI 预测 × 实际结果', 'AI Calls × Actual Results') + '</div>';
-  (WC.review || []).slice().reverse().forEach(day => {
-    const done = day.state === 'done';
-    h += '<div class="rev-day reveal"><div class="rev-head"><span class="d num">' + dLong(day.date) + '</span><span class="s">' + esc(L(day.title, day.title_en || day.title)) + '</span><span class="tag ' + (done ? 'tag-done' : 'tag-wait') + '">' + (done ? L('已复盘', 'Reviewed') : L('待完赛更新', 'Awaiting FT')) + '</span></div>';
-    day.items.forEach(it => {
-      let hitTag = '<span class="hit wait">' + L('待开赛', 'Pending') + '</span>';
-      if (it.hit === 'full') hitTag = '<span class="hit full">' + L('比分全中', 'Exact score') + '</span>';
-      else if (it.hit === 'dir') hitTag = '<span class="hit dir">' + L('胜负方向命中', 'Right call') + '</span>';
-      else if (it.hit === 'miss') hitTag = '<span class="hit miss">' + L('未命中', 'Missed') + '</span>';
-      else if (it.hit === 'na') hitTag = '<span class="hit wait">' + L('不计入', 'Excluded') + '</span>';
-      const sealed = !done && it.predicted && !it.actual;
-      const predCell = it.predicted
-        ? (sealed ? '<span class="spill p num" title="' + L('赛后公开', 'Revealed after FT') + '">🔒 ● - ●</span>' : '<span class="spill p num">' + esc(it.predicted) + '</span>')
-        : '<span class="spill na">—</span>';
-      /* 未完赛的注记可能含概率/置信度等付费信息,与比分一同密封 */
-      const noteV = sealed ? '' : (state.lang === 'zh' ? it.note : (it.note_en || it.note));
-      h += '<div class="rev-item"><span class="mt">' + esc(state.lang === 'zh' ? it.label : (it.label_en || it.label)) + '</span>' +
-        '<span class="pillbox">' + L('预测 ', 'Call ') + predCell +
-        ' ' + L('实际 ', 'Actual ') + (it.actual ? '<span class="spill a num">' + esc(it.actual) + '</span>' : '<span class="spill na">' + L('待更新', 'TBD') + '</span>') + '</span>' + hitTag +
-        (noteV ? '<span class="nt">' + esc(noteV) + '</span>' : '') + '</div>';
-    });
-    const sm = state.lang === 'zh' ? day.summary : (day.summary_en || day.summary);
-    if (sm) h += '<div class="rev-item"><span class="nt">📋 ' + esc(sm) + '</span></div>';
-    h += '</div>';
-  });
-  h += '</section>';
-  el.innerHTML = h;
-}
-
-/* ================= full simulation ================= */
-function dimChips(hN, aN) {
-  const a = T(hN).dims, b = T(aN).dims;
-  if (!a || !b) return '';
-  const diffs = a.map((v, i) => ({ i, d: v - b[i] })).sort((x, y) => Math.abs(y.d) - Math.abs(x.d)).slice(0, 2);
-  const part = diffs.map(x => dimN(x.i) + (x.d >= 0 ? '+' : '') + x.d + '(' + (x.d >= 0 ? L('主', 'H') : L('客', 'A')) + ')').join(' · ');
-  return L('综合 ', 'Overall ') + T(hN).overall + ' : ' + T(aN).overall + L(' · 五维最大差 ', ' · top gaps ') + part;
-}
-function koCard(no) {
-  const m = WC.pred.ko[String(no)];
-  const wHome = m.winner === m.home;
-  const note = m.pens ? L('点球 ', 'Pens ') + esc(m.pens) : (m.decided_by === '加时' ? L('加时赛', 'AET') : '');
-  const cls = no === 104 ? ' final-card' : no === 103 ? ' third-card' : '';
-  return '<div class="ko' + cls + '">' +
-    '<div class="kd num"><span>' + (no === 104 ? L('决赛', 'Final') : no === 103 ? L('季军战', '3rd place') : '#' + no) + ' · ' + fmtD(m.date) + '</span><span>' + esc(city(m.city)) + '</span></div>' +
-    '<div class="kt' + (wHome ? ' win' : '') + '"><span>' + fl(m.home) + '</span><span class="n">' + esc(tn(m.home)) + '</span><span class="s num">' + m.hs + '</span></div>' +
-    '<div class="kt' + (!wHome ? ' win' : '') + '"><span>' + fl(m.away) + '</span><span class="n">' + esc(tn(m.away)) + '</span><span class="s num">' + m.as + '</span></div>' +
-    (note ? '<div class="note">' + note + '</div>' : '') + '</div>';
-}
-function renderFull() {
-  const el = $('#v-full');
-  if (ent() !== 'season') {
-    el.innerHTML = '<section><div class="gate reveal in">' +
-      '<span class="big">🏆</span><h3>' + L('全程推演 · 订阅内容', 'Full Simulation · Season Pass') + '</h3>' +
-      '<p>' + L('订阅后解锁:赛事期间每日 1 场精选 AI 预测报告(直至决赛),以及 48 队全程沙盘推演——12 个小组逐场比分、积分榜、32 强对阵树与冠军推演,随真实赛果滚动修正。',
-        'Season pass includes: one featured AI prediction report every matchday through the final, plus the full 48-team sandbox simulation — group-by-group scores and tables, the round-of-32 bracket and the title run, recalibrated as real results come in.') + '</p>' +
-      '<ul><li>' + L('每日精选 AI 报告', 'Daily featured AI report') + '</li><li>' + L('小组赛 72 场沙盘', '72 group-stage calls') + '</li><li>' + L('32 强对阵树推演', 'Knockout bracket sim') + '</li><li>' + L('冠军 / 金靴推演', 'Champion & Golden Boot') + '</li><li>' + L('随赛果滚动修正', 'Rolling recalibration') + '</li></ul>' +
-      '<button class="btn-gold pay-open" data-prod="season">🔓 ' + L('订阅全程 ', 'Season pass ') + esc(P.season.price) + '</button>' +
-      '<div class="mini">' + L('单日解锁仅含当日精选报告,不含本页内容。', 'The day pass covers today’s featured report only — not this page.') + '</div>' +
-      '<div class="blurband num">🏆 ●●● · ●●● ? - ? ●●●</div>' +
-      '</div></section>';
-    return;
-  }
-  const F = WC.pred.finals, fm = WC.pred.ko['104'], m103 = WC.pred.ko['103'];
-  let h = '<section><div class="sandbox reveal in">🧪 ' + L('<b>沙盘推演说明</b>:以下为 AI 模型对全程赛事的当前推演快照,随真实赛果滚动修正;每日交付以「今日预测」中的精选报告为准,本页仅供研究参考,不构成任何投注建议。',
-    '<b>Sandbox note</b>: this is the model’s current snapshot of the whole tournament, recalibrated as real results come in. The daily deliverable is the featured report under Today’s Forecast; this page is research reference only.') + '</div>';
-  h += '<div class="method-chips reveal">' +
-    [L('硬实力 <b>30%</b>', 'Strength <b>30%</b>'), L('当前状态 <b>25%</b>', 'Form <b>25%</b>'), L('阵容厚度 <b>20%</b>', 'Squad <b>20%</b>'), L('大赛底蕴 <b>15%</b>', 'Pedigree <b>15%</b>'), L('环境适应 <b>10%</b>', 'Environment <b>10%</b>')].map(c => '<span class="mchip">' + c + '</span>').join('') +
-    '<span class="mchip">' + L('3 视角独立评分取均值', '3 lenses, averaged') + '</span></div>';
-  h += '<details class="method"><summary>' + L('方法与数据说明', 'Method & data notes') + '</summary><p>' +
-    L('三位侧重不同的评分视角(量化数据 / 状态体能 / 战术专家)对 48 队五维打分取均值;小组赛逐场预测比分(已赛场次用真实比分)→ 按官方规则计算积分榜(积分→净胜→进球→相互战绩→FIFA排名)→ 前两名 + 8 个最佳第三晋级,按 FIFA 对阵框架推演至决赛。未赛场次的「依据」一栏为五维评分的纯数据对比,不含主观叙事。数据:FIFA 排名 2026-06-10 期、Elo、市场夺冠预期、各队伤停情报(截至 ' + WC.meta.updated + ')。',
-      'Three scoring lenses (quant / fitness & form / tactics) rate all 48 teams on five dimensions and are averaged; every group match gets a predicted score (real scores once played) → tables follow official tie-breakers → top two plus eight best thirds advance through the FIFA bracket to the final. The “basis” line under unplayed matches is a pure data comparison. Data: FIFA ranking (2026-06-10), Elo, market title expectations, injury intel (as of ' + WC.meta.updated + ').') + '</p></details>';
-  h += '<div class="champ-strip reveal"><div class="champ-cup">🏆</div><div><div class="champ-label">PREDICTED CHAMPION · ' + L('预测冠军', 'Model champion') + '</div><div class="champ-name">' + fl(F.champion) + ' ' + esc(tn(F.champion)) + '</div></div>' +
-    '<div class="champ-final">' + L('决赛', 'Final') + ' · ' + fmtD(fm.date) + ' · ' + esc(fm.stadium) + '(' + esc(city(fm.city)) + ')<br><b class="num">' + esc(tn(fm.home)) + ' ' + fm.hs + ' - ' + fm.as + ' ' + esc(tn(fm.away)) + (fm.pens ? L('(点球 ', ' (pens ') + esc(fm.pens) + ')' : '') + '</b></div></div>';
-  h += '<div class="sec-kicker">GROUP STAGE</div><div class="sec-title">' + L('小组赛 72 场推演', '72 Group-Stage Calls') + '</div><div class="groups">';
-  Object.keys(WC.pred.groupMatches).sort().forEach((g, gi) => {
-    const tb = WC.pred.tables[g], ms = WC.pred.groupMatches[g];
-    const rows = tb.map((r, i) => {
-      const q3 = i === 2 && WC.pred.thirds.qualified.includes(g);
-      return '<tr class="' + (i < 2 ? 'q12' : q3 ? 'q3y' : '') + '"><td class="num">' + (i + 1) + '</td><td>' + fl(r.team) + ' ' + esc(tn(r.team)) + '</td><td class="num">' + r.w + '/' + r.d + '/' + r.l + '</td><td class="num">' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td class="num pts">' + r.pts + '</td></tr>';
-    }).join('');
-    const mrows = ms.map(m =>
-      '<div class="gm-row' + (m.actual ? ' actual' : '') + '"><span class="gm-date num">' + fmtD(m.date) + '</span><span class="gm-team">' + esc(tn(m.home)) + ' ' + fl(m.home) + '</span><span class="gm-score num">' + m.hs + ' - ' + m.as + '</span><span class="gm-team away">' + fl(m.away) + ' ' + esc(tn(m.away)) + '</span>' + (m.actual ? '<span class="tag-live">' + L('已赛', 'FT') + '</span>' : '') + '</div>' +
-      '<div class="gm-why">' + (m.actual ? L('真实赛果', 'Actual result') : dimChips(m.home, m.away)) + '</div>').join('');
-    h += '<div class="gcard reveal"><div class="ghead"><div class="gbadge" style="background:' + GC[gi % 3] + '">' + g + '</div><div class="gt">' + L(g + ' 组', 'Group ' + g) + '</div><div class="gs">' + esc(tb.map(r => tn(r.team)).join(' · ')) + '</div></div>' +
-      '<div style="overflow-x:auto"><table class="gtable"><tr><th>#</th><th>' + L('球队', 'Team') + '</th><th>' + L('胜/平/负', 'W/D/L') + '</th><th>' + L('净胜', 'GD') + '</th><th>' + L('积分', 'Pts') + '</th></tr>' + rows + '</table></div><div class="gm">' + mrows + '</div></div>';
-  });
-  h += '</div><div class="legend"><span><i style="background:var(--mx)"></i>' + L('前二直接晋级', 'Top two advance') + '</span><span><i style="background:var(--gold)"></i>' + L('最佳第三晋级', 'Best-third advances') + '</span><span><i style="background:var(--ca)"></i>' + L('已赛 = 真实比分', 'FT = real score') + '</span></div>';
-  h += '<div style="height:26px"></div><div class="sec-kicker">BEST THIRDS</div><div class="sec-title">' + L('第三名排位 · 前 8 晋级', 'Third-Place Ranking · Top 8 Through') + '</div><div class="tcard reveal"><table class="gtable"><tr><th>#</th><th>' + L('球队(组)', 'Team (grp)') + '</th><th>' + L('胜/平/负', 'W/D/L') + '</th><th>' + L('净胜', 'GD') + '</th><th>' + L('积分', 'Pts') + '</th><th>' + L('结果', 'Result') + '</th></tr>' +
-    WC.pred.thirds.ranking.map((r, i) => '<tr class="' + (i < 8 ? 'q3y' : '') + '"><td class="num">' + (i + 1) + '</td><td>' + fl(r.team) + ' ' + esc(tn(r.team)) + '(' + r.group + ')</td><td class="num">' + r.w + '/' + r.d + '/' + r.l + '</td><td class="num">' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td class="num pts">' + r.pts + '</td><td style="font-size:11px;color:' + (i < 8 ? 'var(--gold-deep)' : 'var(--muted)') + '">' + (i < 8 ? L('晋级', 'Through') : L('出局', 'Out')) + '</td></tr>').join('') + '</table></div>';
-  const ROUNDS = [[L('32 强', 'ROUND OF 32'), '06.28–07.03', [74,77,73,75,83,84,81,82,76,78,79,80,86,88,85,87]], [L('16 强', 'ROUND OF 16'), '07.04–07.07', [89,90,93,94,91,92,95,96]], [L('八强', 'QUARTER-FINALS'), '07.09–07.11', [97,98,99,100]], [L('半决赛', 'SEMI-FINALS'), '07.14–07.15', [101,102]], [L('决赛·季军战', 'FINAL · 3RD'), '07.18–07.19', [104,103]]];
-  h += '<div style="height:26px"></div><div class="sec-kicker">KNOCKOUT</div><div class="sec-title">' + L('淘汰赛对阵推演', 'Knockout Bracket Simulation') + '</div><div class="bracket-scroll reveal"><div class="bracket">' +
-    ROUNDS.map(r => '<div class="round"><div class="rhead">' + r[0] + '<small class="num">' + r[1] + '</small></div>' + r[2].map(koCard).join('') + '</div>').join('') + '</div></div>';
-  h += '<div style="height:26px"></div><div class="sec-kicker">HONOURS</div><div class="sec-title">' + L('荣誉殿堂(模型推演)', 'Honours (Model Simulation)') + '</div><div class="honors">' +
-    '<div class="hcard gold reveal"><div class="hl">' + L('冠军', 'CHAMPION') + '</div><div class="hf">' + fl(F.champion) + '</div><div class="hn">' + esc(tn(F.champion)) + '</div><div class="hs num">' + L('决赛 ', 'Final ') + fm.hs + '-' + fm.as + (fm.pens ? L(' 点球 ', ' pens ') + esc(fm.pens) : '') + L(' 胜 ', ' vs ') + esc(tn(F.runner_up)) + '</div></div>' +
-    '<div class="hcard reveal"><div class="hl">' + L('亚军', 'RUNNER-UP') + '</div><div class="hf">' + fl(F.runner_up) + '</div><div class="hn">' + esc(tn(F.runner_up)) + '</div></div>' +
-    '<div class="hcard reveal"><div class="hl">' + L('季军', 'THIRD PLACE') + '</div><div class="hf">' + fl(F.third_place) + '</div><div class="hn">' + esc(tn(F.third_place)) + '</div><div class="hs num">' + L('季军战 ', '3rd-place match ') + m103.hs + '-' + m103.as + '</div></div>' +
-    '<div class="hcard reveal"><div class="hl">' + L('金靴', 'GOLDEN BOOT') + '</div><div class="hf">👟</div><div class="hn">' + esc(state.lang === 'zh' ? (F.golden_boot.player_zh || F.golden_boot.player) : F.golden_boot.player) + '</div><div class="hs">' + fl(F.golden_boot.team_en) + ' ' + esc(tn(F.golden_boot.team_en)) + ' · ' + F.golden_boot.goals + L(' 球', ' goals') + '<br>' + L('最佳新秀:', 'Young star: ') + esc(state.lang === 'zh' ? F.young_star : (F.young_star_en || F.young_star)) + '</div></div></div>';
-  h += '</section>';
-  el.innerHTML = h;
-  countUps(el);
-}
-
-/* ================= paywall ================= */
-window.WCPay = {
-  /* 真实支付接入点(用户已注册微信/支付宝商家收款,正式接入见 README):
-     1) 后端创建订单 → 2) 拉起微信/支付宝收银台 → 3) 回调验签后发放解锁凭证。
-     演示模式:延时后直接成功。 */
-  checkout(channel, product) { return new Promise(res => setTimeout(() => res({ ok: true, channel, product }), 1400)); }
-};
-function renderPayModal() {
-  const sel = state.paySel;
-  $('#payBody').innerHTML =
-    '<div class="mi">📊</div><h3>' + L('解锁 AI 预测报告', 'Unlock AI Prediction Reports') + '</h3>' +
-    '<div class="sub">' + L('体育数据分析内容服务 · 非投注服务,不构成任何投注建议', 'Sports data-analytics content · not a betting service, no betting advice') + '</div>' +
-    '<div class="prods">' +
-      '<div class="prod' + (sel === 'day' ? ' sel' : '') + '" data-prod="day"><div class="pn">☀️ ' + L('单日精选', 'Day Pass') + '</div><div class="pp num">' + esc(P.day.price) + ' <small>/ ' + L('当日', 'today') + '</small></div>' +
-        '<div class="pd">' + L('今日精选场次的完整 AI 预测报告:精确比分、胜平负概率、置信度与深度分析。仅当日有效。', "Today's featured AI report: exact score, outcome probabilities, confidence and full analysis. Valid today only.") + '</div></div>' +
-      '<div class="prod' + (sel === 'season' ? ' sel' : '') + '" data-prod="season"><span class="rec">' + L('推荐', 'BEST') + '</span><div class="pn">🏆 ' + L('全程订阅', 'Season Pass') + '</div><div class="pp num">' + esc(P.season.price) + ' <small>/ ' + L('整届赛事', 'tournament') + '</small></div>' +
-        '<div class="pd">' + L('赛事期间每日 1 场精选报告(直至决赛)+ 全程沙盘推演页。预测按日推送,不一次性发布未来赛果。', 'One featured report every matchday through the final, plus the full sandbox simulation. Reports drop daily — future calls are never dumped in advance.') + '</div></div>' +
-    '</div>' +
-    '<div class="demo-note">' + L('演示环境:点击支付将模拟成功,不产生真实扣款。正式版接入微信支付 / 支付宝商户收单后生效(接入说明见 README)。', 'Demo mode: payment is simulated, nothing is charged. Production requires the WeChat Pay / Alipay merchant integration (see README).') + '</div>' +
-    '<div class="payrow">' +
-      '<button class="paybtn wx" data-ch="wechat">' + L('微信支付', 'WeChat Pay') + '</button>' +
-      '<button class="paybtn ali" data-ch="alipay">' + L('支付宝', 'Alipay') + '</button>' +
-    '</div>' +
-    '<div class="comp-note">' + L('购买即同意:内容为统计模型输出的数据分析报告,仅供研究参考,不构成投注建议;数字内容一经解锁不支持退款。', 'By purchasing you agree: content is model-generated data analysis for research reference only, not betting advice; digital content is non-refundable once unlocked.') + '</div>' +
-    '<button class="close" id="payClose">' + L('暂不解锁', 'Not now') + '</button>';
-}
-function openPay(pre) { if (pre) state.paySel = pre; renderPayModal(); $('#payModal').classList.add('on'); }
-function closePay() { $('#payModal').classList.remove('on'); }
-$('#payModal').addEventListener('click', async e => {
-  if (state.payBusy) return; /* 支付进行中:禁止改选/关闭/重复支付 */
-  if (e.target === e.currentTarget) return closePay();
-  if (e.target.closest('#payClose')) return closePay();
-  const prod = e.target.closest('.prod');
-  if (prod) { state.paySel = prod.dataset.prod; renderPayModal(); return; }
-  const btn = e.target.closest('.paybtn');
-  if (btn) {
-    const product = state.paySel;
-    state.payBusy = true;
-    document.querySelectorAll('.paybtn').forEach(x => { x.disabled = true; });
-    btn.textContent = L('正在拉起支付…', 'Opening payment…');
-    try {
-    const r = await WCPay.checkout(btn.dataset.ch, product);
-    if (r.ok) {
-      if (product === 'season') storeSet('wc26_season', '1');
-      else if (WC.today) storeSet('wc26_day', WC.today.date);
-      closePay();
-      toast('🎉 ' + (product === 'season' ? L('订阅成功,<span class="g">全程内容已开启</span>', 'Subscribed — <span class="g">season content unlocked</span>') : L('解锁成功,<span class="g">今日精选报告已开启</span>', 'Unlocked — <span class="g">today’s featured report is live</span>')));
-      renderChrome(); renderToday(); renderFull(); bindReveal();
-    }
-    } finally { state.payBusy = false; }
-  }
-});
-document.addEventListener('click', e => { const b = e.target.closest('.pay-open'); if (b) openPay(b.dataset.prod); });
-let toastTimer;
-function toast(html) { const t = $('#toast'); t.innerHTML = html; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2600); }
-
-/* ================= boot ================= */
-function renderAll() { renderChrome(); renderToday(); renderData(); renderReview(); renderFull(); bindReveal(); animateBars(document); }
-renderAll();
-</script>
+<script src="assets/app.js"></script>
 </body>
 </html>
