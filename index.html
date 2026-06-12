@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WC26 预测站 · 2026 美加墨世界杯</title>
+<style>
+:root{
+  --ink:#141414; --paper:#F7F5F0; --card:#FFFFFF; --line:#E8E4DA; --muted:#75705F;
+  --gold:#C9A227; --gold-deep:#A8861A; --gold-soft:#F6EDD4;
+  --us:#1F4FA0; --ca:#D52B1E; --mx:#006847;
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+button{font-family:inherit}
+
+/* ---------- animations ---------- */
+@keyframes stripeFlow{0%{background-position:0 0}100%{background-position:240px 0}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes floatY{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+@keyframes popIn{0%{opacity:0;transform:scale(.86)}70%{transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}}
+
+/* ---------- header ---------- */
+.stripe{height:5px;background:repeating-linear-gradient(90deg,var(--us) 0 80px,var(--ca) 80px 160px,var(--mx) 160px 240px);background-size:240px 100%;animation:stripeFlow 9s linear infinite}
+.hero{background:#111;color:#fff;position:relative;overflow:hidden}
+.hero .wrap{position:relative;padding:34px 20px 0;z-index:1}
+.hero-deco{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.hero-deco i{position:absolute;display:block;animation:floatY 9s ease-in-out infinite}
+.hero-deco i:nth-child(1){right:6%;top:-30px;width:90px;height:90px;background:var(--us);animation-delay:-2s}
+.hero-deco i:nth-child(2){right:16%;top:90px;width:44px;height:44px;border-radius:50%;background:var(--ca);animation-delay:-5s}
+.hero-deco i:nth-child(3){right:2%;top:120px;width:80px;height:80px;border-radius:0 0 0 80px;background:var(--mx);animation-delay:-7s}
+.hero-deco i:nth-child(4){right:24%;top:-12px;width:30px;height:30px;border-radius:50%;background:var(--gold);animation-delay:-3.5s}
+.kicker{color:var(--gold);font-size:12px;letter-spacing:.3em;font-weight:700;margin-bottom:8px}
+h1{font-size:clamp(24px,3.6vw,36px);font-weight:900;letter-spacing:.02em;line-height:1.2}
+h1 .y{background:linear-gradient(110deg,var(--gold) 35%,#F4E3A4 50%,var(--gold) 65%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 5s linear infinite}
+.hero-meta{color:#A8A498;margin-top:6px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px 16px}
+.hero-meta b{color:#D8D3C4;font-weight:600}
+.tabs{display:flex;gap:4px;margin-top:22px;flex-wrap:wrap}
+.tab{appearance:none;border:none;background:transparent;color:#B8B3A4;font-size:14.5px;font-weight:700;padding:11px 18px;border-radius:12px 12px 0 0;cursor:pointer;position:relative;transition:color .25s,background .25s}
+.tab:hover{color:#fff}
+.tab.on{background:var(--paper);color:var(--ink)}
+.tab .lock{font-size:11px;margin-left:4px}
+.tab .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ca);margin-left:6px;animation:pulse 1.6s ease-in-out infinite;vertical-align:2px}
+
+/* ---------- views ---------- */
+.view{display:none}
+.view.on{display:block;animation:fadeUp .4s ease}
+main{min-height:60vh}
+section{padding:34px 0 6px}
+.sec-kicker{color:var(--gold-deep);font-size:11.5px;letter-spacing:.28em;font-weight:800;margin-bottom:4px}
+.sec-title{font-size:22px;font-weight:900;margin-bottom:4px}
+.sec-desc{color:var(--muted);font-size:13.5px;max-width:720px;margin-bottom:18px}
+
+/* ---------- today ---------- */
+.day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.day-pill{background:#15140F;color:#fff;border-radius:999px;padding:6px 16px;font-weight:800;font-size:14px}
+.day-sub{color:var(--muted);font-size:13px}
+.mcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:22px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.mcard:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,20,20,.08)}
+.mtop{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.gtag{color:#fff;border-radius:6px;padding:1px 8px;font-weight:800;font-size:12px}
+.stat-pill{margin-left:auto;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 10px;background:#F2EFE7;color:var(--muted)}
+.stat-pill.live{background:var(--ca);color:#fff}
+.mteams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:20px 20px 8px}
+.mteam{text-align:center}
+.mteam .f{font-size:44px;line-height:1}
+.mteam .n{font-weight:900;font-size:18px;margin-top:4px}
+.mteam .v{font-size:11.5px;color:var(--muted);margin-top:2px}
+.mvs{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-align:center}
+.mvs .hl{display:block;font-size:11px;color:var(--gold-deep);margin-top:2px;font-weight:800}
+.envrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px 20px 4px}
+.env{font-size:12px;background:#F2EFE7;border-radius:999px;padding:3px 12px;color:#55514a}
+.facwrap{padding:14px 20px 6px}
+.fhead{font-size:12px;color:var(--gold-deep);font-weight:800;letter-spacing:.18em;margin-bottom:8px}
+.fac{display:grid;grid-template-columns:1fr 96px 1fr;gap:6px;align-items:center;padding:7px 0;border-top:1px dashed #EFEBE0;font-size:12.5px}
+.fac .l{text-align:right}.fac .r{text-align:left}
+.fac .c{text-align:center;font-weight:800;font-size:12px;color:#55514a}
+.fac .edge{font-weight:800}
+.fac .edge.h{color:var(--mx)}.fac .edge.a{color:var(--us)}
+.fac .note{grid-column:1/4;text-align:center;font-size:11px;color:var(--muted);margin-top:-2px}
+.lean{margin:12px 20px;background:var(--gold-soft);border:1px solid #E5D8AC;border-radius:10px;padding:10px 16px;font-size:13.5px;color:#5d5230;font-weight:600}
+.paid-zone{margin:0 20px 18px;border:1.5px dashed var(--gold);border-radius:12px;padding:16px 18px;position:relative}
+.paid-zone.unlocked{border-style:solid;animation:popIn .5s ease}
+.pz-title{font-size:12px;letter-spacing:.2em;color:var(--gold-deep);font-weight:800;margin-bottom:10px}
+.pz-locked{text-align:center;padding:8px 0 4px}
+.pz-locked .blur-score{font-size:34px;font-weight:900;filter:blur(10px);user-select:none;letter-spacing:.1em}
+.pz-locked p{font-size:12.5px;color:var(--muted);margin:6px 0 12px}
+.btn-gold{appearance:none;border:none;background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:#fff;font-weight:800;font-size:14px;border-radius:999px;padding:10px 26px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,162,39,.4)}
+.pz-score{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pz-score .sc{font-size:36px;font-weight:900;letter-spacing:.06em;animation:popIn .55s ease}
+.pz-score .cf{font-size:12px;color:var(--muted)}
+.cf b{color:var(--gold-deep);font-size:16px}
+.probs{margin-top:12px}
+.prob{display:grid;grid-template-columns:88px 1fr 44px;gap:10px;align-items:center;font-size:12.5px;padding:3px 0}
+.prob .bar{height:9px;background:#F0EDE4;border-radius:5px;overflow:hidden}
+.prob .bar i{display:block;height:100%;border-radius:5px;width:0;transition:width 1s cubic-bezier(.2,.7,.3,1)}
+.analysis{margin-top:14px;font-size:13.5px;color:#3d3a30;line-height:1.8;border-top:1px dashed #E5D8AC;padding-top:12px}
+.srcs{margin:0 20px 16px}
+.srcs summary{font-size:12px;color:var(--muted);cursor:pointer;padding:6px 0}
+.srcs a{display:block;font-size:11.5px;color:var(--us);text-decoration:none;padding:2px 0;word-break:break-all}
+.gen-note{font-size:12px;color:var(--muted);text-align:center;padding:20px;background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}
+
+/* ---------- review ---------- */
+.rev-day{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:18px;overflow:hidden}
+.rev-head{display:flex;align-items:center;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line)}
+.rev-head .d{font-weight:900;font-size:15px}
+.rev-head .s{font-size:12px;color:var(--muted)}
+.rev-head .tag{margin-left:auto;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 10px}
+.tag-done{background:#EAF3EC;color:var(--mx)}
+.tag-wait{background:var(--gold-soft);color:var(--gold-deep)}
+.rev-item{display:flex;align-items:center;gap:12px;padding:11px 20px;border-top:1px dashed #EFEBE0;font-size:13.5px;flex-wrap:wrap}
+.rev-item:first-of-type{border-top:none}
+.rev-item .mt{font-weight:700;min-width:200px}
+.pillbox{display:flex;gap:8px;align-items:center}
+.spill{border-radius:7px;padding:1px 10px;font-weight:800;font-size:12.5px}
+.spill.p{background:#F2EFE7;color:#55514a}
+.spill.a{background:#15140F;color:#fff}
+.spill.na{background:transparent;color:var(--muted);font-weight:500}
+.hit{font-size:11.5px;font-weight:800;border-radius:5px;padding:1px 8px}
+.hit.full{background:var(--mx);color:#fff}.hit.dir{background:var(--gold);color:#fff}.hit.miss{background:#999;color:#fff}.hit.wait{background:#F2EFE7;color:var(--muted)}
+.rev-item .nt{flex-basis:100%;font-size:12px;color:var(--muted)}
+.res-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px}
+.res{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:13.5px}
+.res .d{font-size:11.5px;color:var(--muted);width:46px}
+.res b{font-weight:800}
+.res .sc{margin-left:auto;background:#15140F;color:#fff;border-radius:7px;padding:1px 10px;font-weight:800}
+
+/* ---------- full (locked) ---------- */
+.gate{background:linear-gradient(150deg,#171511,#262012);border-radius:var(--r);color:#fff;padding:38px 30px;text-align:center;position:relative;overflow:hidden}
+.gate .big{font-size:44px;animation:floatY 7s ease-in-out infinite;display:inline-block}
+.gate h3{font-size:22px;font-weight:900;margin:8px 0 6px}
+.gate p{color:#C9C4B6;font-size:13px;max-width:520px;margin:0 auto 8px}
+.gate ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 20px}
+.gate li{font-size:12px;border:1px solid #4d4736;border-radius:999px;padding:4px 14px;color:#E0DBCB}
+.blurband{margin-top:26px;filter:blur(7px);user-select:none;pointer-events:none;opacity:.6;font-weight:900;font-size:22px;letter-spacing:.18em}
+.method-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.mchip{font-size:12px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 13px;color:#55514a}
+.mchip b{color:var(--gold-deep)}
+.champ-strip{background:linear-gradient(135deg,#1c1a14,#26200f);border:1px solid #4d3f17;border-radius:var(--r);padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:#fff;margin-bottom:22px}
+.champ-cup{font-size:34px;filter:drop-shadow(0 2px 8px rgba(201,162,39,.45))}
+.champ-label{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700}
+.champ-name{font-size:25px;font-weight:900;margin-top:1px}
+.champ-final{margin-left:auto;text-align:right;font-size:12.5px;color:#C9C4B6}
+.champ-final b{color:#fff;font-size:14.5px}
+.contenders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr));gap:12px}
+.cont{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;gap:6px;align-items:center}
+.cont .info{flex:1;min-width:0}
+.cont .nm{font-weight:800;font-size:15px;white-space:nowrap}
+.cont .meta{font-size:11.5px;color:var(--muted);margin-top:1px}
+.cont .ov{font-size:23px;font-weight:900;color:var(--gold-deep)}
+.cont .ovl{font-size:10.5px;color:var(--muted);letter-spacing:.1em}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(430px,100%),1fr));gap:16px}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ghead{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.gbadge{width:30px;height:30px;border-radius:8px;color:#fff;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center}
+.ghead .gt{font-weight:800;font-size:15px}
+.ghead .gs{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+.gtable th{font-size:10.5px;color:var(--muted);font-weight:600;text-align:right;padding:7px 6px;border-bottom:1px solid var(--line)}
+.gtable th:nth-child(2){text-align:left}
+.gtable td{padding:6px;text-align:right;border-bottom:1px solid #F1EEE6}
+.gtable td:nth-child(2){text-align:left;font-weight:600;white-space:nowrap}
+.gtable tr.q12 td{background:#F4F8F2}
+.gtable tr.q12 td:first-child{box-shadow:inset 3px 0 0 var(--mx)}
+.gtable tr.q3y td{background:#FBF7EA}
+.gtable tr.q3y td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
+.gtable .pts{font-weight:800}
+.gm{padding:4px 16px 12px}
+.gm-row{display:flex;align-items:center;gap:8px;padding:7px 0 1px;font-size:13px}
+.gm-date{color:var(--muted);font-size:11px;width:40px;flex-shrink:0}
+.gm-team{flex:1;text-align:right;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gm-team.away{text-align:left}
+.gm-score{background:#15140F;color:#fff;border-radius:7px;padding:1px 9px;font-weight:800;font-size:12.5px;flex-shrink:0}
+.gm-row.actual .gm-score{background:var(--gold-deep)}
+.tag-live{font-size:10px;color:#fff;background:var(--ca);border-radius:4px;padding:1px 5px;flex-shrink:0;font-weight:700}
+.gm-why{font-size:11px;color:var(--muted);padding:1px 0 5px 48px;border-bottom:1px dashed #EFEBE0}
+.gm:last-child .gm-why:last-child{border-bottom:none}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:4px 16px 12px;max-width:700px;overflow-x:auto}
+.bracket-scroll{overflow-x:auto;padding-bottom:8px}
+.bracket{display:flex;gap:14px;min-width:1040px;align-items:stretch}
+.round{display:flex;flex-direction:column;justify-content:space-around;gap:9px;flex:1;min-width:195px}
+.rhead{text-align:center;font-size:11.5px;letter-spacing:.18em;color:var(--gold-deep);font-weight:800;padding:3px 0 1px}
+.rhead small{display:block;letter-spacing:0;color:var(--muted);font-weight:500}
+.ko{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:12.5px;transition:transform .2s,box-shadow .2s}
+.ko:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(20,20,20,.08)}
+.ko .kd{font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px}
+.ko .kt{display:flex;align-items:center;gap:6px;padding:2px 0}
+.ko .kt .n{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#6d6a60}
+.ko .kt .s{font-weight:800;color:#6d6a60}
+.ko .kt.win .n{color:var(--ink);font-weight:800}
+.ko .kt.win .s{color:var(--gold-deep);font-weight:800}
+.ko .note{font-size:10px;color:var(--gold-deep);font-weight:700;margin-top:2px}
+.ko.final-card{border:2px solid var(--gold);box-shadow:0 6px 22px rgba(201,162,39,.18)}
+.ko.third-card{border-style:dashed}
+.honors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(205px,100%),1fr));gap:12px}
+.hcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;text-align:center;transition:transform .2s}
+.hcard:hover{transform:translateY(-3px)}
+.hcard.gold{background:linear-gradient(160deg,#171511,#2a2310);border-color:#4d3f17;color:#fff}
+.hcard .hl{font-size:11px;letter-spacing:.25em;color:var(--gold-deep);font-weight:800}
+.hcard.gold .hl{color:var(--gold)}
+.hcard .hf{font-size:34px;margin:6px 0 2px}
+.hcard .hn{font-size:19px;font-weight:900}
+.hcard .hs{font-size:12px;color:var(--muted);margin-top:3px}
+.hcard.gold .hs{color:#C9C4B6}
+.legend{display:flex;gap:16px;margin-top:12px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}
+details.method{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:4px 18px;margin-bottom:20px}
+details.method summary{cursor:pointer;font-weight:700;font-size:13.5px;padding:10px 0;color:var(--gold-deep)}
+details.method p{font-size:12.5px;color:var(--muted);padding-bottom:12px}
+
+/* ---------- pay modal ---------- */
+.modal-bg{position:fixed;inset:0;background:rgba(10,10,8,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal-bg.on{display:flex;animation:fadeUp .25s ease}
+.modal{background:#fff;border-radius:18px;max-width:380px;width:100%;padding:26px 26px 20px;text-align:center;animation:popIn .35s ease}
+.modal .mi{font-size:38px}
+.modal h3{font-size:19px;font-weight:900;margin:6px 0 4px}
+.modal .sub{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.modal .price{font-size:32px;font-weight:900;color:var(--gold-deep);margin-bottom:2px}
+.modal .price small{font-size:12px;color:var(--muted);font-weight:500}
+.payrow{display:flex;flex-direction:column;gap:9px;margin:16px 0 10px}
+.paybtn{appearance:none;border:none;border-radius:11px;padding:12px;font-size:14.5px;font-weight:800;color:#fff;cursor:pointer;transition:transform .15s,opacity .2s}
+.paybtn:hover{transform:translateY(-1px)}
+.paybtn.wx{background:#09BB07}
+.paybtn.ali{background:#1677FF}
+.paybtn:disabled{opacity:.6;cursor:wait}
+.modal .demo-note{font-size:11px;color:var(--ca);background:#FDF0EF;border-radius:8px;padding:7px 10px;margin-bottom:10px}
+.modal .close{appearance:none;border:none;background:none;color:var(--muted);font-size:12.5px;cursor:pointer;padding:6px}
+.toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(80px);background:#15140F;color:#fff;border-radius:999px;padding:10px 22px;font-size:13.5px;font-weight:700;z-index:60;opacity:0;transition:.4s cubic-bezier(.2,.7,.3,1)}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1}
+.toast .g{color:var(--gold)}
+
+/* ---------- footer ---------- */
+footer{margin-top:54px;background:#111;color:#A8A498;font-size:12px}
+footer .wrap{padding:26px 20px 30px}
+footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:10px;padding-top:12px;border-top:1px solid #2c2c28}
+footer p{line-height:1.8}
+footer b{color:#D8D3C4}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+
+<header class="hero">
+  <div class="hero-deco" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="kicker">FIFA WORLD CUP 26™ · 美国 / 加拿大 / 墨西哥</div>
+    <h1>WC26 <span class="y">预测站</span></h1>
+    <div class="hero-meta" id="heroMeta"></div>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-v="today">今日赛场<span class="dot"></span></button>
+      <button class="tab" data-v="review">赛果复盘</button>
+      <button class="tab" data-v="full">全程预测<span class="lock" id="fullLock">🔒</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="view on" id="v-today"></div>
+  <div class="view" id="v-review"></div>
+  <div class="view" id="v-full"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>免责声明</b> 本站所有内容均为统计模型与公开资料分析的结果,仅供参考与娱乐,不构成任何投注建议;请理性观赛,拒绝赌球。已赛比分为真实赛果,带来源标注的资料截至页面更新时间。付费功能当前为<b>演示模式</b>,未接入真实支付。</p>
+    <div class="fin">
+      <span>FIFA WORLD CUP 26™ · WE ARE 26</span>
+      <span id="footMeta"></span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-bg" id="payModal">
+  <div class="modal">
+    <div class="mi">🔮</div>
+    <h3>解锁精确预测</h3>
+    <div class="sub">精确比分 · 胜平负概率 · 置信度 · 深度分析<br>+ 全程 104 场推演与冠军预测</div>
+    <div class="price" id="payPrice"></div>
+    <div class="demo-note">演示环境:点击任意支付方式将模拟支付成功,不会产生真实扣款。正式上线需接入商户后台(见 README)。</div>
+    <div class="payrow">
+      <button class="paybtn wx" data-ch="wechat">微信支付</button>
+      <button class="paybtn ali" data-ch="alipay">支付宝</button>
+    </div>
+    <button class="close" id="payClose">暂不解锁</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/data.js"></script>
+<script>
+/* ================= helpers ================= */
+const $ = s => document.querySelector(s);
+const T = n => WC.teams[n] || {};
+const zh = n => T(n).zh || n;
+const fl = n => T(n).flag || '';
+const fmtD = d => d.slice(5).replace('-', '.');
+const CITY_ZH = {'Mexico City':'墨西哥城','Guadalajara':'瓜达拉哈拉','Zapopan':'瓜达拉哈拉','Monterrey':'蒙特雷','Guadalupe (Monterrey)':'蒙特雷','Atlanta':'亚特兰大','Toronto':'多伦多','Toronto, Canada':'多伦多','Vancouver':'温哥华','Seattle':'西雅图','Santa Clara':'旧金山湾区','San Francisco Bay':'旧金山湾区','Inglewood':'洛杉矶','Inglewood (Los Angeles), USA':'洛杉矶','Los Angeles':'洛杉矶','East Rutherford':'纽约/新泽西','New York/New Jersey':'纽约/新泽西','Foxborough':'波士顿','Boston':'波士顿','Philadelphia':'费城','Houston':'休斯敦','Arlington':'达拉斯','Dallas':'达拉斯','Miami Gardens':'迈阿密','Miami':'迈阿密','Kansas City':'堪萨斯城'};
+const city = c => CITY_ZH[c] || c;
+const GC = ['var(--mx)','var(--us)','var(--ca)'];
+const DIM_NAMES = ['实力','状态','阵容','底蕴','环境'];
+const esc = s => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+const storeGet = k => { try { return window.localStorage.getItem(k); } catch (e) { return null; } };
+const storeSet = (k, v) => { try { window.localStorage.setItem(k, v); } catch (e) {} };
+const state = { unlocked: storeGet('wc26_unlocked') === '1' };
+
+/* ================= header ================= */
+const played = WC.schedule.filter(m => m.actual);
+$('#heroMeta').innerHTML = '<span>五维分析 · 48 队 · 104 场</span><span>已赛 <b class="num">' + played.length + '</b> 场</span><span>更新 <b class="num">' + WC.meta.updated + '</b></span>';
+$('#footMeta').textContent = '数据更新 ' + WC.meta.updated + ' · 多智能体联网调研生成';
+
+/* ================= tabs ================= */
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  const v = $('#v-' + b.dataset.v);
+  v.classList.add('on');
+  bindReveal(v);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}));
+
+/* ================= reveal on scroll ================= */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 });
+function bindReveal(root) { (root || document).querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el)); }
+
+/* ================= today ================= */
+function statusPill(st) {
+  if (st === 'played') return '<span class="stat-pill">已完赛</span>';
+  if (st === 'live') return '<span class="stat-pill live">进行中</span>';
+  return '<span class="stat-pill">未开赛</span>';
+}
+function probBars(p, home, away) {
+  const rows = [[zh(home) + ' 胜', p.home, 'var(--mx)'], ['战平', p.draw, '#B8B3A4'], [zh(away) + ' 胜', p.away, 'var(--us)']];
+  return '<div class="probs">' + rows.map(r =>
+    '<div class="prob"><span>' + r[0] + '</span><span class="bar"><i data-w="' + r[1] + '" style="background:' + r[2] + '"></i></span><b class="num">' + r[1] + '%</b></div>').join('') + '</div>';
+}
+function renderToday() {
+  const el = $('#v-today'), td = WC.today;
+  let h = '<section><div class="sec-kicker">MATCH DAY</div><div class="sec-title">今日赛场 · 深度预测</div>' +
+    '<p class="sec-desc">综合天气温度、场馆条件、阵容身价、硬实力、近期状态、伤病情况、盘口信号等全要素的当日比赛深度分析,资料全部来自当日联网调研并经事实核查,来源可溯。</p>';
+  if (!td || !td.matches || !td.matches.length) {
+    h += '<div class="gen-note">今日暂无比赛或深度分析生成中,请稍后刷新。</div></section>';
+    el.innerHTML = h; return;
+  }
+  h += '<div class="day-head reveal"><span class="day-pill num">' + td.label + '</span><span class="day-sub">共 ' + td.matches.length + ' 场 · 时间均为当地时间</span></div>';
+  td.matches.forEach((m, i) => {
+    const f = m.free || {}, p = m.paid;
+    h += '<div class="mcard reveal" style="transition-delay:' + i * .12 + 's">' +
+      '<div class="mtop"><span class="gtag" style="background:' + GC[i % 3] + '">' + m.group + ' 组</span><span class="num">⏱ ' + esc(m.kickoff_zh) + '</span><span>🏟 ' + esc(m.stadium) + ' · ' + city(m.city) + '</span>' + statusPill(m.status) + '</div>' +
+      '<div class="mteams">' +
+        '<div class="mteam"><div class="f">' + fl(m.home) + '</div><div class="n">' + zh(m.home) + '</div><div class="v num">FIFA #' + T(m.home).rank + (m.value && m.value.home ? ' · 身价 ' + esc(m.value.home) : '') + '</div></div>' +
+        '<div class="mvs">VS' + (f.headline ? '<span class="hl">' + esc(f.headline) + '</span>' : '') + '</div>' +
+        '<div class="mteam"><div class="f">' + fl(m.away) + '</div><div class="n">' + zh(m.away) + '</div><div class="v num">FIFA #' + T(m.away).rank + (m.value && m.value.away ? ' · 身价 ' + esc(m.value.away) : '') + '</div></div>' +
+      '</div>';
+    if (m.env && m.env.length) h += '<div class="envrow">' + m.env.map(e => '<span class="env">' + esc(e) + '</span>').join('') + '</div>';
+    if (m.factors && m.factors.length) {
+      h += '<div class="facwrap"><div class="fhead">FACTORS · 全要素对比</div>' + m.factors.map(fc => {
+        const eh = fc.edge === 'home', ea = fc.edge === 'away';
+        return '<div class="fac"><span class="l ' + (eh ? 'edge h' : '') + '">' + esc(fc.home) + (eh ? ' ●' : '') + '</span><span class="c">' + esc(fc.name) + '</span><span class="r ' + (ea ? 'edge a' : '') + '">' + (ea ? '● ' : '') + esc(fc.away) + '</span>' + (fc.note ? '<span class="note">' + esc(fc.note) + '</span>' : '') + '</div>';
+      }).join('') + '</div>';
+    }
+    if (f.lean) h += '<div class="lean">📌 免费速览:' + esc(f.lean) + '</div>';
+    h += '<div class="paid-zone' + (state.unlocked ? ' unlocked' : '') + '" data-mi="' + i + '"><div class="pz-title">PRECISE CALL · 精确预测</div>';
+    if (state.unlocked && p) {
+      h += '<div class="pz-score"><span class="sc num">' + zh(m.home) + ' ' + esc(p.score) + ' ' + zh(m.away) + '</span><span class="cf">模型置信度<br><b class="num">' + p.confidence + '%</b></span></div>' +
+        probBars(p.probs, m.home, m.away) +
+        '<div class="analysis">' + esc(p.analysis) + '</div>';
+    } else {
+      h += '<div class="pz-locked"><div class="blur-score num">2 - 1</div><p>精确比分 · 胜平负概率 · 置信度 · 深度分析,解锁后立即查看</p><button class="btn-gold pay-open">🔓 解锁精确预测 ' + WC.pay.price + '</button></div>';
+    }
+    h += '</div>';
+    if (m.sources && m.sources.length) h += '<details class="srcs"><summary>调研来源 ' + m.sources.length + ' 条</summary>' + m.sources.map(s => '<a href="' + esc(s) + '" target="_blank" rel="noopener">' + esc(s) + '</a>').join('') + '</details>';
+    h += '</div>';
+  });
+  if (td.note) h += '<p class="sec-desc" style="font-size:12px">' + esc(td.note) + '</p>';
+  h += '</section>';
+  el.innerHTML = h;
+  animateBars(el);
+}
+function animateBars(root) { setTimeout(() => root.querySelectorAll('.bar i').forEach(b => { b.style.width = b.dataset.w + '%'; }), 80); }
+
+/* ================= review ================= */
+function renderReview() {
+  const el = $('#v-review');
+  let h = '<section><div class="sec-kicker">RESULTS & REVIEW</div><div class="sec-title">赛果与预测复盘</div>' +
+    '<p class="sec-desc">每个比赛日结束后,真实赛果在此更新,并与前日发布的预测逐场对照。</p>';
+  h += '<div class="res-list">' + played.map(m =>
+    '<div class="res reveal"><span class="d num">' + fmtD(m.date) + '</span><span>' + fl(m.home) + ' <b>' + zh(m.home) + '</b></span><span class="sc num">' + m.actual + '</span><span><b>' + zh(m.away) + '</b> ' + fl(m.away) + '</span></div>').join('') + '</div>';
+  h += '<div style="height:26px"></div><div class="sec-kicker">PREDICTION vs RESULT</div><div class="sec-title" style="font-size:18px">前日预测 × 实际结果</div>';
+  (WC.review || []).slice().reverse().forEach(day => {
+    const done = day.state === 'done';
+    h += '<div class="rev-day reveal"><div class="rev-head"><span class="d num">' + day.date.slice(5).replace('-', ' 月 ') + ' 日</span><span class="s">' + esc(day.title || '') + '</span><span class="tag ' + (done ? 'tag-done' : 'tag-wait') + '">' + (done ? '已复盘' : '待完赛更新') + '</span></div>';
+    day.items.forEach(it => {
+      let hitTag = '<span class="hit wait">待开赛</span>';
+      if (it.hit === 'full') hitTag = '<span class="hit full">比分全中</span>';
+      else if (it.hit === 'dir') hitTag = '<span class="hit dir">胜负方向命中</span>';
+      else if (it.hit === 'miss') hitTag = '<span class="hit miss">未命中</span>';
+      else if (it.hit === 'na') hitTag = '<span class="hit wait">不计入</span>';
+      h += '<div class="rev-item"><span class="mt">' + esc(it.label) + '</span>' +
+        '<span class="pillbox">预测 ' + (it.predicted ? '<span class="spill p num">' + esc(it.predicted) + '</span>' : '<span class="spill na">—</span>') +
+        ' 实际 ' + (it.actual ? '<span class="spill a num">' + esc(it.actual) + '</span>' : '<span class="spill na">待更新</span>') + '</span>' + hitTag +
+        (it.note ? '<span class="nt">' + esc(it.note) + '</span>' : '') + '</div>';
+    });
+    if (day.summary) h += '<div class="rev-item"><span class="nt">📋 ' + esc(day.summary) + '</span></div>';
+    h += '</div>';
+  });
+  h += '</section>';
+  el.innerHTML = h;
+}
+
+/* ================= full predictions ================= */
+function dimChips(hN, aN) {
+  const a = T(hN).dims, b = T(aN).dims;
+  if (!a || !b) return '';
+  const diffs = a.map((v, i) => ({ i, d: v - b[i] })).sort((x, y) => Math.abs(y.d) - Math.abs(x.d)).slice(0, 2);
+  const part = diffs.map(x => DIM_NAMES[x.i] + (x.d >= 0 ? '+' : '') + x.d + '(' + (x.d >= 0 ? '主' : '客') + ')').join(' · ');
+  return '综合 ' + T(hN).overall + ' : ' + T(aN).overall + ' · 五维最大差 ' + part;
+}
+function koCard(no) {
+  const m = WC.pred.ko[String(no)];
+  const wHome = m.winner === m.home;
+  const note = m.pens ? '点球 ' + m.pens : (m.decided_by === '加时' ? '加时赛' : '');
+  const cls = no === 104 ? ' final-card' : no === 103 ? ' third-card' : '';
+  return '<div class="ko' + cls + '">' +
+    '<div class="kd num"><span>' + (no === 104 ? '决赛' : no === 103 ? '季军战' : '#' + no) + ' · ' + fmtD(m.date) + '</span><span>' + city(m.city) + '</span></div>' +
+    '<div class="kt' + (wHome ? ' win' : '') + '"><span>' + fl(m.home) + '</span><span class="n">' + zh(m.home) + '</span><span class="s num">' + m.hs + '</span></div>' +
+    '<div class="kt' + (!wHome ? ' win' : '') + '"><span>' + fl(m.away) + '</span><span class="n">' + zh(m.away) + '</span><span class="s num">' + m.as + '</span></div>' +
+    (note ? '<div class="note">' + note + '</div>' : '') + '</div>';
+}
+function renderFull() {
+  const el = $('#v-full');
+  $('#fullLock').style.display = state.unlocked ? 'none' : '';
+  if (!state.unlocked) {
+    el.innerHTML = '<section><div class="gate reveal in">' +
+      '<span class="big">🏆</span><h3>全程 104 场推演已生成</h3>' +
+      '<p>基于五维分析法(硬实力30% · 状态25% · 阵容20% · 底蕴15% · 环境10%),三位独立评分视角对 48 队建模,逐场推演小组赛 72 场、淘汰赛 32 场,直至决出冠军。</p>' +
+      '<ul><li>12 个小组逐场比分与积分榜</li><li>最佳第三名排位</li><li>32 强对阵树推演</li><li>冠军 / 金靴 / 最佳新秀</li><li>争冠集团五维雷达</li></ul>' +
+      '<button class="btn-gold pay-open">🔓 解锁全程预测 ' + WC.pay.price + '</button>' +
+      '<div class="blurband num">🏆 冠军 ●●● · 决赛 ●●● ? - ? ●●●</div>' +
+      '</div></section>';
+    return;
+  }
+  const F = WC.pred.finals, fm = WC.pred.ko['104'], m103 = WC.pred.ko['103'];
+  let h = '<section><div class="method-chips reveal">' +
+    ['硬实力 <b>30%</b>','当前状态 <b>25%</b>','阵容厚度 <b>20%</b>','大赛底蕴 <b>15%</b>','环境适应 <b>10%</b>'].map(c => '<span class="mchip">' + c + '</span>').join('') +
+    '<span class="mchip">3 视角独立评分取均值</span></div>';
+  h += '<details class="method"><summary>方法与数据说明</summary><p>三位侧重不同的评分视角(量化数据 / 状态体能 / 战术专家)对 48 队五维打分取均值;小组赛逐场预测比分(已赛场次用真实比分)→ 按官方规则计算积分榜(积分→净胜→进球→相互战绩→FIFA排名)→ 前两名 + 8 个最佳第三晋级,按 FIFA 对阵框架推演至决赛。未赛场次的「依据」一栏为五维评分的纯数据对比,不含主观叙事。数据:FIFA 排名 2026-06-10 期、Elo、夺冠赔率、各队伤停情报(截至 ' + WC.meta.updated + ')。</p></details>';
+  h += '<div class="champ-strip reveal"><div class="champ-cup">🏆</div><div><div class="champ-label">预测冠军 PREDICTED CHAMPION</div><div class="champ-name">' + fl(F.champion) + ' ' + zh(F.champion) + '</div></div>' +
+    '<div class="champ-final">决赛 · ' + fmtD(fm.date) + ' · ' + esc(fm.stadium) + '(' + city(fm.city) + ')<br><b class="num">' + zh(fm.home) + ' ' + fm.hs + ' - ' + fm.as + ' ' + zh(fm.away) + (fm.pens ? '(点球 ' + fm.pens + ')' : '') + '</b></div></div>';
+  const top8 = Object.entries(WC.teams).sort((a, b) => b[1].overall - a[1].overall).slice(0, 8);
+  h += '<div class="sec-kicker">TITLE RACE</div><div class="sec-title">争冠集团 · 五维雷达</div><div class="contenders">' + top8.map(([n, t], i) =>
+    '<div class="cont reveal" style="transition-delay:' + i * .05 + 's">' + radarSVG(t.dims) +
+    '<div class="info"><div class="nm">' + t.flag + ' ' + t.zh + '</div><div class="meta num">FIFA #' + t.rank + (t.odds ? ' · 赔率 ' + t.odds : '') + '</div><div class="ov num" data-cnt="' + t.overall + '">0</div><div class="ovl">综合评分</div></div></div>').join('') + '</div>';
+  h += '<div style="height:26px"></div><div class="sec-kicker">GROUP STAGE</div><div class="sec-title">小组赛 72 场推演</div><div class="groups">';
+  Object.keys(WC.pred.groupMatches).sort().forEach((g, gi) => {
+    const tb = WC.pred.tables[g], ms = WC.pred.groupMatches[g];
+    const rows = tb.map((r, i) => {
+      const q3 = i === 2 && WC.pred.thirds.qualified.includes(g);
+      return '<tr class="' + (i < 2 ? 'q12' : q3 ? 'q3y' : '') + '"><td class="num">' + (i + 1) + '</td><td>' + fl(r.team) + ' ' + zh(r.team) + '</td><td class="num">' + r.w + '/' + r.d + '/' + r.l + '</td><td class="num">' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td class="num pts">' + r.pts + '</td></tr>';
+    }).join('');
+    const mrows = ms.map(m =>
+      '<div class="gm-row' + (m.actual ? ' actual' : '') + '"><span class="gm-date num">' + fmtD(m.date) + '</span><span class="gm-team">' + zh(m.home) + ' ' + fl(m.home) + '</span><span class="gm-score num">' + m.hs + ' - ' + m.as + '</span><span class="gm-team away">' + fl(m.away) + ' ' + zh(m.away) + '</span>' + (m.actual ? '<span class="tag-live">已赛</span>' : '') + '</div>' +
+      '<div class="gm-why">' + (m.actual ? '真实赛果' : dimChips(m.home, m.away)) + '</div>').join('');
+    h += '<div class="gcard reveal"><div class="ghead"><div class="gbadge" style="background:' + GC[gi % 3] + '">' + g + '</div><div class="gt">' + g + ' 组</div><div class="gs">' + tb.map(r => zh(r.team)).join(' · ') + '</div></div>' +
+      '<div style="overflow-x:auto"><table class="gtable"><tr><th>#</th><th>球队</th><th>胜/平/负</th><th>净胜</th><th>积分</th></tr>' + rows + '</table></div><div class="gm">' + mrows + '</div></div>';
+  });
+  h += '</div><div class="legend"><span><i style="background:var(--mx)"></i>前二直接晋级</span><span><i style="background:var(--gold)"></i>最佳第三晋级</span><span><i style="background:var(--ca)"></i>已赛 = 真实比分</span></div>';
+  h += '<div style="height:26px"></div><div class="sec-kicker">BEST THIRDS</div><div class="sec-title">第三名排位 · 前 8 晋级</div><div class="tcard reveal"><table class="gtable"><tr><th>#</th><th>球队(组)</th><th>胜/平/负</th><th>净胜</th><th>积分</th><th>结果</th></tr>' +
+    WC.pred.thirds.ranking.map((r, i) => '<tr class="' + (i < 8 ? 'q3y' : '') + '"><td class="num">' + (i + 1) + '</td><td>' + fl(r.team) + ' ' + zh(r.team) + '(' + r.group + ')</td><td class="num">' + r.w + '/' + r.d + '/' + r.l + '</td><td class="num">' + (r.gd > 0 ? '+' : '') + r.gd + '</td><td class="num pts">' + r.pts + '</td><td style="font-size:11px;color:' + (i < 8 ? 'var(--gold-deep)' : 'var(--muted)') + '">' + (i < 8 ? '晋级' : '出局') + '</td></tr>').join('') + '</table></div>';
+  const ROUNDS = [['32 强', '06.28–07.03', [74,77,73,75,83,84,81,82,76,78,79,80,86,88,85,87]], ['16 强', '07.04–07.07', [89,90,93,94,91,92,95,96]], ['八强', '07.09–07.11', [97,98,99,100]], ['半决赛', '07.14–07.15', [101,102]], ['决赛·季军战', '07.18–07.19', [104,103]]];
+  h += '<div style="height:26px"></div><div class="sec-kicker">KNOCKOUT</div><div class="sec-title">淘汰赛对阵推演</div><div class="bracket-scroll reveal"><div class="bracket">' +
+    ROUNDS.map(r => '<div class="round"><div class="rhead">' + r[0] + '<small class="num">' + r[1] + '</small></div>' + r[2].map(koCard).join('') + '</div>').join('') + '</div></div>';
+  h += '<div style="height:26px"></div><div class="sec-kicker">HONOURS</div><div class="sec-title">荣誉殿堂(模型推演)</div><div class="honors">' +
+    '<div class="hcard gold reveal"><div class="hl">冠军</div><div class="hf">' + fl(F.champion) + '</div><div class="hn">' + zh(F.champion) + '</div><div class="hs num">决赛 ' + fm.hs + '-' + fm.as + (fm.pens ? ' 点球 ' + fm.pens : '') + ' 胜 ' + zh(F.runner_up) + '</div></div>' +
+    '<div class="hcard reveal"><div class="hl">亚军</div><div class="hf">' + fl(F.runner_up) + '</div><div class="hn">' + zh(F.runner_up) + '</div></div>' +
+    '<div class="hcard reveal"><div class="hl">季军</div><div class="hf">' + fl(F.third_place) + '</div><div class="hn">' + zh(F.third_place) + '</div><div class="hs num">季军战 ' + m103.hs + '-' + m103.as + '</div></div>' +
+    '<div class="hcard reveal"><div class="hl">金靴</div><div class="hf">👟</div><div class="hn">' + esc(F.golden_boot.player_zh || F.golden_boot.player) + '</div><div class="hs">' + fl(F.golden_boot.team_en) + ' ' + zh(F.golden_boot.team_en) + ' · ' + F.golden_boot.goals + ' 球<br>最佳新秀:' + esc(F.young_star) + '</div></div></div>';
+  h += '</section>';
+  el.innerHTML = h;
+  countUps(el);
+}
+function radarSVG(dims) {
+  const cx = 56, cy = 52, R = 40, N = 5;
+  const pt = (i, r) => { const a = -Math.PI / 2 + i * 2 * Math.PI / N; return (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1); };
+  let s = '<svg width="112" height="104" viewBox="0 0 112 104">';
+  for (const f of [1, .66, .33]) s += '<polygon points="' + [0,1,2,3,4].map(i => pt(i, R * f)).join(' ') + '" fill="none" stroke="#E4E0D4" stroke-width="1"/>';
+  for (let i = 0; i < N; i++) s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + pt(i, R).replace(',', '" y2="') + '" stroke="#EEEAE0" stroke-width="1"/>';
+  s += '<polygon points="' + dims.map((v, i) => pt(i, R * v / 100)).join(' ') + '" fill="rgba(201,162,39,.22)" stroke="var(--gold-deep)" stroke-width="1.8"/>';
+  const lp = [[56,8],[107,41],[88,100],[24,100],[5,41]];
+  DIM_NAMES.forEach((l, i) => s += '<text x="' + lp[i][0] + '" y="' + lp[i][1] + '" font-size="9" fill="#9a9484" text-anchor="middle">' + l + '</text>');
+  return s + '</svg>';
+}
+function countUps(root) {
+  root.querySelectorAll('[data-cnt]').forEach(el => {
+    const target = parseFloat(el.dataset.cnt); const t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / 900); el.textContent = (target * (1 - Math.pow(1 - k, 3))).toFixed(1); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}
+
+/* ================= paywall ================= */
+window.WCPay = {
+  /* 真实支付接入点:替换 checkout 为
+     1) 调后端创建订单 → 2) 拉起微信/支付宝收银台(小程序内使用 wx.requestPayment)
+     3) 支付回调由后端校验签名后发放解锁凭证(token),前端凭 token 解锁。
+     演示模式:延时后直接成功。 */
+  checkout(channel) { return new Promise(res => setTimeout(() => res({ ok: true, channel }), 1400)); }
+};
+function openPay() { $('#payModal').classList.add('on'); }
+function closePay() { $('#payModal').classList.remove('on'); }
+$('#payPrice').innerHTML = WC.pay.price + ' <small>/ ' + WC.pay.period + '</small>';
+$('#payClose').addEventListener('click', closePay);
+$('#payModal').addEventListener('click', e => { if (e.target === e.currentTarget) closePay(); });
+document.addEventListener('click', e => { if (e.target.closest('.pay-open')) openPay(); });
+document.querySelectorAll('.paybtn').forEach(b => b.addEventListener('click', async () => {
+  document.querySelectorAll('.paybtn').forEach(x => { x.disabled = true; });
+  b.textContent = '正在拉起支付…';
+  const r = await WCPay.checkout(b.dataset.ch);
+  if (r.ok) {
+    storeSet('wc26_unlocked', '1'); state.unlocked = true;
+    closePay(); toast('🎉 解锁成功,<span class="g">精确预测已开启</span>');
+    renderToday(); renderFull(); bindReveal();
+  }
+  document.querySelectorAll('.paybtn').forEach(x => { x.disabled = false; });
+  b.textContent = b.dataset.ch === 'wechat' ? '微信支付' : '支付宝';
+}));
+let toastTimer;
+function toast(html) { const t = $('#toast'); t.innerHTML = html; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2600); }
+
+/* ================= boot ================= */
+renderToday(); renderReview(); renderFull(); bindReveal();
+</script>
+</body>
+</html>

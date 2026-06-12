@@ -1,0 +1,343 @@
+{
+ "matches": [
+  {
+   "match_no": 15,
+   "date": "2026-06-15",
+   "group": "G",
+   "home": "Iran",
+   "away": "New Zealand",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood"
+  },
+  {
+   "match_no": 16,
+   "date": "2026-06-15",
+   "group": "G",
+   "home": "Belgium",
+   "away": "Egypt",
+   "stadium": "Lumen Field",
+   "city": "Seattle"
+  },
+  {
+   "match_no": 39,
+   "date": "2026-06-21",
+   "group": "G",
+   "home": "Belgium",
+   "away": "Iran",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood"
+  },
+  {
+   "match_no": 40,
+   "date": "2026-06-21",
+   "group": "G",
+   "home": "New Zealand",
+   "away": "Egypt",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 63,
+   "date": "2026-06-26",
+   "group": "G",
+   "home": "Egypt",
+   "away": "Iran",
+   "stadium": "Lumen Field",
+   "city": "Seattle"
+  },
+  {
+   "match_no": 64,
+   "date": "2026-06-26",
+   "group": "G",
+   "home": "New Zealand",
+   "away": "Belgium",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 13,
+   "date": "2026-06-15",
+   "group": "H",
+   "home": "Saudi Arabia",
+   "away": "Uruguay",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens"
+  },
+  {
+   "match_no": 14,
+   "date": "2026-06-15",
+   "group": "H",
+   "home": "Spain",
+   "away": "Cape Verde",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 37,
+   "date": "2026-06-21",
+   "group": "H",
+   "home": "Uruguay",
+   "away": "Cape Verde",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens"
+  },
+  {
+   "match_no": 38,
+   "date": "2026-06-21",
+   "group": "H",
+   "home": "Spain",
+   "away": "Saudi Arabia",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 65,
+   "date": "2026-06-26",
+   "group": "H",
+   "home": "Cape Verde",
+   "away": "Saudi Arabia",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 66,
+   "date": "2026-06-26",
+   "group": "H",
+   "home": "Uruguay",
+   "away": "Spain",
+   "stadium": "Estadio Akron",
+   "city": "Zapopan"
+  },
+  {
+   "match_no": 17,
+   "date": "2026-06-16",
+   "group": "I",
+   "home": "France",
+   "away": "Senegal",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford"
+  },
+  {
+   "match_no": 18,
+   "date": "2026-06-16",
+   "group": "I",
+   "home": "Iraq",
+   "away": "Norway",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough"
+  },
+  {
+   "match_no": 41,
+   "date": "2026-06-22",
+   "group": "I",
+   "home": "Norway",
+   "away": "Senegal",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford"
+  },
+  {
+   "match_no": 42,
+   "date": "2026-06-22",
+   "group": "I",
+   "home": "France",
+   "away": "Iraq",
+   "stadium": "Lincoln Financial Field",
+   "city": "Philadelphia"
+  },
+  {
+   "match_no": 61,
+   "date": "2026-06-26",
+   "group": "I",
+   "home": "Norway",
+   "away": "France",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough"
+  },
+  {
+   "match_no": 62,
+   "date": "2026-06-26",
+   "group": "I",
+   "home": "Senegal",
+   "away": "Iraq",
+   "stadium": "BMO Field",
+   "city": "Toronto"
+  },
+  {
+   "match_no": 19,
+   "date": "2026-06-16",
+   "group": "J",
+   "home": "Argentina",
+   "away": "Algeria",
+   "stadium": "Arrowhead Stadium",
+   "city": "Kansas City"
+  },
+  {
+   "match_no": 20,
+   "date": "2026-06-16",
+   "group": "J",
+   "home": "Austria",
+   "away": "Jordan",
+   "stadium": "Levi's Stadium",
+   "city": "Santa Clara"
+  },
+  {
+   "match_no": 43,
+   "date": "2026-06-22",
+   "group": "J",
+   "home": "Argentina",
+   "away": "Austria",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington"
+  },
+  {
+   "match_no": 44,
+   "date": "2026-06-22",
+   "group": "J",
+   "home": "Jordan",
+   "away": "Algeria",
+   "stadium": "Levi's Stadium",
+   "city": "Santa Clara"
+  },
+  {
+   "match_no": 69,
+   "date": "2026-06-27",
+   "group": "J",
+   "home": "Algeria",
+   "away": "Austria",
+   "stadium": "Arrowhead Stadium",
+   "city": "Kansas City"
+  },
+  {
+   "match_no": 70,
+   "date": "2026-06-27",
+   "group": "J",
+   "home": "Jordan",
+   "away": "Argentina",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington"
+  },
+  {
+   "match_no": 23,
+   "date": "2026-06-17",
+   "group": "K",
+   "home": "Portugal",
+   "away": "DR Congo",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 24,
+   "date": "2026-06-17",
+   "group": "K",
+   "home": "Uzbekistan",
+   "away": "Colombia",
+   "stadium": "Estadio Azteca",
+   "city": "Mexico City"
+  },
+  {
+   "match_no": 47,
+   "date": "2026-06-23",
+   "group": "K",
+   "home": "Portugal",
+   "away": "Uzbekistan",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 48,
+   "date": "2026-06-23",
+   "group": "K",
+   "home": "Colombia",
+   "away": "DR Congo",
+   "stadium": "Estadio Akron",
+   "city": "Zapopan"
+  },
+  {
+   "match_no": 71,
+   "date": "2026-06-27",
+   "group": "K",
+   "home": "Colombia",
+   "away": "Portugal",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens"
+  },
+  {
+   "match_no": 72,
+   "date": "2026-06-27",
+   "group": "K",
+   "home": "DR Congo",
+   "away": "Uzbekistan",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 21,
+   "date": "2026-06-17",
+   "group": "L",
+   "home": "Ghana",
+   "away": "Panama",
+   "stadium": "BMO Field",
+   "city": "Toronto"
+  },
+  {
+   "match_no": 22,
+   "date": "2026-06-17",
+   "group": "L",
+   "home": "England",
+   "away": "Croatia",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington"
+  },
+  {
+   "match_no": 45,
+   "date": "2026-06-23",
+   "group": "L",
+   "home": "England",
+   "away": "Ghana",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough"
+  },
+  {
+   "match_no": 46,
+   "date": "2026-06-23",
+   "group": "L",
+   "home": "Panama",
+   "away": "Croatia",
+   "stadium": "BMO Field",
+   "city": "Toronto"
+  },
+  {
+   "match_no": 67,
+   "date": "2026-06-27",
+   "group": "L",
+   "home": "Panama",
+   "away": "England",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford"
+  },
+  {
+   "match_no": 68,
+   "date": "2026-06-27",
+   "group": "L",
+   "home": "Croatia",
+   "away": "Ghana",
+   "stadium": "Lincoln Financial Field",
+   "city": "Philadelphia"
+  }
+ ],
+ "notes": "36 matches, 6 per group G-L. Dates are local dates as listed on Wikipedia group pages. Teams/dates/venues cross-checked vs Sky Sports group guides, Yahoo Sports and ESPN search summaries; all consistent. Official FIFA match numbers taken from Wikipedia group pages (single source for the numbers themselves, but internally consistent across MD1=13-24, MD2=37-48, MD3=61-72). Stadium names per Wikipedia/common usage: Estadio Azteca = FIFA \"Estadio Ciudad de Mexico\", Estadio Akron = FIFA \"Estadio Guadalajara\", BC Place = FIFA \"BC Place Vancouver\". Sky Sports lists some Group K kickoffs in BST (date +1 vs local); local dates above confirmed.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_G",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_H",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_I",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_J",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_K",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_L",
+  "https://www.skysports.com/football/news/12098/13543098/world-cup-2026-group-g-guide-fixtures-schedule-standings-and-odds-for-belgium-egypt-iran-and-new-zealand",
+  "https://www.skysports.com/football/news/12098/13543099/world-cup-2026-group-h-guide-fixtures-schedule-standings-and-odds-for-spain-cape-verde-saudi-arabia-and-uruguay",
+  "https://www.skysports.com/football/news/12098/13543102/world-cup-2026-group-i-guide-fixtures-schedule-standings-and-odds-for-france-senegal-iraq-and-norway",
+  "https://www.skysports.com/football/news/12098/13543105/world-cup-2026-group-j-guide-fixtures-schedule-standings-and-odds-for-argentina-algeria-austria-and-jordan",
+  "https://www.skysports.com/football/news/12040/13543106/world-cup-2026-group-k-guide-fixtures-schedule-standings-and-odds-for-portugal-dr-congo-uzbekistan-and-colombia",
+  "https://www.skysports.com/football/news/12098/13543108/world-cup-2026-group-l-guide-fixtures-schedule-standings-and-odds-for-england-croatia-ghana-and-panama"
+ ]
+}

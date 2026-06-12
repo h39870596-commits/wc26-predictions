@@ -1,0 +1,480 @@
+{
+ "matchday": "2026-06-12",
+ "results": [
+  {
+   "match": {
+    "no": 3,
+    "group": "B",
+    "home": "Canada",
+    "away": "Bosnia and Herzegovina",
+    "stadium": "BMO Field",
+    "city": "Toronto, Canada",
+    "kickoff": "2026-06-12 15:00 当地时间 (19:00 UTC, 北京时间6月13日 03:00)"
+   },
+   "dossier": {
+    "weather": {
+     "weather": {
+      "temp_c": "27°C（体感约30，午后最高28°C）",
+      "condition": "晴到多云（上午40%概率阵雨，午后转好，开球时多云间晴，紫外线指数6）",
+      "humidity": "约43%–55%（午后；上午10点实测73%）",
+      "wind": "西风约19–20 km/h，阵风可达40–45 km/h（湖畔风口，阵风较强）",
+      "precip": "开球时段约1%–20%（加拿大环境部小时预报20%，WorldWeatherOnline为1%；降雨风险集中在上午，已基本解除）",
+      "kickoff_note": "当地15:00开球正值午后最热时段，27–28°C加上6月强日照（UV 6），看台遮阳棚会在场内投下明暗分界阴影线；最大变量是来自安大略湖方向的西风阵风（40+ km/h），对高球和传中有实际影响。"
+     },
+     "venue": {
+      "roof": "露天球场：2015–16年改造后看台上方有顶棚（canopy），但草坪上方完全露天",
+      "pitch": "混合草（hybrid grass）：天然肯塔基早熟禾 + SISGrass缝植合成纤维加固，2019年4月起启用，世界杯沿用该混合草系统",
+      "capacity": "世界杯期间45,736（常规28,180，临时加座17,756，南北两端加建临时上层看台、首次形成全封闭碗形）",
+      "altitude": "约76–80米（多伦多湖滨海拔76米，球场位于湖畔Exhibition Place），海拔影响可忽略",
+      "note": "世界杯期间临时更名Toronto Stadium，是本届最小的比赛场馆之一；紧邻安大略湖岸，湖风/西风阵风明显；今天承办加拿大队的世界杯揭幕主场战（该场馆共办6场：5场小组赛+1场淘汰赛）。"
+     },
+     "sources": [
+      "https://weather.gc.ca/en/forecast/hourly/index.html?coords=43.655,-79.383",
+      "https://weather.gc.ca/en/location/index.html?coords=43.655,-79.383",
+      "https://wttr.in/Toronto?format=j1",
+      "https://en.wikipedia.org/wiki/BMO_Field",
+      "https://findmyfans.ca/bmo-field-world-cup",
+      "https://fwctimes.com/bmo-field/",
+      "https://elevation-check.com/cities/en/toronto.html"
+     ],
+     "notes": "天气经加拿大环境部（官方小时预报+实况）与WorldWeatherOnline双源核对：15:00开球27°C一致、西风一致；降水概率两源有差（20% vs 1%），均表示低风险，已注明区间。湿度为午后预报值43%–55%（环境部小时预报不公布湿度，故用第二来源+上午实测73%佐证）。场馆数据经Wikipedia与两家世界杯场馆指南交叉验证：45,736容量、17,756临时座、SISGrass混合草均多源一致。球场自身精确海拔无官方数字，按多伦多湖滨76米推定为约76–80米并已注明。场地朝向未找到可靠数据（未知）。"
+    },
+    "money": {
+     "home": {
+      "total_value": "€1.9865亿 (26人, 平均年龄27.0岁)",
+      "top_players": [
+       {
+        "name": "阿方索·戴维斯 (Alphonso Davies)",
+        "pos": "左后卫",
+        "value": "€4000万"
+       },
+       {
+        "name": "乔纳森·戴维 (Jonathan David)",
+        "pos": "中锋",
+        "value": "€3000万"
+       },
+       {
+        "name": "伊斯梅尔·科内 (Ismaël Koné)",
+        "pos": "中前卫",
+        "value": "€2500万"
+       }
+      ]
+     },
+     "away": {
+      "total_value": "€1.4640亿 (26人, 平均年龄26.5岁)",
+      "top_players": [
+       {
+        "name": "塔里克·穆哈雷莫维奇 (Tarik Muharemović)",
+        "pos": "中后卫",
+        "value": "€2500万"
+       },
+       {
+        "name": "克里姆·阿拉伊贝戈维奇 (Kerim Alajbegović)",
+        "pos": "左边锋",
+        "value": "€2200万"
+       },
+       {
+        "name": "埃尔梅丁·杰米罗维奇 (Ermedin Demirović)",
+        "pos": "中锋",
+        "value": "€2200万"
+       }
+      ]
+     },
+     "ratio_note": "加拿大全队身价约为波黑的1.36倍 (€1.99亿 vs €1.46亿), 占优但差距并不悬殊; 注: Transfermarkt页面未标注估值具体更新日期。",
+     "sources": [
+      "https://www.transfermarkt.us/kanada/startseite/verein/3510",
+      "https://www.transfermarkt.us/kanada/kader/verein/3510",
+      "https://www.transfermarkt.us/bosnien-herzegowina/startseite/verein/3446",
+      "https://www.transfermarkt.us/bosnien-herzegowina/kader/verein/3446"
+     ]
+    },
+    "news": {
+     "home": {
+      "lineup": "预测首发(4-4-2,SI/RotoWire/Sports Mole多源一致):克雷波(Crépeau);约翰斯顿、科内利乌斯、德富热罗勒(De Fougerolles)、拉里亚(左后卫顶替戴维斯);布坎南、科内(Koné)、尤斯塔基奥、米勒;乔纳森·戴维、拉林。注意:官方首发以开赛前1小时公布为准。",
+      "injuries": "戴维斯(Alphonso Davies):腿筋伤(5月初欧冠半决赛对巴黎受伤),确认缺席本场;马什透露赛前MRI显示\"愈合情况非常好,几乎完全恢复\",有望小组赛后程复出。邦比托(Bombito):胫骨骨折恢复中,马什确认本场可用(是否首发存疑,Sports Mole认为不会出场)。科内:周三因发烧缺训,但确认可出战。弗洛雷斯(Marcelo Flores):ACL断裂已退出名单,由杰登·纳尔逊替补入队。",
+      "suspensions": "无停赛(世界杯首轮,无红黄牌累积;多家预览确认加拿大无停赛球员)。",
+      "coach_note": "马什(6月11日发布会):\"我们昨天给戴维斯做了MRI,显示非常积极的信号,他恢复得非常好,几乎完全愈合……希望未来几天几周能加速进程,让他尽快做出贡献。\"谈邦比托:\"过去一个月进步惊人,把他留在队中的决定相对容易。\"球队定位高位逼抢、快速纵向打法,主场首秀士气高。"
+     },
+     "away": {
+      "lineup": "预测首发存在分歧。版本一(4-4-2,RotoWire等):瓦西利(Vasilj);德迪奇、卡蒂奇、穆哈雷莫维奇、科拉希纳茨;巴伊拉克塔雷维奇、塔希罗维奇、巴西奇、梅米奇;杰米罗维奇、哲科。版本二(Sports Mole 4-3-3,假设哲科不首发):瓦西利;布尔尼奇、吉戈维奇、穆哈雷莫维奇、梅米奇;切利克、巴西奇、巴伊拉克塔雷维奇;马赫米奇、杰米罗维奇、巴日达尔。哲科是否首发未定,杰米罗维奇锋线主力基本确定。",
+      "injuries": "哲科(40岁,队长):右肩伤(3月附加赛胜意大利时受伤,5月中旬后未再出场,曾缺席周二训练及热身赛),主帅巴尔巴雷斯6月11日确认其本场可出战,但是否首发未明。塔巴科维奇(Tabakovic):脚部/跖骨伤(另有消息称脚踝),出场可能性低。苏尼奇(Sunjic):肌肉问题,出战成疑。",
+      "suspensions": "无停赛(检索多家预览未见波黑停赛球员报道)。",
+      "coach_note": "巴尔巴雷斯(6月11日多伦多发布会):确认哲科可出战;谈哲科:\"我尽量少说,因为言语在这里是多余的——像哲科这样的人,以其品格和意志赢得了赞歌。\"自认弱旅姿态:\"我们用心去踢球,这是我们至今的优势;但也不要低估加拿大人的心,他们是东道主,值得所有尊重。\"战术预计深度防守+哲科/巴伊拉克塔雷维奇打反击。"
+     },
+     "sources": [
+      "https://www.si.com/soccer/jesse-marsch-alphonso-davies-injury-update-canada-world-cup-opener",
+      "https://www.si.com/soccer/canada-predicted-lineup-vs-bosnia-herzegovina-world-cup-6-12-26",
+      "https://www.sportsmole.co.uk/football/canada/world-cup-2026/preview/canada-vs-bosnia-hvina-prediction-team-news-lineups_598907.html",
+      "https://www.sportsmole.co.uk/football/canada/world-cup-2026/predicted-lineups/dzeko-seeking-an-improbable-return-predicted-bosnia-herzegovina-lineup-vs-canada_598905.html",
+      "https://cfjctoday.com/2026/06/11/edin-dzeko-available-for-bosnia-herzegovinas-world-cup-opener-against-canada/",
+      "https://english.aawsat.com/sports/5283152-bosnia-will-play-hearts-world-cup-opener-says-coach-barbarez",
+      "https://www.rotowire.com/soccer/article/canada-vs-bosnia-and-herzegovina-preview-prediction-lineups-odds-2026-world-cup-group-b-117672",
+      "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/canada-makes-its-debut-in-the-2026-fifa-world-cup-without-alphonso-davies-2026-06-12"
+     ]
+    },
+    "market": {
+     "form": {
+      "home_last5": "加拿大近5场(近→远,均为友谊赛,东道主未参加预选赛): D-W-D-D-W — 爱尔兰1-1平、乌兹别克斯坦2-0胜(6月1日)、突尼斯0-0平、冰岛2-2平、危地马拉1-0胜;近4场3平,近5场中3场进球2+(Sports Mole/FOX/CBS交叉确认)",
+      "away_last5": "波黑近5场(近→远): D-D-W-W-D — 巴拿马1-1平(友)、北马其顿0-0平(友)、意大利1-1(欧洲区附加赛决赛,点球大战胜,爆冷淘汰意大利)、威尔士1-1后晋级(附加赛半决赛,晋级具体方式未核实)、奥地利1-1平(世预赛);近7场6场有进球(CBS)"
+     },
+     "h2h": "两队历史交锋仅2次,均为友谊赛:2013-11-18 波黑1-0加拿大;2019年(khelnow称6月11日)0-0平。总计:波黑1胜1平,加拿大0胜。本场为两队首次在正式大赛交手。注:Sports Mole称\"两队史上首次交锋\",与khelnow/AiScore及多数来源矛盾,按多数来源采信2次交锋记录。另:加拿大此前2届世界杯(1986、2022)6战全败,仍在寻求队史世界杯首胜。",
+     "implied": {
+      "home": "约52.5%(原始55.6%,按FanDuel -125折算,已剔除约5.9%抽水归一化)",
+      "draw": "约27.0%(原始28.6%,+250)",
+      "away": "约20.5%(原始21.7%,+360)"
+     },
+     "odds": {
+      "book": "FanDuel(FOX Sports引用;CBS同源另一快照为 -120/+240/+360,赔率有小幅波动)",
+      "home": "-125(约1.80)",
+      "draw": "+250(3.50)",
+      "away": "+360(4.60)",
+      "overunder": "大小球盘口2.5球:大2.5 +120(约2.20)/ 小2.5 -150(约1.67)(FanDuel);另SportyTrader比价:最高主胜1.88(1xbet)、平3.55(Tonybet)、客胜4.80(Bet365)"
+     },
+     "sources": [
+      "https://www.foxsports.com/stories/soccer/2026-world-cup-canada-bosnia-herzegovina-odds-predictions-picks",
+      "https://www.cbssports.com/soccer/news/canada-bosnia-and-herzegovina-odds-prediction-time-2026-world-cup-picks/",
+      "https://www.sportsmole.co.uk/football/canada/world-cup-2026/preview/canada-vs-bosnia-hvina-prediction-team-news-lineups_598907.html",
+      "https://khelnow.com/football/world-football-canada-vs-bosnia-herzegovina-head-to-head-record",
+      "https://www.sportytrader.com/en/odds/canada-bosnia-herzegovina-7937375/",
+      "https://www.aiscore.com/head-to-head/soccer-bosnia-and-herzegovina-vs-canada"
+     ]
+    }
+   },
+   "final": {
+    "analysis_zh": "市场以FanDuel主胜-125定价，去水后隐含主胜52.5%、平27%、客胜20.5%，与身价€1.99亿对€1.46亿（约1.36倍）的差距方向一致。东道主坐镇BMO球场迎来主场首秀（世界杯容量45,736人，临时加座17,756后首次形成全封闭碗形），零旅途消耗；27–28°C午后多云间晴，湖畔西风阵风40+km/h对高球和传中有实际影响，不利于波黑深守后由哲科打支点反击的高球套路——40岁队长哲科肩伤虽获主帅确认可出战但首发未定，塔巴科维奇出场可能性低。加拿大失去戴维斯（腿筋伤确认缺阵），但已被赔率消化，布坎南、戴维、拉林仍可多点冲击。小2.5球-150指向低进球；历史上两队仅2次友谊赛交手加拿大未尝胜绩（1平1负），波黑近5场D-D-W-W-D不败、附加赛点球淘汰意大利，深守韧性足，闷平为主要变数，综合判加拿大低比分胜出。",
+    "confidence": 61,
+    "factors": [
+     {
+      "name": "盘口信号",
+      "home": "-125，去水隐含52.5%",
+      "away": "+360，去水隐含20.5%",
+      "edge": "home",
+      "note": "小2.5球-150，市场看低比分主胜"
+     },
+     {
+      "name": "主场与旅途",
+      "home": "东道主主场作战，零旅途消耗",
+      "away": "跨洋客场远征多伦多",
+      "edge": "home",
+      "note": "BMO球场世界杯容量45,736人，主场首秀士气高"
+     },
+     {
+      "name": "历史交锋",
+      "home": "2次交锋0胜（1平1负），世界杯历史6战全败",
+      "away": "对加拿大1胜1平保持不败",
+      "edge": "away",
+      "note": "仅2013（波黑1-0）与2019（0-0）两场友谊赛，本场为首次大赛交手，参考价值有限"
+     },
+     {
+      "name": "阵容身价",
+      "home": "€1.99亿（均龄27.0）",
+      "away": "€1.46亿（均龄26.5）",
+      "edge": "home",
+      "note": "加拿大约为波黑1.36倍，占优不悬殊"
+     },
+     {
+      "name": "天气气温",
+      "home": "地面快攻受风影响小",
+      "away": "哲科支点反击的高球受阵风干扰",
+      "edge": "home",
+      "note": "27°C多云间晴，西风阵风40+km/h对高球和传中有实际影响"
+     },
+     {
+      "name": "场馆条件",
+      "home": "BMO Field（世界杯期间称Toronto Stadium），容量45,736",
+      "away": "露天湖畔风口客场",
+      "edge": "home",
+      "note": "临时加座17,756，首次形成全封闭碗形"
+     },
+     {
+      "name": "伤病情况",
+      "home": "戴维斯腿筋伤确认缺阵",
+      "away": "哲科肩伤可出战但首发未定，塔巴科维奇出场可能性低",
+      "edge": "even",
+      "note": "双方均有核心球员受伤病影响"
+     },
+     {
+      "name": "近期状态",
+      "home": "近5场D-W-D-D-W不败",
+      "away": "近5场D-D-W-W-D，附加赛点球淘汰意大利",
+      "edge": "even",
+      "note": "双方均不败，平局多韧性足"
+     }
+    ],
+    "headline_zh": "东道主首秀低比分胜",
+    "lean_zh": "看好加拿大主场取胜，低进球小胜的概率最高，需提防波黑深守闷平。",
+    "probs": {
+     "home": 52,
+     "draw": 27,
+     "away": 21
+    },
+    "score": "2-0",
+    "sources_used": [
+     "https://www.foxsports.com/stories/soccer/2026-world-cup-canada-bosnia-herzegovina-odds-predictions-picks",
+     "https://www.sportsmole.co.uk/football/canada/world-cup-2026/preview/canada-vs-bosnia-hvina-prediction-team-news-lineups_598907.html",
+     "https://www.si.com/soccer/jesse-marsch-alphonso-davies-injury-update-canada-world-cup-opener",
+     "https://cfjctoday.com/2026/06/11/edin-dzeko-available-for-bosnia-herzegovinas-world-cup-opener-against-canada/",
+     "https://weather.gc.ca/en/forecast/hourly/index.html?coords=43.655,-79.383",
+     "https://en.wikipedia.org/wiki/BMO_Field",
+     "https://www.transfermarkt.us/kanada/startseite/verein/3510",
+     "https://www.transfermarkt.us/bosnien-herzegowina/startseite/verein/3446"
+    ]
+   },
+   "factcheck": {
+    "ok": false,
+    "corrections": [
+     "删除「五维69.9对57.4」「实力73对60」「FIFA#30/#64」：调研档案中不存在任何五维评分、实力分或FIFA排名数据，无法核实。",
+     "删除「环境分93对48」：档案中无环境分数据。",
+     "「45736满座」「满座主场首秀」修正为「世界杯容量45,736人」：档案仅证实世界杯期间容量45,736、临时加座17,756并首次形成全封闭碗形，未证实售罄满座。",
+     "原「硬实力」因子整体无档案依据，替换为档案有据的「历史交锋」因子：两队仅2次友谊赛交手（2013年波黑1-0胜、2019年0-0平），加拿大0胜1平1负，且加拿大此前2届世界杯6战全败；该因子优势方相应改为客队，并注明样本为多年前友谊赛、参考价值有限。",
+     "天气「27°C晴」修正为「27°C多云间晴」：档案载开球时段为多云间晴（上午40%阵雨概率已基本解除），风为西风19–20km/h、阵风40–45km/h，与「阵风40+km/h抑制高球」相符予以保留。",
+     "「塔巴科维奇基本缺席」修正为档案原表述「出场可能性低」；并补充哲科已获主帅巴尔巴雷斯确认可出战、仅首发未定。",
+     "伤病note「双方核心攻击点均受损」改为「双方均有核心球员受伤病影响」：戴维斯为左后卫而非攻击点，表述失准。",
+     "盘口（-125/+360、去水52.5%/27%/20.5%、小2.5球-150）、身价（€1.99亿对€1.46亿、1.36倍、均龄27.0/26.5）、近5场战绩（D-W-D-D-W与D-D-W-W-D、附加赛点球淘汰意大利）、戴维斯腿筋伤确认缺阵、临时加座17,756等均与档案一致，予以保留。"
+    ]
+   }
+  },
+  {
+   "match": {
+    "no": 4,
+    "group": "D",
+    "home": "United States",
+    "away": "Paraguay",
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood (Los Angeles), USA",
+    "kickoff": "2026-06-12 21:00 当地时间 (2026-06-13 01:00 UTC, 北京时间6月13日 09:00)"
+   },
+   "dossier": {
+    "weather": {
+     "weather": {
+      "temp_c": "约21°C(70°F),开球后逐步降至19-20°C",
+      "condition": "局部多云(45%云量),典型洛杉矶六月夜间海洋层低云,无雨",
+      "humidity": "约80%",
+      "wind": "西南偏南微风,约1-3 mph(2-5 km/h),近乎无风",
+      "precip": "0%(降水概率为零)",
+      "kickoff_note": "NWS逐小时:18:00 约24°C/84%湿度/云量57% → 19:00 约23°C → 20:00 约22°C → 21:00开球 约21°C/湿度80%/云量45%/风2mph/降水0% → 22:00 约20°C → 23:00 约19°C。开球在日落(约20:05)之后,无阳光照射问题;体感温和干爽,对球员体能几乎无负担"
+     },
+     "venue": {
+      "roof": "固定式半透明ETFE膜顶棚(302块面板,其中46块可开启通风),非可开合屋顶;看台四周侧面开放,属\"有顶开放式\"混合设计,雨水基本无法影响比赛",
+      "pitch": "为世界杯专门铺设的混合草:肯塔基蓝草+多年生黑麦草、合成纤维加固(hybrid grass),铺在Permavoid排水层+原有人工草坪(Matrix Turf)之上;因顶棚遮挡无直射阳光,需LED补光灯昼夜养护。原球场宽度不足FIFA标准,已拆除部分场边座椅扩宽",
+      "capacity": "70,240(世界杯模式;最大可扩至100,000+,世界杯按70,240执行)",
+      "altitude": "地面海拔约38米(125英尺);因LAX机场航线限高,球场整体下沉约30米(100英尺)建于地平面以下,草坪接近海平面高度",
+      "note": "球场下沉30米+顶棚覆盖=场内几乎无风,温度比室外更稳定;ETFE顶棚白天有温室效应,但21:00夜场开球此影响很小;无日照阴影问题(夜场);新铺混合草在无自然光环境下养护,草皮状态(抓地力/球速)是比天气更值得关注的变量——3月美墨友谊赛已在此测试过世界杯草皮"
+     },
+     "sources": [
+      "https://forecast.weather.gov/MapClick.php?lat=33.9534&lon=-118.3387&FcstType=digitalDWML",
+      "https://www.weather.gov/lox/",
+      "https://en.wikipedia.org/wiki/SoFi_Stadium",
+      "https://www.espn.com/soccer/story/_/id/44241086/sofi-stadium-test-pitch-nations-league-2026-world-cup",
+      "https://www.lawnstarter.com/blog/sports-turf/us-world-cup-cities-natural-grass/",
+      "https://www.kickoffadventures.com/events/world-cup-26/stadiums/sofi-stadium-ca-usa",
+      "https://elevation.maplogs.com/poi/sofi_stadium_s_prairie_ave_inglewood_ca_usa.527075.html",
+      "https://www.geoquest-group.us/reinforced-earth/sofi-stadium/"
+     ],
+     "notes": "天气数据来自NWS(美国国家气象局)针对英格尔伍德坐标的逐小时数字预报,与NWS洛杉矶区域预报(夜间晴到少云、低温50s-60s°F)交叉验证一致;另一来源(weather.com摘要)称傍晚多云、低温63°F,云量描述略有出入但整体一致——均为温和、无雨、微风。华氏转摄氏由本人换算。场馆事实经Wikipedia、ESPN、工程方(Geoquest MSE挡墙)多源交叉验证。FIFA官方对该场馆世界杯容量的精确数字以70,240为多源共识;未找到FIFA官方页面单独确认,故标注来源为KickoffAdventures等二手来源。球场草坪海拔的精确数值未找到官方数据,系由地面海拔38米减下沉100英尺推算,仅作参考。"
+    },
+    "money": {
+     "home": {
+      "total_value": "€3.8565亿 (€385.65m, 26人名单)",
+      "top_players": [
+       {
+        "name": "Christian Pulisic 普利西奇",
+        "pos": "右边锋",
+        "value": "€4000万"
+       },
+       {
+        "name": "Folarin Balogun 巴洛贡",
+        "pos": "中锋",
+        "value": "€4000万"
+       },
+       {
+        "name": "Weston McKennie 麦肯尼",
+        "pos": "中前卫",
+        "value": "€3000万"
+       }
+      ]
+     },
+     "away": {
+      "total_value": "€1.5365亿 (€153.65m, 26人名单)",
+      "top_players": [
+       {
+        "name": "Diego Gómez 迭戈·戈麦斯",
+        "pos": "中前卫",
+        "value": "€2500万"
+       },
+       {
+        "name": "Julio Enciso 恩西索",
+        "pos": "前腰",
+        "value": "€2500万"
+       },
+       {
+        "name": "Mauricio 毛里西奥(帕尔梅拉斯)",
+        "pos": "前腰",
+        "value": "€1500万"
+       }
+      ]
+     },
+     "ratio_note": "美国队总身价(€3.8565亿)约为巴拉圭(€1.5365亿)的2.5倍,纸面实力明显占优;另注:美国队还有Malik Tillman、Ricardo Pepi同为€3000万,巴拉圭第4、5位为Omar Alderete(中卫€1300万)与Ramón Sosa(影锋€1000万)。",
+     "sources": [
+      "https://www.transfermarkt.us/vereinigte-staaten/kader/verein/3505",
+      "https://www.transfermarkt.us/paraguay/kader/verein/3581",
+      "https://www.transfermarkt.us/mauricio/profil/spieler/678439",
+      "https://www.givemesport.com/every-squad-at-2026-world-cup-ranked-by-combined-player-value/"
+     ]
+    },
+    "news": {
+     "home": {
+      "injuries": "无伤员:Pochettino确认26人全部可用(\"we are ready to start the competition with 26 players available\")。Chris Richards(水晶宫,脚踝伤缺阵约一个月)已恢复训练、宣布自己可出战,但首发或替补待定,中卫位置由Miles Robinson/Mark McKenzie竞争顶替。注:Cameron Carter-Vickers、Patrick Agyemang(跟腱)与Johnny Cardoso(脚踝)因伤未入选26人名单。Pulisic、Balogun均健康。",
+      "suspensions": "无停赛(各来源均未提及)。",
+      "lineup": "预测首发(Sports Mole/FOX综合,门将之争Freese领先Turner):Freese;Freeman、M. Robinson(若Richards不首发)、Ream、A. Robinson;Adams、McKennie、Tillman;Dest、Pulisic;Balogun。FOX(Stu Holden)预测4-2-3-1,Sports Mole给出3-4-2-1变体——阵型存在分歧,但人员高度一致;最大悬念是Richards是否直接首发及门将人选。",
+      "coach_note": "Pochettino赛前发布会(6月11日):\"现在不需要外部激励或励志演讲\"、\"我希望他们踢得自由快乐,像孩子一样去比赛\";称巴拉圭\"只懂得竞争和侵略性\",并表示尊重Alfaro。暗示Richards\"可被选择,首发还是替补再定\"。Opta给美国40.1%胜率。"
+     },
+     "away": {
+      "injuries": "Julio Enciso(斯特拉斯堡,6月6日热身赛对尼加拉瓜股四头肌轻伤)提前康复——6月11日已随队完整合练,多家媒体(libero、365scores)预计他直接首发;Sports Mole称其\"仍有望出任前场自由人角色\"。除Enciso外无其他伤情报告。",
+      "suspensions": "无停赛(各来源均未提及)。",
+      "lineup": "预测首发4-3-3 / 4-2-3-1:门将Orlando Gill(Sports Mole、libero预测)或Roberto \"Gatito\" Fernández(365scores预测,门将人选两说);后防Cáceres、Gustavo Gómez(队长)、Alderete、Alonso;中场Bobadilla、Cubas、Diego Gómez;前场Almirón、Sanabria、Enciso。Enciso若首发将顶替Mauricio Magalhães(帕尔梅拉斯)。",
+      "coach_note": "Alfaro在SoFi球场发布会(6月11日):\"我们带着憧憬而来,但我们是来竞争、与任何对手平起平坐地较量\"、\"巴拉圭来世界杯是竞争,不是参与\";承认美国\"有Pochettino这样的优秀教练\",强调必须减少失误。赛前动员时Diego Gómez谈到巴拉圭16年后重返世界杯落泪,Alfaro回应\"这是我们所有人的感受\"。球队赛前8场不败(含胜巴西、阿根廷、乌拉圭)。"
+     },
+     "sources": [
+      "https://www.espn.com/soccer/story/_/id/49017942/fifa-world-cup-2026-usmnt-vs-paraguay-kickoff-how-watch-stats-team-news",
+      "https://www.espn.com/soccer/story/_/id/49035215/mauricio-pochettino-usa-world-cup-speech-paraguay-lineup",
+      "https://www.sportsmole.co.uk/football/usa/world-cup-2026/preview/usa-vs-paraguay-prediction-team-news-lineups_598859.html",
+      "https://www.foxsports.com/stories/soccer/usa-vs-paraguay-key-players-projected-lineup-what-know",
+      "https://english.news.cn/northamerica/20260612/af86b306b68e4d60ab22dba704bd56be/c.html",
+      "https://www.365scores.com/es/news/posible-alineacion-paraguay-usa-2026/",
+      "https://libero.pe/futbol-internacional/2026/06/11/alineaciones-paraguay-vs-estados-unidos-11-de-albirroja-julio-enciso-mundial-2026-782078",
+      "https://www.abc.com.py/deportes/futbol/seleccion-paraguaya/2026/06/11/en-vivo-desde-sofi-stadium-habla-gustavo-alfaro-entrenador-de-la-seleccion-paraguaya/",
+      "https://www.lanacion.com.ar/estados-unidos/paraguay-debe-minimizar-sus-errores-ante-un-eeuu-con-jerarquia-dice-alfaro-nid12062026/",
+      "https://www.infobae.com/deportes/2026/06/12/la-reaccion-de-alfaro-cuando-un-jugador-de-paraguay-se-emociono-en-la-previa-del-debut-del-mundial-es-lo-que-sentimos-todos/",
+      "https://www.cbssports.com/soccer/news/usmnt-vs-paraguay-world-cup-2026-preview-predictions-watch/",
+      "https://www.goal.com/en-us/lists/chris-richards-world-cup-moment-five-keys-to-usmnt-s-opener-paraguay/blt2dfd37bde9cac0b9"
+     ]
+    },
+    "market": {
+     "form": {
+      "home_last5": "美国(东道主,赛前均为友谊赛) 新→旧: 负德国1-2(2026-06-06)、胜塞内加尔3-2(05-31)、负葡萄牙0-2(03-31)、负比利时2-5(03-28)、胜乌拉圭5-1(2025-11-18) → L W L L W(1胜3负于近4场,6月状态略回暖)",
+      "away_last5": "巴拉圭(均为友谊赛) 新→旧: 胜尼加拉瓜4-0(2026-06-05)、负摩洛哥1-2(03-31)、胜希腊1-0(03-27)、胜墨西哥2-1(2025-11-18)、负美国1-2(2025-11-15) → W L W W L(近5场3胜2负;核心恩西索(Julio Enciso)伤情存疑,多家媒体预计缺席本场)"
+     },
+     "odds": {
+      "book": "DraftKings(经ESPN/CBS引用,赛日盘口);另参考: bet365 美国+100/平+240/巴拉圭+275;FanDuel 美国-105/平+240/巴拉圭+320",
+      "home": "+110 (约2.10)",
+      "draw": "+225 (约3.25)",
+      "away": "+285 (约3.85)",
+      "overunder": "2.5球:大球+145 / 小球-180(DraftKings线,小球为热门)"
+     },
+     "implied": {
+      "home": "47.6%(含水);去水归一化约45.6%",
+      "draw": "30.8%(含水);去水约29.5%",
+      "away": "26.0%(含水);去水约24.9%(三项含水合计约104.4%)"
+     },
+     "h2h": "历史交锋9次:美国5胜2平2负占优。明细:1930世界杯 美国3-0(Patenaude上演世界杯史上首个帽子戏法)、1997友谊赛0-0、1998友谊赛2-2、2003友谊赛美国2-0、2007美洲杯巴拉圭3-1、2011友谊赛巴拉圭1-0、2016美洲杯美国1-0、2018友谊赛美国1-0、2025-11-15友谊赛美国2-1(Reyna、Balogun破门)。本场为两队时隔96年再度在世界杯相遇。",
+     "sources": [
+      "https://www.espn.com/soccer/odds/_/gameId/760417",
+      "https://www.cbssports.com/soccer/news/usa-paraguay-odds-picks-prediction-betting-preview-start-time-2026-world-cup-match-friday/",
+      "https://www.espn.com/espn/betting/story/_/id/49019941/2026-world-cup-how-bet-usa-paraguay-best-picks-odds-props",
+      "https://sportsbook.fanduel.com/soccer/fifa-world-cup/usa-v-paraguel-35035290",
+      "https://www.foxsports.com/stories/soccer/2026-world-cup-usa-paraguay-odds-prediction-picks",
+      "https://ussoccerplayers.com/results-scores-usmnt-soccer",
+      "https://www.espn.com/soccer/match/_/gameId/758376/paraguay-united-states",
+      "https://www.espn.com/soccer/match/_/gameId/758974/paraguay-mexico",
+      "https://www.espn.com/soccer/match/_/gameId/401860937/paraguay-morocco",
+      "https://www.sportsmole.co.uk/football/usa/world-cup-2026/head-to-head/usa-vs-paraguay-head-to-head-record-and-past-meetings_598974.html",
+      "https://khelnow.com/football/world-football-usa-vs-paraguay-head-to-head-record"
+     ]
+    }
+   },
+   "final": {
+    "analysis_zh": "市场与硬指标同向:DraftKings去水后美国45.6%、平29.5%、巴拉圭24.9%;身价€3.8565亿对€1.5365亿约2.5倍,历史交锋9次美国5胜2平2负(2025年11月刚以2-1击败巴拉圭),Opta给美国40.1%胜率,70,240人东道主首秀是最大加成。临场无变数:21:00开球约21°C、降水0%、风约2mph,下沉式场馆几乎无风,美国3月已在SoFi实测过世界杯草皮,场地适应占先。双方伤停全无、零停赛,美国26人齐整,恩西索已完整合练并有望首发。巴拉圭近5场3胜2负(6月刚4-0大胜尼加拉瓜),赛前报道称其8场不败(含胜巴西、阿根廷、乌拉圭),但该说法与近5场明细中负摩洛哥、负美国的记录存在出入;库巴斯+博巴迪利亚双后腰防守韧性犹存,叠加小球-180为市场大热,比分难以打开,故取美国低比分小胜,平局为次高概率。",
+    "confidence": 59,
+    "factors": [
+     {
+      "name": "天气气温",
+      "home": "21°C 降水0% 风2mph",
+      "away": "同场作战无差异",
+      "edge": "even",
+      "note": "夜场温和干爽,体能几乎无负担"
+     },
+     {
+      "name": "场馆条件",
+      "home": "3月已在SoFi实测草皮",
+      "away": "档案无其适应该草皮记录",
+      "edge": "home",
+      "note": "下沉30米场内几乎无风,美国适应占先"
+     },
+     {
+      "name": "阵容身价",
+      "home": "€3.8565亿",
+      "away": "€1.5365亿",
+      "edge": "home",
+      "note": "约2.5倍,普利西奇巴洛贡各€4000万"
+     },
+     {
+      "name": "硬实力",
+      "home": "Opta胜率40.1% 交锋9次5胜",
+      "away": "历史交锋2胜2平5负",
+      "edge": "home",
+      "note": "2025年11月美国2-1胜巴拉圭,时隔96年世界杯再遇"
+     },
+     {
+      "name": "近期状态",
+      "home": "近5场2胜3负",
+      "away": "近5场3胜2负",
+      "edge": "away",
+      "note": "据赛前报道巴拉圭8场不败(含胜巴西、阿根廷、乌拉圭),但与近5场含两负的明细有出入"
+     },
+     {
+      "name": "伤病情况",
+      "home": "26人全部可用",
+      "away": "恩西索复出已合练",
+      "edge": "even",
+      "note": "双方零停赛,伤停影响近零"
+     },
+     {
+      "name": "盘口信号",
+      "home": "+110 去水45.6%",
+      "away": "+285 去水24.9%",
+      "edge": "home",
+      "note": "小球-180大热,指向低比分"
+     },
+     {
+      "name": "主场与旅途",
+      "home": "东道主 70,240人主场",
+      "away": "客队远征",
+      "edge": "home",
+      "note": "东道主世界杯首秀,70,240坐席氛围压制"
+     }
+    ],
+    "headline_zh": "东道主低比分小胜",
+    "lean_zh": "看好美国主场低比分取胜,巴拉圭凭不败韧性保有逼平机会",
+    "probs": {
+     "home": 46,
+     "draw": 30,
+     "away": 24
+    },
+    "score": "1-0",
+    "sources_used": [
+     "https://www.espn.com/soccer/odds/_/gameId/760417",
+     "https://www.transfermarkt.us/vereinigte-staaten/kader/verein/3505",
+     "https://www.transfermarkt.us/paraguay/kader/verein/3581",
+     "https://forecast.weather.gov/MapClick.php?lat=33.9534&lon=-118.3387&FcstType=digitalDWML",
+     "https://www.espn.com/soccer/story/_/id/49017942/fifa-world-cup-2026-usmnt-vs-paraguay-kickoff-how-watch-stats-team-news",
+     "https://www.sportsmole.co.uk/football/usa/world-cup-2026/preview/usa-vs-paraguay-prediction-team-news-lineups_598859.html",
+     "https://www.espn.com/soccer/story/_/id/44241086/sofi-stadium-test-pitch-nations-league-2026-world-cup",
+     "https://www.cbssports.com/soccer/news/usa-paraguay-odds-picks-prediction-betting-preview-start-time-2026-world-cup-match-friday/"
+    ]
+   },
+   "factcheck": {
+    "ok": false,
+    "corrections": [
+     "删除\"实力75 FIFA#17\"\"实力71 FIFA#41\"与\"五维综合70.8对67.0\"——调研档案中无任何FIFA排名、实力评分或五维评分数据;\"硬实力\"一项改用档案有据内容:Opta给美国40.1%胜率、历史交锋9次美国5胜2平2负、2025年11月美国2-1胜巴拉圭、时隔96年世界杯再遇。",
+     "删除近期状态中的\"(状态62)\"与\"(69)\"评分——档案无任何状态评分体系。",
+     "\"8场不败(含胜巴西、阿根廷、乌拉圭)\"虽见于档案(巴拉圭队赛前报道),但与档案战绩明细矛盾(近5场含2026-03-31负摩洛哥1-2、2025-11-15负美国1-2),故改为\"据赛前报道\"并明确标注与明细存在出入。",
+     "删除\"环境分95\"对\"环境分69\"——档案无环境评分数据;保留有据的70,240坐席与东道主首秀。",
+     "巴拉圭\"首次接触新混合草\"在档案中无依据(档案仅载明美国3月在SoFi测试过世界杯草皮,未提及巴拉圭),改为\"档案无其适应该草皮记录\"。",
+     "按档案原文措辞微调:\"场内无风\"改为\"场内几乎无风\"(档案:下沉30米+顶棚覆盖=场内几乎无风);\"体能零负担\"改为\"体能几乎无负担\"(档案:对球员体能几乎无负担)。",
+     "analysis_zh同步删除\"五维70.8对67.0\"与\"环境分95对69\"两处无据表述,补入有档案依据的历史交锋战绩与Opta胜率;天气、赔率、身价、伤停、容量等其余数字均与档案核对一致,予以保留。"
+    ]
+   }
+  }
+ ]
+}

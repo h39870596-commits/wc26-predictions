@@ -1,0 +1,259 @@
+{
+ "teams": [
+  {
+   "name_en": "Austria",
+   "name_zh": "奥地利",
+   "manager": "Ralf Rangnick",
+   "form": "Topped their UEFA qualifying group with six wins in eight to end a 28-year World Cup absence, playing Rangnick's aggressive pressing game.",
+   "key_players": "Marcel Sabitzer, David Alaba, Marko Arnautovic (8 goals in qualifying), Christoph Baumgartner",
+   "injuries": "",
+   "storyline": "Golden generation finally reaches a World Cup after 28 years"
+  },
+  {
+   "name_en": "Scotland",
+   "name_zh": "苏格兰",
+   "manager": "Steve Clarke",
+   "form": "Qualified directly with a dramatic 4-2 win over Denmark at Hampden (McTominay bicycle kick, McLean halfway-line lob) for their first finals since 1998.",
+   "key_players": "Scott McTominay (2024-25 Serie A Footballer of the Year), John McGinn, Andy Robertson",
+   "injuries": "Billy Gilmour out (knee injury in pre-tournament friendly vs Curacao)",
+   "storyline": "First World Cup since 1998 after a Hampden miracle"
+  },
+  {
+   "name_en": "Turkey",
+   "name_zh": "土耳其",
+   "manager": "Vincenzo Montella",
+   "form": "Won play-off Path C with 1-0 wins over Romania and Kosovo; a talented young attacking core makes them a dark horse at their first finals since 2002.",
+   "key_players": "Arda Guler (fully fit), Kenan Yildiz, Hakan Calhanoglu, Ferdi Kadioglu",
+   "injuries": "",
+   "storyline": "Back after 24 years with the Guler-Yildiz golden youth"
+  },
+  {
+   "name_en": "Czech Republic",
+   "name_zh": "捷克",
+   "manager": "Miroslav Koubek",
+   "form": "Survived two penalty shoot-outs (vs Ireland and Denmark) in the March play-offs to reach their first World Cup since 2006; gritty rather than glamorous.",
+   "key_players": "Tomas Soucek (captain), Patrik Schick",
+   "injuries": "",
+   "storyline": "Koubek, 74, is the oldest coach in World Cup history"
+  },
+  {
+   "name_en": "Bosnia and Herzegovina",
+   "name_zh": "波黑",
+   "manager": "Sergej Barbarez",
+   "form": "Won play-off Path A by knocking out Italy in the final (Bajraktarevic converted the decisive penalty) to reach their second-ever World Cup, first since 2014.",
+   "key_players": "Edin Dzeko (40-year-old captain, 73 international goals), Esmir Bajraktarevic",
+   "injuries": "",
+   "storyline": "Dzeko's last dance after eliminating Italy"
+  },
+  {
+   "name_en": "Sweden",
+   "name_zh": "瑞典",
+   "manager": "Graham Potter",
+   "form": "Awful in the group stage but rescued by Nations League play-off route, where Potter's side beat Ukraine away and Poland 3-2 with Gyokeres scoring four goals in two games.",
+   "key_players": "Viktor Gyokeres (Arsenal, red-hot), Alexander Isak, Lucas Bergvall, Anthony Elanga",
+   "injuries": "Isak short of full fitness entering the tournament",
+   "storyline": "Potter's great escape via the play-offs"
+  },
+  {
+   "name_en": "Iran",
+   "name_zh": "伊朗",
+   "manager": "Amir Ghalenoei",
+   "form": "Qualified early and comfortably from AFC third round for a fourth straight World Cup, but still seeking a first-ever knockout-stage appearance.",
+   "key_players": "Mehdi Taremi (captain), Sardar Azmoun, Mohammad Mohebi",
+   "injuries": "",
+   "storyline": "Fourth straight finals amid political tensions playing in the USA"
+  },
+  {
+   "name_en": "Australia",
+   "name_zh": "澳大利亚",
+   "manager": "Tony Popovic",
+   "form": "Qualified directly under Popovic for a sixth consecutive World Cup; well-organized and hard-working but light on top-end star power.",
+   "key_players": "Jordan Bos (Feyenoord), Riley McGree, Jackson Irvine, Mat Ryan",
+   "injuries": "",
+   "storyline": "Sixth straight World Cup, post-golden-generation grit"
+  },
+  {
+   "name_en": "Uzbekistan",
+   "name_zh": "乌兹别克斯坦",
+   "manager": "Fabio Cannavaro",
+   "form": "First Central Asian nation ever to qualify; results mixed since Cannavaro took over in October 2025 after qualification was sealed.",
+   "key_players": "Abdukodir Khusanov (Manchester City), Eldor Shomurodov, Abbosbek Fayzullaev",
+   "injuries": "",
+   "storyline": "Historic World Cup debut for Central Asia"
+  },
+  {
+   "name_en": "Jordan",
+   "name_zh": "约旦",
+   "manager": "Jamal Sellami",
+   "form": "Shock direct qualifiers from the AFC third round, building on their 2023 Asian Cup final run; compact, counter-attacking debutants.",
+   "key_players": "Musa Al-Taamari (Rennes winger, 23 international goals), Yazan Al-Naimat",
+   "injuries": "",
+   "storyline": "Debutants riding Asian Cup runners-up momentum"
+  },
+  {
+   "name_en": "Saudi Arabia",
+   "name_zh": "沙特阿拉伯",
+   "manager": "Georgios Donis",
+   "form": "In turmoil: sacked Herve Renard in April 2026 after heavy friendly defeats (0-4 Egypt, 1-2 Serbia); Donis leads an almost entirely domestic-league squad in a tough group with Spain and Uruguay.",
+   "key_players": "Salem Al-Dawsari (captain), Saud Abdulhamid",
+   "injuries": "",
+   "storyline": "Coaching chaos weeks before kickoff"
+  },
+  {
+   "name_en": "Qatar",
+   "name_zh": "卡塔尔",
+   "manager": "Julen Lopetegui",
+   "form": "Edged through the AFC fourth round to qualify on merit for the first time; two-time Asian champions but unproven at this level away from home.",
+   "key_players": "Akram Afif, Almoez Ali (all-time top scorer, 60 goals)",
+   "injuries": "",
+   "storyline": "First World Cup reached on merit after hosting in 2022"
+  },
+  {
+   "name_en": "Iraq",
+   "name_zh": "伊拉克",
+   "manager": "Graham Arnold",
+   "form": "Won the inter-confederation play-off in March, beating Bolivia with Ali Al-Hamadi's opener, to reach a first World Cup since 1986; drawn into a brutal group with France, Senegal and Norway.",
+   "key_players": "Ali Al-Hamadi, Aymen Hussein",
+   "injuries": "",
+   "storyline": "First finals since 1986 — a footballing fairy tale"
+  },
+  {
+   "name_en": "Egypt",
+   "name_zh": "埃及",
+   "manager": "Hossam Hassan",
+   "form": "Dominant unbeaten CAF qualifying campaign and AFCON 2025 semi-finalists (knocked out holders Ivory Coast en route); arguably Africa's most in-form side alongside Morocco.",
+   "key_players": "Mohamed Salah (captain, recovered from hamstring tear and fit), Omar Marmoush",
+   "injuries": "Salah fully recovered; no other major concerns",
+   "storyline": "Salah's last realistic shot at World Cup glory"
+  },
+  {
+   "name_en": "Algeria",
+   "name_zh": "阿尔及利亚",
+   "manager": "Vladimir Petkovic",
+   "form": "Won their CAF qualifying group comfortably to end a 12-year World Cup absence, with veteran Mahrez in inspired creative form.",
+   "key_players": "Riyad Mahrez (35), Amine Gouiri, Mohamed Amoura",
+   "injuries": "",
+   "storyline": "Mahrez's farewell tour, back after 12 years"
+  },
+  {
+   "name_en": "Tunisia",
+   "name_zh": "突尼斯",
+   "manager": "Sabri Lamouchi",
+   "form": "Qualified early with an iron defense (unbeaten in CAF qualifying), but a round-of-16 AFCON exit cost Trabelsi his job — Lamouchi took over in January 2026.",
+   "key_players": "Hannibal Mejbri (wears the No. 10), Aissa Laidouni",
+   "injuries": "",
+   "storyline": "New-coach bounce; chasing a first-ever knockout berth"
+  },
+  {
+   "name_en": "Ivory Coast",
+   "name_zh": "科特迪瓦",
+   "manager": "Emerse Fae",
+   "form": "Strong, miserly qualifying campaign won their CAF group, though their AFCON title defense ended in a 2-3 quarter-final loss to Egypt.",
+   "key_players": "Franck Kessie (captain), Amad Diallo, Simon Adingra, Sebastien Haller",
+   "injuries": "",
+   "storyline": "2024 African champions out to prove it on the world stage"
+  },
+  {
+   "name_en": "Ghana",
+   "name_zh": "加纳",
+   "manager": "Otto Addo",
+   "form": "Topped their CAF qualifying group to reach the World Cup, but embarrassingly missed AFCON 2025 entirely (winless, bottom of qualifying group) — wildly inconsistent.",
+   "key_players": "Antoine Semenyo (in career-best form), Jordan Ayew, Thomas Partey",
+   "injuries": "Mohammed Kudus and Mohammed Salisu both ruled out (long-term injuries)",
+   "storyline": "World Cup redemption after AFCON humiliation, without Kudus"
+  },
+  {
+   "name_en": "Cape Verde",
+   "name_zh": "佛得角",
+   "manager": "Bubista (Pedro Leitao Brito)",
+   "form": "Stunned Cameroon to win CAF Group D outright and qualify for a first-ever World Cup — one of the smallest nations ever to do so.",
+   "key_players": "Dailon Livramento (scored the qualification-clinching goals), Ryan Mendes",
+   "injuries": "",
+   "storyline": "Tiny island debutants — the tournament's great underdog story"
+  },
+  {
+   "name_en": "South Africa",
+   "name_zh": "南非",
+   "manager": "Hugo Broos",
+   "form": "Won their CAF qualifying group despite a three-point deduction scare; a settled, youthful Bafana side at their first finals on merit since 2002.",
+   "key_players": "Lyle Foster (Burnley), Ronwen Williams (captain, GK), Teboho Mokoena",
+   "injuries": "",
+   "storyline": "First qualification on merit since 2002"
+  },
+  {
+   "name_en": "DR Congo",
+   "name_zh": "刚果民主共和国",
+   "manager": "Sebastien Desabre",
+   "form": "Won the CAF play-off (beating Nigeria on penalties) then the inter-confederation Pathway 1 in March to reach a first World Cup since 1974 as Zaire; organized and physically strong.",
+   "key_players": "Yoane Wissa, Cedric Bakambu, Aaron Wan-Bissaka, Chancel Mbemba",
+   "injuries": "",
+   "storyline": "First finals since Zaire 1974; faces Portugal in Group K"
+  },
+  {
+   "name_en": "Panama",
+   "name_zh": "巴拿马",
+   "manager": "Thomas Christiansen",
+   "form": "Won their CONCACAF final-round group to qualify directly for a second-ever World Cup; well-drilled and tactically mature under Christiansen.",
+   "key_players": "Adalberto Carrasquilla (2023 Gold Cup Golden Ball), Cecilio Waterman",
+   "injuries": "",
+   "storyline": "Golden era seeking a first-ever World Cup win"
+  },
+  {
+   "name_en": "Curacao",
+   "name_zh": "库拉索",
+   "manager": "Dick Advocaat",
+   "form": "Went unbeaten through CONCACAF qualifying to become the smallest nation (about 150,000 people) ever to reach a World Cup; faces Germany in Group E.",
+   "key_players": "Eloy Room (captain, GK), Leandro Bacuna, Juninho Bacuna, Tahith Chong",
+   "injuries": "",
+   "storyline": "Smallest nation ever at a World Cup, with 78-year-old Advocaat"
+  },
+  {
+   "name_en": "Haiti",
+   "name_zh": "海地",
+   "manager": "Sebastien Migne",
+   "form": "Won their CONCACAF group despite playing all 'home' qualifiers abroad due to the security crisis at home — first World Cup since 1974.",
+   "key_players": "Johny Placide (captain, GK), Duckens Nazon, Frantzdy Pierrot, Danley Jean Jacques",
+   "injuries": "",
+   "storyline": "Qualified amid national crisis — a team of hope"
+  },
+  {
+   "name_en": "New Zealand",
+   "name_zh": "新西兰",
+   "manager": "Darren Bazeley",
+   "form": "Cruised unbeaten through OFC qualifying (beat New Caledonia 3-0 in the final) for a first World Cup since 2010, still chasing a first-ever finals win... beyond their 2010 unbeaten group exit.",
+   "key_players": "Chris Wood (Nottingham Forest, all-time NZ top scorer), Matt Garbett, Marko Stamenic",
+   "injuries": "",
+   "storyline": "Wood-led All Whites back after 16 years"
+  },
+  {
+   "name_en": "Paraguay",
+   "name_zh": "巴拉圭",
+   "manager": "Gustavo Alfaro",
+   "form": "Qualified directly from CONMEBOL on the back of Alfaro's organized, hard-to-beat defensive structure — first World Cup since 2010.",
+   "key_players": "Miguel Almiron, Julio Enciso, Gustavo Gomez (captain)",
+   "injuries": "",
+   "storyline": "Back after 16 years, built on defensive steel"
+  }
+ ],
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_qualification_%E2%80%93_UEFA_second_round",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_qualification_(inter-confederation_play-offs)",
+  "https://www.nbcsports.com/soccer/news/2026-world-cup-inter-confederation-playoffs-how-do-they-work-when-are-they-and-whos-involved",
+  "https://www.foxsports.com/stories/soccer/world-cup-top-players-48-countries-teams",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads",
+  "https://en.wikipedia.org/wiki/2025_Africa_Cup_of_Nations",
+  "https://worldcupwiki.com/world-cup-2026-injury-list/",
+  "https://www.espn.com/soccer/story/_/id/48572979/2026-fifa-world-cup-injuries-tracker-which-stars-miss-latest-info",
+  "https://worldsoccertalk.com/world-cup/full-list-of-2026-world-cup-coaches-and-highest-paid-managers/",
+  "https://www.africanews.com/2026/06/02/world-cup-2026-who-coaches-africas-10-qualified-teams/",
+  "https://www.aljazeera.com/sports/2026/4/17/saudi-arabia-sack-coach-herve-renard-ahead-of-fifa-world-cup-2026",
+  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/georgios-donis-saudi-arabia-squad",
+  "https://www.aljazeera.com/sports/2025/11/19/scotland-beats-denmark-4-2-to-book-first-world-cup-spot-since-1998",
+  "https://www.nbcsports.com/soccer/news/austria-qualify-for-first-world-cup-in-28-years-as-alaba-arnautovic-sabitzer-finally-reach-tournament",
+  "https://www.vavel.com/en-us/soccer/2026/03/26/1255371-turkey-vs-romania-live-score-world-cup-qualifiers.html",
+  "https://sports.yahoo.com/articles/did-ghana-qualify-afcon-2025-111828581.html",
+  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/sweden-squad-announcement-world-cup-graham-potter",
+  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/iraq-preliminary-squad-announcement-graham-arnold",
+  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/czechia-appoint-miroslav-koubek"
+ ]
+}

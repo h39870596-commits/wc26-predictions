@@ -1,0 +1,341 @@
+{
+ "matches": [
+  {
+   "match_no": 1,
+   "date": "2026-06-11",
+   "group": "A",
+   "home": "Mexico",
+   "away": "South Africa",
+   "stadium": "Estadio Azteca",
+   "city": "Mexico City"
+  },
+  {
+   "match_no": 2,
+   "date": "2026-06-11",
+   "group": "A",
+   "home": "South Korea",
+   "away": "Czech Republic",
+   "stadium": "Estadio Akron",
+   "city": "Guadalajara"
+  },
+  {
+   "match_no": 25,
+   "date": "2026-06-18",
+   "group": "A",
+   "home": "Czech Republic",
+   "away": "South Africa",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 28,
+   "date": "2026-06-18",
+   "group": "A",
+   "home": "Mexico",
+   "away": "South Korea",
+   "stadium": "Estadio Akron",
+   "city": "Guadalajara"
+  },
+  {
+   "match_no": 53,
+   "date": "2026-06-24",
+   "group": "A",
+   "home": "Czech Republic",
+   "away": "Mexico",
+   "stadium": "Estadio Azteca",
+   "city": "Mexico City"
+  },
+  {
+   "match_no": 54,
+   "date": "2026-06-24",
+   "group": "A",
+   "home": "South Africa",
+   "away": "South Korea",
+   "stadium": "Estadio BBVA",
+   "city": "Monterrey"
+  },
+  {
+   "match_no": 3,
+   "date": "2026-06-12",
+   "group": "B",
+   "home": "Canada",
+   "away": "Bosnia and Herzegovina",
+   "stadium": "BMO Field",
+   "city": "Toronto"
+  },
+  {
+   "match_no": 8,
+   "date": "2026-06-13",
+   "group": "B",
+   "home": "Qatar",
+   "away": "Switzerland",
+   "stadium": "Levi's Stadium",
+   "city": "Santa Clara"
+  },
+  {
+   "match_no": 26,
+   "date": "2026-06-18",
+   "group": "B",
+   "home": "Switzerland",
+   "away": "Bosnia and Herzegovina",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood"
+  },
+  {
+   "match_no": 27,
+   "date": "2026-06-18",
+   "group": "B",
+   "home": "Canada",
+   "away": "Qatar",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 51,
+   "date": "2026-06-24",
+   "group": "B",
+   "home": "Switzerland",
+   "away": "Canada",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 52,
+   "date": "2026-06-24",
+   "group": "B",
+   "home": "Bosnia and Herzegovina",
+   "away": "Qatar",
+   "stadium": "Lumen Field",
+   "city": "Seattle"
+  },
+  {
+   "match_no": 5,
+   "date": "2026-06-13",
+   "group": "C",
+   "home": "Haiti",
+   "away": "Scotland",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough"
+  },
+  {
+   "match_no": 7,
+   "date": "2026-06-13",
+   "group": "C",
+   "home": "Brazil",
+   "away": "Morocco",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford"
+  },
+  {
+   "match_no": 29,
+   "date": "2026-06-19",
+   "group": "C",
+   "home": "Brazil",
+   "away": "Haiti",
+   "stadium": "Lincoln Financial Field",
+   "city": "Philadelphia"
+  },
+  {
+   "match_no": 30,
+   "date": "2026-06-19",
+   "group": "C",
+   "home": "Scotland",
+   "away": "Morocco",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough"
+  },
+  {
+   "match_no": 49,
+   "date": "2026-06-24",
+   "group": "C",
+   "home": "Scotland",
+   "away": "Brazil",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens"
+  },
+  {
+   "match_no": 50,
+   "date": "2026-06-24",
+   "group": "C",
+   "home": "Morocco",
+   "away": "Haiti",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 4,
+   "date": "2026-06-12",
+   "group": "D",
+   "home": "United States",
+   "away": "Paraguay",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood"
+  },
+  {
+   "match_no": 6,
+   "date": "2026-06-13",
+   "group": "D",
+   "home": "Australia",
+   "away": "Turkey",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 31,
+   "date": "2026-06-19",
+   "group": "D",
+   "home": "Turkey",
+   "away": "Paraguay",
+   "stadium": "Levi's Stadium",
+   "city": "Santa Clara"
+  },
+  {
+   "match_no": 32,
+   "date": "2026-06-19",
+   "group": "D",
+   "home": "United States",
+   "away": "Australia",
+   "stadium": "Lumen Field",
+   "city": "Seattle"
+  },
+  {
+   "match_no": 59,
+   "date": "2026-06-25",
+   "group": "D",
+   "home": "Turkey",
+   "away": "United States",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood"
+  },
+  {
+   "match_no": 60,
+   "date": "2026-06-25",
+   "group": "D",
+   "home": "Paraguay",
+   "away": "Australia",
+   "stadium": "Levi's Stadium",
+   "city": "Santa Clara"
+  },
+  {
+   "match_no": 9,
+   "date": "2026-06-14",
+   "group": "E",
+   "home": "Ivory Coast",
+   "away": "Ecuador",
+   "stadium": "Lincoln Financial Field",
+   "city": "Philadelphia"
+  },
+  {
+   "match_no": 10,
+   "date": "2026-06-14",
+   "group": "E",
+   "home": "Germany",
+   "away": "Curaçao",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 33,
+   "date": "2026-06-20",
+   "group": "E",
+   "home": "Germany",
+   "away": "Ivory Coast",
+   "stadium": "BMO Field",
+   "city": "Toronto"
+  },
+  {
+   "match_no": 34,
+   "date": "2026-06-20",
+   "group": "E",
+   "home": "Ecuador",
+   "away": "Curaçao",
+   "stadium": "Arrowhead Stadium",
+   "city": "Kansas City"
+  },
+  {
+   "match_no": 55,
+   "date": "2026-06-25",
+   "group": "E",
+   "home": "Curaçao",
+   "away": "Ivory Coast",
+   "stadium": "Lincoln Financial Field",
+   "city": "Philadelphia"
+  },
+  {
+   "match_no": 56,
+   "date": "2026-06-25",
+   "group": "E",
+   "home": "Ecuador",
+   "away": "Germany",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford"
+  },
+  {
+   "match_no": 11,
+   "date": "2026-06-14",
+   "group": "F",
+   "home": "Netherlands",
+   "away": "Japan",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington"
+  },
+  {
+   "match_no": 12,
+   "date": "2026-06-14",
+   "group": "F",
+   "home": "Sweden",
+   "away": "Tunisia",
+   "stadium": "Estadio BBVA",
+   "city": "Monterrey"
+  },
+  {
+   "match_no": 35,
+   "date": "2026-06-20",
+   "group": "F",
+   "home": "Netherlands",
+   "away": "Sweden",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 36,
+   "date": "2026-06-20",
+   "group": "F",
+   "home": "Tunisia",
+   "away": "Japan",
+   "stadium": "Estadio BBVA",
+   "city": "Monterrey"
+  },
+  {
+   "match_no": 57,
+   "date": "2026-06-25",
+   "group": "F",
+   "home": "Japan",
+   "away": "Sweden",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington"
+  },
+  {
+   "match_no": 58,
+   "date": "2026-06-25",
+   "group": "F",
+   "home": "Tunisia",
+   "away": "Netherlands",
+   "stadium": "Arrowhead Stadium",
+   "city": "Kansas City"
+  }
+ ],
+ "notes": "All 36 pairings/dates/venues cross-checked: Wikipedia group pages (A-F) vs NBC Sports full schedule, with Yahoo/CBS corroborating Groups A-D; full agreement. Match numbers are from Wikipedia (official FIFA numbering); not independently shown by NBC, so treat numbers as single-source (low risk). Dates are local dates as listed on Wikipedia. No placeholders: all play-off slots resolved (e.g. Bosnia and Herzegovina, Sweden, Turkey, Curaçao, Haiti). Cities use the precise venue municipality (Wikipedia style): Inglewood=Los Angeles area, East Rutherford=New York/New Jersey, Foxborough=Boston, Santa Clara=SF Bay Area, Arlington=Dallas, Miami Gardens=Miami; Estadio Akron is technically in Zapopan (Guadalajara) and Estadio BBVA in Guadalupe (Monterrey). Played so far: Match 1 Mexico 2-0 South Africa; Match 2 South Korea 2-1 Czech Republic (score per Wikipedia, second-source unverified).",
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_A",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_B",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_C",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_D",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_E",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_F",
+  "https://www.nbcsports.com/soccer/news/2026-world-cup-schedule-kick-off-times-stadiums-dates-groups-how-to-watch-live-bracket",
+  "https://sports.yahoo.com/soccer/article/2026-world-cup-schedule-teams-group-stage-match-dates-fixtures-how-to-watch-050724300.html",
+  "https://www.cbssports.com/soccer/news/world-cup-2026-schedule-times-dates/"
+ ]
+}

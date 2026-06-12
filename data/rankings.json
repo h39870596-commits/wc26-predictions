@@ -1,0 +1,352 @@
+{
+ "teams": [
+  {
+   "name_en": "Argentina",
+   "name_zh": "阿根廷",
+   "fifa_rank": 1,
+   "elo": 2115,
+   "title_odds": "+900"
+  },
+  {
+   "name_en": "Spain",
+   "name_zh": "西班牙",
+   "fifa_rank": 2,
+   "elo": 2157,
+   "title_odds": "+450"
+  },
+  {
+   "name_en": "France",
+   "name_zh": "法国",
+   "fifa_rank": 3,
+   "elo": 2063,
+   "title_odds": "+500"
+  },
+  {
+   "name_en": "England",
+   "name_zh": "英格兰",
+   "fifa_rank": 4,
+   "elo": 2024,
+   "title_odds": "+700"
+  },
+  {
+   "name_en": "Portugal",
+   "name_zh": "葡萄牙",
+   "fifa_rank": 5,
+   "elo": 1989,
+   "title_odds": "+900"
+  },
+  {
+   "name_en": "Brazil",
+   "name_zh": "巴西",
+   "fifa_rank": 6,
+   "elo": 1991,
+   "title_odds": "+800"
+  },
+  {
+   "name_en": "Morocco",
+   "name_zh": "摩洛哥",
+   "fifa_rank": 7,
+   "elo": 1827,
+   "title_odds": "40/1"
+  },
+  {
+   "name_en": "Netherlands",
+   "name_zh": "荷兰",
+   "fifa_rank": 8,
+   "elo": 1948,
+   "title_odds": "20/1"
+  },
+  {
+   "name_en": "Belgium",
+   "name_zh": "比利时",
+   "fifa_rank": 9,
+   "elo": 1894,
+   "title_odds": "33/1"
+  },
+  {
+   "name_en": "Germany",
+   "name_zh": "德国",
+   "fifa_rank": 10,
+   "elo": 1932,
+   "title_odds": "14/1"
+  },
+  {
+   "name_en": "Croatia",
+   "name_zh": "克罗地亚",
+   "fifa_rank": 11,
+   "elo": 1912,
+   "title_odds": "80/1"
+  },
+  {
+   "name_en": "Colombia",
+   "name_zh": "哥伦比亚",
+   "fifa_rank": 13,
+   "elo": 1982,
+   "title_odds": "40/1"
+  },
+  {
+   "name_en": "Mexico",
+   "name_zh": "墨西哥",
+   "fifa_rank": 14,
+   "elo": 1881,
+   "title_odds": "66/1"
+  },
+  {
+   "name_en": "Senegal",
+   "name_zh": "塞内加尔",
+   "fifa_rank": 15,
+   "elo": 1860,
+   "title_odds": "66/1"
+  },
+  {
+   "name_en": "Uruguay",
+   "name_zh": "乌拉圭",
+   "fifa_rank": 16,
+   "elo": 1892,
+   "title_odds": "66/1"
+  },
+  {
+   "name_en": "United States",
+   "name_zh": "美国",
+   "fifa_rank": 17,
+   "elo": 1726,
+   "title_odds": "50/1"
+  },
+  {
+   "name_en": "Japan",
+   "name_zh": "日本",
+   "fifa_rank": 18,
+   "elo": 1906,
+   "title_odds": "50/1"
+  },
+  {
+   "name_en": "Switzerland",
+   "name_zh": "瑞士",
+   "fifa_rank": 19,
+   "elo": 1891,
+   "title_odds": "66/1"
+  },
+  {
+   "name_en": "Iran",
+   "name_zh": "伊朗",
+   "fifa_rank": 20,
+   "elo": 1772,
+   "title_odds": "500/1"
+  },
+  {
+   "name_en": "Turkey",
+   "name_zh": "土耳其",
+   "fifa_rank": 22,
+   "elo": 1911,
+   "title_odds": "66/1"
+  },
+  {
+   "name_en": "Ecuador",
+   "name_zh": "厄瓜多尔",
+   "fifa_rank": 23,
+   "elo": 1938,
+   "title_odds": "80/1"
+  },
+  {
+   "name_en": "Austria",
+   "name_zh": "奥地利",
+   "fifa_rank": 24,
+   "elo": 1830,
+   "title_odds": "150/1"
+  },
+  {
+   "name_en": "South Korea",
+   "name_zh": "韩国",
+   "fifa_rank": 25,
+   "elo": 1758,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Australia",
+   "name_zh": "澳大利亚",
+   "fifa_rank": 27,
+   "elo": 1777,
+   "title_odds": "500/1"
+  },
+  {
+   "name_en": "Algeria",
+   "name_zh": "阿尔及利亚",
+   "fifa_rank": 28,
+   "elo": 1772,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Egypt",
+   "name_zh": "埃及",
+   "fifa_rank": 29,
+   "elo": 1696,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Canada",
+   "name_zh": "加拿大",
+   "fifa_rank": 30,
+   "elo": 1788,
+   "title_odds": "150/1"
+  },
+  {
+   "name_en": "Norway",
+   "name_zh": "挪威",
+   "fifa_rank": 31,
+   "elo": 1914,
+   "title_odds": "33/1"
+  },
+  {
+   "name_en": "Ivory Coast",
+   "name_zh": "科特迪瓦",
+   "fifa_rank": 33,
+   "elo": 1695,
+   "title_odds": "200/1"
+  },
+  {
+   "name_en": "Panama",
+   "name_zh": "巴拿马",
+   "fifa_rank": 34,
+   "elo": 1730,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Sweden",
+   "name_zh": "瑞典",
+   "fifa_rank": 38,
+   "elo": 1712,
+   "title_odds": "100/1"
+  },
+  {
+   "name_en": "Czech Republic",
+   "name_zh": "捷克",
+   "fifa_rank": 40,
+   "elo": 1740,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Paraguay",
+   "name_zh": "巴拉圭",
+   "fifa_rank": 41,
+   "elo": 1834,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Scotland",
+   "name_zh": "苏格兰",
+   "fifa_rank": 42,
+   "elo": 1782,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Tunisia",
+   "name_zh": "突尼斯",
+   "fifa_rank": 45,
+   "elo": 1628,
+   "title_odds": "500/1"
+  },
+  {
+   "name_en": "DR Congo",
+   "name_zh": "刚果(金)",
+   "fifa_rank": 46,
+   "elo": 1652,
+   "title_odds": "750/1"
+  },
+  {
+   "name_en": "Uzbekistan",
+   "name_zh": "乌兹别克斯坦",
+   "fifa_rank": 50,
+   "elo": 1714,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Qatar",
+   "name_zh": "卡塔尔",
+   "fifa_rank": 56,
+   "elo": 1421,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Iraq",
+   "name_zh": "伊拉克",
+   "fifa_rank": 57,
+   "elo": 1607,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "South Africa",
+   "name_zh": "南非",
+   "fifa_rank": 60,
+   "elo": 1511,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Saudi Arabia",
+   "name_zh": "沙特阿拉伯",
+   "fifa_rank": 61,
+   "elo": 1576,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Jordan",
+   "name_zh": "约旦",
+   "fifa_rank": 63,
+   "elo": 1680,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Bosnia and Herzegovina",
+   "name_zh": "波黑",
+   "fifa_rank": 64,
+   "elo": 1595,
+   "title_odds": "250/1"
+  },
+  {
+   "name_en": "Cape Verde",
+   "name_zh": "佛得角",
+   "fifa_rank": 67,
+   "elo": 1578,
+   "title_odds": "1000/1"
+  },
+  {
+   "name_en": "Ghana",
+   "name_zh": "加纳",
+   "fifa_rank": 73,
+   "elo": 1510,
+   "title_odds": "500/1"
+  },
+  {
+   "name_en": "Curacao",
+   "name_zh": "库拉索",
+   "fifa_rank": 82,
+   "elo": 1434,
+   "title_odds": "2500/1"
+  },
+  {
+   "name_en": "Haiti",
+   "name_zh": "海地",
+   "fifa_rank": 83,
+   "elo": 1548,
+   "title_odds": "2500/1"
+  },
+  {
+   "name_en": "New Zealand",
+   "name_zh": "新西兰",
+   "fifa_rank": 85,
+   "elo": 1562,
+   "title_odds": "1000/1"
+  }
+ ],
+ "ranking_date": "2026-06-10",
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
+  "https://en.wikipedia.org/wiki/FIFA_Men%27s_World_Ranking",
+  "https://inside.fifa.com/news/france-1st-fifa-coca-cola-world-ranking-april-2026",
+  "https://www.goal.com/en/lists/argentina-reclaim-top-spot-in-fifa-men-s-world-rankings-as-2026-world-cup-kicks-off/bltadd82cb2695e4620",
+  "https://www.whereig.com/football/fifa-world-rankings.html",
+  "https://www.eloratings.net/",
+  "https://sports.yahoo.com/soccer/betting/article/2026-world-cup-betting-odds-for-all-48-teams-to-win-the-title-145427136.html",
+  "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds"
+ ],
+ "notes": "FIFA ranks = final pre-tournament release, published 10 June 2026 per FIFA (some outlets date it 11 June); Argentina reclaimed #1 from France (April #1). All 48 ranks cross-checked: Wikipedia 2026 WC article (\"final positions before the tournament\", cite accessed 2026-06-10) vs whereig full list vs Wikipedia/Goal top 20 - all agree. Elo = eloratings.net World.tsv fetched 2026-06-12 (includes opening-day results). Odds = BetMGM outrights 2026-06-11 via Yahoo (all 48 teams), consistent with FOX/ESPN (Spain favourite +450, FanDuel +475). DR Congo and Iraq qualified via March 2026 intercontinental playoffs; Italy and Denmark did not qualify. Note: ranks 12 (Italy) and 21 (Denmark) etc. absent as non-qualifiers."
+}

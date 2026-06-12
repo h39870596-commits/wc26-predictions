@@ -1,0 +1,270 @@
+{
+ "matches": [
+  {
+   "match_no": 73,
+   "date": "2026-06-28",
+   "stage": "R32",
+   "pairing": "Runner-up Group A vs Runner-up Group B",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood (Los Angeles)"
+  },
+  {
+   "match_no": 74,
+   "date": "2026-06-29",
+   "stage": "R32",
+   "pairing": "Winner Group E vs 3rd Group A/B/C/D/F",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough (Boston)"
+  },
+  {
+   "match_no": 75,
+   "date": "2026-06-29",
+   "stage": "R32",
+   "pairing": "Winner Group F vs Runner-up Group C",
+   "stadium": "Estadio BBVA",
+   "city": "Guadalupe (Monterrey)"
+  },
+  {
+   "match_no": 76,
+   "date": "2026-06-29",
+   "stage": "R32",
+   "pairing": "Winner Group C vs Runner-up Group F",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 77,
+   "date": "2026-06-30",
+   "stage": "R32",
+   "pairing": "Winner Group I vs 3rd Group C/D/F/G/H",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford (New York/New Jersey)"
+  },
+  {
+   "match_no": 78,
+   "date": "2026-06-30",
+   "stage": "R32",
+   "pairing": "Runner-up Group E vs Runner-up Group I",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington (Dallas)"
+  },
+  {
+   "match_no": 79,
+   "date": "2026-06-30",
+   "stage": "R32",
+   "pairing": "Winner Group A vs 3rd Group C/E/F/H/I",
+   "stadium": "Estadio Azteca",
+   "city": "Mexico City"
+  },
+  {
+   "match_no": 80,
+   "date": "2026-07-01",
+   "stage": "R32",
+   "pairing": "Winner Group L vs 3rd Group E/H/I/J/K",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 81,
+   "date": "2026-07-01",
+   "stage": "R32",
+   "pairing": "Winner Group D vs 3rd Group B/E/F/I/J",
+   "stadium": "Levi's Stadium",
+   "city": "Santa Clara (San Francisco Bay Area)"
+  },
+  {
+   "match_no": 82,
+   "date": "2026-07-01",
+   "stage": "R32",
+   "pairing": "Winner Group G vs 3rd Group A/E/H/I/J",
+   "stadium": "Lumen Field",
+   "city": "Seattle"
+  },
+  {
+   "match_no": 83,
+   "date": "2026-07-02",
+   "stage": "R32",
+   "pairing": "Runner-up Group K vs Runner-up Group L",
+   "stadium": "BMO Field",
+   "city": "Toronto"
+  },
+  {
+   "match_no": 84,
+   "date": "2026-07-02",
+   "stage": "R32",
+   "pairing": "Winner Group H vs Runner-up Group J",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood (Los Angeles)"
+  },
+  {
+   "match_no": 85,
+   "date": "2026-07-02",
+   "stage": "R32",
+   "pairing": "Winner Group B vs 3rd Group E/F/G/I/J",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 86,
+   "date": "2026-07-03",
+   "stage": "R32",
+   "pairing": "Winner Group J vs Runner-up Group H",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens (Miami)"
+  },
+  {
+   "match_no": 87,
+   "date": "2026-07-03",
+   "stage": "R32",
+   "pairing": "Winner Group K vs 3rd Group D/E/I/J/L",
+   "stadium": "Arrowhead Stadium",
+   "city": "Kansas City"
+  },
+  {
+   "match_no": 88,
+   "date": "2026-07-03",
+   "stage": "R32",
+   "pairing": "Runner-up Group D vs Runner-up Group G",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington (Dallas)"
+  },
+  {
+   "match_no": 89,
+   "date": "2026-07-04",
+   "stage": "R16",
+   "pairing": "Winner Match 74 vs Winner Match 77",
+   "stadium": "Lincoln Financial Field",
+   "city": "Philadelphia"
+  },
+  {
+   "match_no": 90,
+   "date": "2026-07-04",
+   "stage": "R16",
+   "pairing": "Winner Match 73 vs Winner Match 75",
+   "stadium": "NRG Stadium",
+   "city": "Houston"
+  },
+  {
+   "match_no": 91,
+   "date": "2026-07-05",
+   "stage": "R16",
+   "pairing": "Winner Match 76 vs Winner Match 78",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford (New York/New Jersey)"
+  },
+  {
+   "match_no": 92,
+   "date": "2026-07-05",
+   "stage": "R16",
+   "pairing": "Winner Match 79 vs Winner Match 80",
+   "stadium": "Estadio Azteca",
+   "city": "Mexico City"
+  },
+  {
+   "match_no": 93,
+   "date": "2026-07-06",
+   "stage": "R16",
+   "pairing": "Winner Match 83 vs Winner Match 84",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington (Dallas)"
+  },
+  {
+   "match_no": 94,
+   "date": "2026-07-06",
+   "stage": "R16",
+   "pairing": "Winner Match 81 vs Winner Match 82",
+   "stadium": "Lumen Field",
+   "city": "Seattle"
+  },
+  {
+   "match_no": 95,
+   "date": "2026-07-07",
+   "stage": "R16",
+   "pairing": "Winner Match 86 vs Winner Match 88",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 96,
+   "date": "2026-07-07",
+   "stage": "R16",
+   "pairing": "Winner Match 85 vs Winner Match 87",
+   "stadium": "BC Place",
+   "city": "Vancouver"
+  },
+  {
+   "match_no": 97,
+   "date": "2026-07-09",
+   "stage": "QF",
+   "pairing": "Winner Match 89 vs Winner Match 90",
+   "stadium": "Gillette Stadium",
+   "city": "Foxborough (Boston)"
+  },
+  {
+   "match_no": 98,
+   "date": "2026-07-10",
+   "stage": "QF",
+   "pairing": "Winner Match 93 vs Winner Match 94",
+   "stadium": "SoFi Stadium",
+   "city": "Inglewood (Los Angeles)"
+  },
+  {
+   "match_no": 99,
+   "date": "2026-07-11",
+   "stage": "QF",
+   "pairing": "Winner Match 91 vs Winner Match 92",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens (Miami)"
+  },
+  {
+   "match_no": 100,
+   "date": "2026-07-11",
+   "stage": "QF",
+   "pairing": "Winner Match 95 vs Winner Match 96",
+   "stadium": "Arrowhead Stadium",
+   "city": "Kansas City"
+  },
+  {
+   "match_no": 101,
+   "date": "2026-07-14",
+   "stage": "SF",
+   "pairing": "Winner Match 97 vs Winner Match 98",
+   "stadium": "AT&T Stadium",
+   "city": "Arlington (Dallas)"
+  },
+  {
+   "match_no": 102,
+   "date": "2026-07-15",
+   "stage": "SF",
+   "pairing": "Winner Match 99 vs Winner Match 100",
+   "stadium": "Mercedes-Benz Stadium",
+   "city": "Atlanta"
+  },
+  {
+   "match_no": 103,
+   "date": "2026-07-18",
+   "stage": "THIRD",
+   "pairing": "Loser Match 101 vs Loser Match 102",
+   "stadium": "Hard Rock Stadium",
+   "city": "Miami Gardens (Miami)"
+  },
+  {
+   "match_no": 104,
+   "date": "2026-07-19",
+   "stage": "FINAL",
+   "pairing": "Winner Match 101 vs Winner Match 102",
+   "stadium": "MetLife Stadium",
+   "city": "East Rutherford (New York/New Jersey)"
+  }
+ ],
+ "third_place_rules": "The 12 third-placed teams (one per group A-L) are ranked in a single comparison table; the top 8 advance to the Round of 32. Ranking criteria in order: 1) points; 2) goal difference; 3) goals scored; 4) highest team conduct score (fair play: yellow -1, indirect red -3, direct red -4, yellow+direct red -5); 5) position in the latest FIFA World Ranking (then earlier rankings per some sources; drawing of lots only as theoretical last resort - this final step wording unverified against the raw FIFA regulations PDF). Allocation: the 8 qualified third-placed teams fill the away slots of 8 fixed Round-of-32 matches against group winners - Match 74 (W-E vs 3rd A/B/C/D/F), 77 (W-I vs 3rd C/D/F/G/H), 79 (W-A vs 3rd C/E/F/H/I), 80 (W-L vs 3rd E/H/I/J/K), 81 (W-D vs 3rd B/E/F/I/J), 82 (W-G vs 3rd A/E/H/I/J), 85 (W-B vs 3rd E/F/G/I/J), 87 (W-K vs 3rd D/E/I/J/L). The exact assignment depends on WHICH 8 of the 12 groups supply qualifying third-placed teams: FIFA's regulations contain an annex table covering all 495 possible combinations (C(12,8)), each mapping the qualified thirds to specific match slots so that no team meets an opponent from its own group in the Round of 32 and bracket balance is preserved.",
+ "notes": "All 32 knockout fixtures cross-verified across 2 full independent sources (Wikipedia knockout-stage page; worldcuppass.com) plus spot-checks (FOX Sports, NBC/ESPN search results, worldcuplocaltime). Full agreement on match numbers, dates, pairings, venues; one source's \"AT&T Toronto\" for Match 83 is a typo - Toronto venue is BMO Field. FIFA.com pages returned empty/404 via fetch, so FIFA's own site could not be read directly; FIFA stadium branding differs for sponsor names (SoFi = Los Angeles Stadium, Estadio BBVA = Estadio Monterrey, Levi's = San Francisco Bay Area Stadium, Estadio Azteca = Estadio Ciudad de Mexico, AT&T = Dallas Stadium, etc.). Kickoff for the final: 2026-07-19, 15:00 ET at MetLife.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+  "https://worldcuppass.com/schedule/",
+  "https://www.foxsports.com/stories/soccer/fifa-world-cup-group-stage-third-place-tiebreakers",
+  "https://worldcuplocaltime.com/2026-world-cup-third-place-qualification/",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
+  "https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results-match-schedule-group-stage-knockout-rounds-bracket"
+ ]
+}

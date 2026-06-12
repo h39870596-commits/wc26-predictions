@@ -1,0 +1,5 @@
+{
+ "ok": true,
+ "corrections": [],
+ "notes": "All 6 via_playoff teams verified vs 2+ independent sources (UEFA/FIFA via search + Wikipedia group pages): UEFA Path A=Bosnia (beat Italy, Zenica 31 Mar) -> Group B; Path B=Sweden (3-2 vs Poland) -> Group F; Path C=Turkiye (beat Kosovo, Pristina) -> Group D; Path D=Czechia (beat Denmark, Prague) -> Group A; ICP Pathway 1=DR Congo -> Group K; ICP Pathway 2=Iraq -> Group I. FIFA headline 'Bosnia, Czechia, Sweden and Turkiye qualify as Italy miss out' and NBC 'Iraq, DR Congo advance' corroborate. Note: there are 4 UEFA + 2 inter-confederation playoff winners (task wording said 6 UEFA; JSON's 6 via_playoff flags are correct). Spot-checks passed: Group C = Brazil/Morocco/Scotland/Haiti (Wikipedia, ESPN, Sky); Group J = Argentina/Austria/Algeria/Jordan (Wikipedia, MLSSoccer, FOX); also group-mates confirmed on Wikipedia pages: South Korea & South Africa (A), Switzerland & Qatar (B), Paraguay & Australia (D), Netherlands/Japan/Tunisia (F), France/Norway/Senegal (I), Portugal/Colombia/Uzbekistan (K). No discrepancies found."
+}

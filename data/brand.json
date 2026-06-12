@@ -1,0 +1,86 @@
+{
+ "palette": [
+  {
+   "name": "FIFA 26 Black",
+   "hex": "#000000",
+   "usage": "Primary brand base; emblem and dark backgrounds (official core colour)"
+  },
+  {
+   "name": "FIFA 26 White",
+   "hex": "#FFFFFF",
+   "usage": "Negative space, text on dark, clean page background (official core colour)"
+  },
+  {
+   "name": "Trophy Gold",
+   "hex": "#C9A227",
+   "usage": "Accent / highlights; echoes the photoreal World Cup trophy in the '26' emblem (approx.)"
+  },
+  {
+   "name": "Trophy Gold Light",
+   "hex": "#E8C766",
+   "usage": "Soft gold for hover states, dividers, medal/champion accents (approx.)"
+  },
+  {
+   "name": "US Blue",
+   "hex": "#1F4FA0",
+   "usage": "USA host theme; headers, links, primary UI accent (approx., USA = three blue tones)"
+  },
+  {
+   "name": "US Blue Light",
+   "hex": "#4A90D9",
+   "usage": "Secondary USA blue tone for charts, tags, gradients (approx.)"
+  },
+  {
+   "name": "Canada Red",
+   "hex": "#D52B1E",
+   "usage": "Canada host theme; alerts, highlights, secondary accent (approx., Canada = three red tones)"
+  },
+  {
+   "name": "Canada Red Deep",
+   "hex": "#A6192E",
+   "usage": "Darker Canadian red tone for emphasis/borders (approx.)"
+  },
+  {
+   "name": "Mexico Green",
+   "hex": "#006847",
+   "usage": "Mexico host theme; success states, pitch-adjacent accents (approx., Mexico = three green tones; Mexican flag green)"
+  },
+  {
+   "name": "Mexico Green Bright",
+   "hex": "#2E9E5B",
+   "usage": "Brighter Mexican green tone for badges and data viz (approx.)"
+  },
+  {
+   "name": "Neutral Mist",
+   "hex": "#F5F5F2",
+   "usage": "Light neutral background to keep the black/white/gold core breathing room (approx.)"
+  }
+ ],
+ "design_notes": "Official brand = \"WE ARE 26\" (unveiled May 2023, Los Angeles). Emblem: photorealistic World Cup trophy layered over a stacked \"26\"; the numerals are built from 48 geometric modules (squares + quarter-circles = pitch + ball), representing the 48 teams. Core palette is deliberately neutral — black, white and trophy gold — designed so the 16 host-city sub-brands and three host-nation tone families can be layered on top: USA = three blue tones, Canada = three red tones, Mexico = three green tones (per FIFA unveiling coverage). Typography: custom display face \"FWC 26\" — bold, chunky, condensed, inspired by street-soccer graphics and vintage sports posters — with Noto Sans as the secondary/system font. Each host city has its own poster-style identity riffing on the emblem (e.g. LA beach waves, San Francisco Golden Gate, Kansas City jazz/BBQ motifs), giving a vibrant retro-poster collage feel over the monochrome core. IMPORTANT: FIFA has not published exact public hex values; all hex codes above are well-reasoned approximations from flag colours and brand imagery (gold approximated from trophy renders; US blue brightened from Old Glory blue; Canada red from maple-leaf print red; Mexico green from flag green). Recommended webpage use: black/white base + gold for hero/emblem moments, with the blue/red/green tricolour as functional accents.",
+ "venues": [
+  "MetLife Stadium (FIFA: New York New Jersey Stadium) — East Rutherford, New Jersey, USA (final venue)",
+  "AT&T Stadium (FIFA: Dallas Stadium) — Arlington, Texas, USA",
+  "SoFi Stadium (FIFA: Los Angeles Stadium) — Inglewood, California, USA",
+  "Arrowhead Stadium (FIFA: Kansas City Stadium) — Kansas City, Missouri, USA",
+  "Levi's Stadium (FIFA: San Francisco Bay Area Stadium) — Santa Clara, California, USA",
+  "NRG Stadium (FIFA: Houston Stadium) — Houston, Texas, USA",
+  "Lincoln Financial Field (FIFA: Philadelphia Stadium) — Philadelphia, Pennsylvania, USA",
+  "Mercedes-Benz Stadium (FIFA: Atlanta Stadium) — Atlanta, Georgia, USA",
+  "Lumen Field (FIFA: Seattle Stadium) — Seattle, Washington, USA",
+  "Hard Rock Stadium (FIFA: Miami Stadium) — Miami Gardens, Florida, USA",
+  "Gillette Stadium (FIFA: Boston Stadium) — Foxborough, Massachusetts, USA",
+  "Estadio Azteca (FIFA: Estadio Ciudad de México / Mexico City Stadium) — Mexico City, Mexico (opening match)",
+  "Estadio BBVA (FIFA: Estadio Monterrey) — Monterrey, Mexico",
+  "Estadio Akron (FIFA: Estadio Guadalajara) — Guadalajara (Zapopan), Mexico",
+  "BC Place (FIFA: BC Place Vancouver) — Vancouver, Canada",
+  "BMO Field (FIFA: Toronto Stadium) — Toronto, Canada"
+ ],
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup (venues list + emblem description)",
+  "https://www.fifa.com/en/articles/world-cup-2026-official-brand-unveiled-canada-mexico-usa-celebration-football-diversity (WE ARE 26 brand unveiling)",
+  "https://1000logos.net/news/2026-fifa-world-cup-identity-introduces-new-design-system/ (emblem 48 shapes, host-city logos, Noto Sans secondary font)",
+  "https://panamericanworld.com/en/magazine/sports/branding-2026-fifa-world-cup/ (black/white/gold core palette, FWC 2026 typeface, host-city poster identities)",
+  "https://fwcumc.com/news/world-cup-logo-design/ (logo meaning and colours; host-nation blue/red/green tone families)",
+  "Note: exact official hex values unverified/not publicly published; palette hexes are reasoned approximations"
+ ]
+}

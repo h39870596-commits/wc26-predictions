@@ -1,0 +1,361 @@
+{
+ "groups": [
+  {
+   "group": "A",
+   "teams": [
+    {
+     "name_en": "Mexico",
+     "name_zh": "墨西哥",
+     "confederation": "CONCACAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "South Korea",
+     "name_zh": "韩国",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "South Africa",
+     "name_zh": "南非",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Czechia",
+     "name_zh": "捷克",
+     "confederation": "UEFA",
+     "via_playoff": true
+    }
+   ]
+  },
+  {
+   "group": "B",
+   "teams": [
+    {
+     "name_en": "Canada",
+     "name_zh": "加拿大",
+     "confederation": "CONCACAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Switzerland",
+     "name_zh": "瑞士",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Qatar",
+     "name_zh": "卡塔尔",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Bosnia and Herzegovina",
+     "name_zh": "波黑",
+     "confederation": "UEFA",
+     "via_playoff": true
+    }
+   ]
+  },
+  {
+   "group": "C",
+   "teams": [
+    {
+     "name_en": "Brazil",
+     "name_zh": "巴西",
+     "confederation": "CONMEBOL",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Morocco",
+     "name_zh": "摩洛哥",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Scotland",
+     "name_zh": "苏格兰",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Haiti",
+     "name_zh": "海地",
+     "confederation": "CONCACAF",
+     "via_playoff": false
+    }
+   ]
+  },
+  {
+   "group": "D",
+   "teams": [
+    {
+     "name_en": "United States",
+     "name_zh": "美国",
+     "confederation": "CONCACAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Paraguay",
+     "name_zh": "巴拉圭",
+     "confederation": "CONMEBOL",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Australia",
+     "name_zh": "澳大利亚",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Turkey",
+     "name_zh": "土耳其",
+     "confederation": "UEFA",
+     "via_playoff": true
+    }
+   ]
+  },
+  {
+   "group": "E",
+   "teams": [
+    {
+     "name_en": "Germany",
+     "name_zh": "德国",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Ecuador",
+     "name_zh": "厄瓜多尔",
+     "confederation": "CONMEBOL",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Ivory Coast",
+     "name_zh": "科特迪瓦",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Curacao",
+     "name_zh": "库拉索",
+     "confederation": "CONCACAF",
+     "via_playoff": false
+    }
+   ]
+  },
+  {
+   "group": "F",
+   "teams": [
+    {
+     "name_en": "Netherlands",
+     "name_zh": "荷兰",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Japan",
+     "name_zh": "日本",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Tunisia",
+     "name_zh": "突尼斯",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Sweden",
+     "name_zh": "瑞典",
+     "confederation": "UEFA",
+     "via_playoff": true
+    }
+   ]
+  },
+  {
+   "group": "G",
+   "teams": [
+    {
+     "name_en": "Belgium",
+     "name_zh": "比利时",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Iran",
+     "name_zh": "伊朗",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Egypt",
+     "name_zh": "埃及",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "New Zealand",
+     "name_zh": "新西兰",
+     "confederation": "OFC",
+     "via_playoff": false
+    }
+   ]
+  },
+  {
+   "group": "H",
+   "teams": [
+    {
+     "name_en": "Spain",
+     "name_zh": "西班牙",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Uruguay",
+     "name_zh": "乌拉圭",
+     "confederation": "CONMEBOL",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Saudi Arabia",
+     "name_zh": "沙特阿拉伯",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Cape Verde",
+     "name_zh": "佛得角",
+     "confederation": "CAF",
+     "via_playoff": false
+    }
+   ]
+  },
+  {
+   "group": "I",
+   "teams": [
+    {
+     "name_en": "France",
+     "name_zh": "法国",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Norway",
+     "name_zh": "挪威",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Senegal",
+     "name_zh": "塞内加尔",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Iraq",
+     "name_zh": "伊拉克",
+     "confederation": "AFC",
+     "via_playoff": true
+    }
+   ]
+  },
+  {
+   "group": "J",
+   "teams": [
+    {
+     "name_en": "Argentina",
+     "name_zh": "阿根廷",
+     "confederation": "CONMEBOL",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Austria",
+     "name_zh": "奥地利",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Algeria",
+     "name_zh": "阿尔及利亚",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Jordan",
+     "name_zh": "约旦",
+     "confederation": "AFC",
+     "via_playoff": false
+    }
+   ]
+  },
+  {
+   "group": "K",
+   "teams": [
+    {
+     "name_en": "Portugal",
+     "name_zh": "葡萄牙",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Colombia",
+     "name_zh": "哥伦比亚",
+     "confederation": "CONMEBOL",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Uzbekistan",
+     "name_zh": "乌兹别克斯坦",
+     "confederation": "AFC",
+     "via_playoff": false
+    },
+    {
+     "name_en": "DR Congo",
+     "name_zh": "刚果(金)",
+     "confederation": "CAF",
+     "via_playoff": true
+    }
+   ]
+  },
+  {
+   "group": "L",
+   "teams": [
+    {
+     "name_en": "England",
+     "name_zh": "英格兰",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Croatia",
+     "name_zh": "克罗地亚",
+     "confederation": "UEFA",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Ghana",
+     "name_zh": "加纳",
+     "confederation": "CAF",
+     "via_playoff": false
+    },
+    {
+     "name_en": "Panama",
+     "name_zh": "巴拿马",
+     "confederation": "CONCACAF",
+     "via_playoff": false
+    }
+   ]
+  }
+ ],
+ "notes": "Draw held 2025-12-05 (Washington DC). Correction to task premise: UEFA play-offs (March 2026) had 4 paths producing 4 winners, not 6; total play-off-derived teams = 6 (4 UEFA + 2 inter-confederation). UEFA winners: Path A Bosnia and Herzegovina (Group B), Path B Sweden (Group F), Path C Turkey (Group D), Path D Czechia (Group A, beat Denmark on penalties 2026-03-31). Inter-confederation winners (finals 2026-03-31 in Mexico): DR Congo beat Jamaica 1-0 aet (Group K); Iraq beat Bolivia 2-1 (Group I). Group composition cross-verified by NBC Sports full-group table and FIFA/UEFA/olympics.com search results; all groups consistent across sources.",
+ "sources": [
+  "https://www.nbcsports.com/soccer/news/2026-world-cup-group-stage-table-full-standings-for-all-12-groups",
+  "https://www.uefa.com/european-qualifiers/news/02a3-203db939acfe-f4a4def4b9fd-1000--world-cup-2026-european-play-off-finals-confirmed/",
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_qualification_(inter-confederation_play-offs)",
+  "https://www.olympics.com/en/news/football-2026-fifa-world-cup-playoff-tournament-and-european-play-offs-all-results-scores-and-schedule",
+  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/final-draw-results",
+  "https://www.nbcsports.com/soccer/news/2026-world-cup-inter-confederation-playoffs-how-do-they-work-when-are-they-and-whos-involved"
+ ]
+}

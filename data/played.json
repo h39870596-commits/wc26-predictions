@@ -1,0 +1,46 @@
+{
+ "matches": [
+  {
+   "date": "2026-06-11",
+   "group": "A",
+   "home": "Mexico",
+   "away": "South Africa",
+   "score": "2-0",
+   "scorers": "Julián Quiñones 9', Raúl Jiménez 67'",
+   "status": "finished"
+  },
+  {
+   "date": "2026-06-11",
+   "group": "A",
+   "home": "South Korea",
+   "away": "Czech Republic",
+   "score": "2-1",
+   "scorers": "Hwang In-beom 67', Oh Hyeon-gyu 80'; Ladislav Krejčí 59' (CZE)",
+   "status": "finished"
+  },
+  {
+   "date": "2026-06-12",
+   "group": "B",
+   "home": "Canada",
+   "away": "Bosnia and Herzegovina",
+   "status": "scheduled_today"
+  },
+  {
+   "date": "2026-06-12",
+   "group": "D",
+   "home": "United States",
+   "away": "Paraguay",
+   "status": "scheduled_today"
+  }
+ ],
+ "notes": "As of 2026-06-12 08:01 UTC. June 11 (Day 1, both Group A): Mexico 2-0 South Africa at Estadio Azteca, Mexico City (3 red cards in match); South Korea 2-1 Czech Republic at Estadio Akron, Guadalajara/Zapopan. Both results cross-verified (Wikipedia Group A page + Yahoo/CNN/ESPN). June 12 (Day 2): only 2 fixtures, neither kicked off yet — Canada vs Bosnia-Herzegovina, BMO Field Toronto, 19:00 UTC (3pm ET); USA vs Paraguay, SoFi Stadium Inglewood, 01:00 UTC Jun 13 (9pm ET Jun 12). FOX Sports box score confirms Canada match 'Not Started'. Chinese names: 墨西哥 Mexico, 南非 South Africa, 韩国 South Korea, 捷克 Czech Republic, 加拿大 Canada, 波黑 Bosnia and Herzegovina, 美国 United States, 巴拉圭 Paraguay.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_A",
+  "https://sports.yahoo.com/soccer/live/2026-world-cup-schedule-scores-live-updates-group-stage-mexico-vs-south-africa-south-korea-czechia-150000738.html",
+  "https://www.cnn.com/2026/06/11/sport/live-news/world-cup-mexico-south-africa",
+  "https://www.espn.com/soccer/match/_/gameId/760415/south-africa-mexico",
+  "https://www.foxsports.com/soccer/fifa-world-cup-men-canada-vs-bosnia-and-herzegovina-jun-12-2026-game-boxscore-647618",
+  "https://www.foxsports.com/stories/soccer/world-cup-how-to-watch-usa-paraguay-canada",
+  "https://www.cbssports.com/soccer/news/world-cup-2026-schedule-times-dates/"
+ ]
+}

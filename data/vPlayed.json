@@ -1,0 +1,5 @@
+{
+ "ok": true,
+ "corrections": [],
+ "notes": "All 4 entries verified via non-Wikipedia sources. (1) Mexico 2-0 South Africa: confirmed by ESPN, Sky Sports, Al Jazeera, CBS, Bleacher Report; Quiñones 9' and Jiménez 67' both confirmed (Sky Sports/olympics.com); match had 3 red cards (Sithole, Zwane RSA; Montes MEX) - context only, not an error. (2) South Korea 2-1 Czechia: FOX Sports box score confirms exact minutes Krejčí 59' (CZE), Hwang In-beom 67' (assist Lee Kang-in), Oh Hyeon-gyu 80' (assist Hwang). (3) June 11 had exactly 2 matches (both Group A) per Al Jazeera schedule + Bleacher Report recap - nothing missing. (4) June 12 has exactly 2 fixtures: Canada vs Bosnia and Herzegovina (Group B, BMO Field Toronto, 15:00 ET/19:00 UTC) and USA vs Paraguay (Group D, SoFi Stadium, 21:00 ET); no final score published for either at check time, so scheduled_today status is correct and no played match is missing. Minor naming note: sources use \"Czechia\" for Czech Republic - same team, not a correction."
+}
