@@ -11,13 +11,20 @@ try { if (window.top !== window.self) window.top.location = window.self.location
    feedbackEmail : 接收 BUG 反馈的邮箱(换域名/邮箱别名后改这里)
    payApi        : 自动开通后端地址(部署 server/app.py 后填,如 'https://pay.example.com/api')。
                    配置后:支付按钮变为真实下单→展示动态收款二维码→支付回调后自动开通,无需人工发码;
-                   同时需把该域名加入 index.html CSP 的 connect-src。留空 = 当前模式(静态收款码+解锁码) */
+                   同时需把该域名加入 index.html CSP 的 connect-src。留空 = 当前模式(静态收款码+解锁码)
+   海外赞助(任一配置即在弹窗显示「国际赞助」区;支付后凭凭证领解锁码):
+   paypal        : PayPal.Me 链接或用户名(如 'https://paypal.me/yourname' 或 'yourname')
+   bmc           : Buy Me a Coffee 用户名(buymeacoffee.com/<这里>)
+   kofi          : Ko-fi 用户名(ko-fi.com/<这里>) */
 const SITE_CONFIG = {
   goatcounter: '',
   baiduTongji: '',
   feedbackEndpoint: '',
   feedbackEmail: 'h39870596@gmail.com',
   payApi: '',
+  paypal: '',
+  bmc: '',
+  kofi: '',
 };
 
 /* ================= helpers ================= */
@@ -436,6 +443,8 @@ function renderPayModal() {
       '<div class="steps">' + L('1️⃣ 选择档位,扫码支付对应金额(微信 / 支付宝任选)<br>2️⃣ 点击下方「提交支付凭证」,附上支付单号或截图说明<br>3️⃣ 站长确认收款后回复解锁码,在下方输入即开通', '1️⃣ Pick a tier and pay the matching amount via either QR<br>2️⃣ Tap “Submit payment proof” below with your transaction ID<br>3️⃣ You’ll receive an unlock code — enter it below to activate') + '</div>' +
       '<button class="linklike" id="payToFb">📧 ' + L('提交支付凭证 / 领取解锁码', 'Submit payment proof / get unlock code') + '</button>' +
     '</div>') +
+    /* 海外赞助(配置任一渠道即显示;支付后凭凭证领解锁码) */
+    intlZone(price) +
     /* 解锁码兑换(仅非 API 模式) */
     (apiMode ? '' : '<div class="redeem-row">' +
       '<input id="rdInput" class="fb-input" style="margin:0" placeholder="' + L('已有解锁码?如 WC26-XXXXX-XXXXX', 'Have a code? e.g. WC26-XXXXX-XXXXX') + '">' +
@@ -463,6 +472,24 @@ function renderPayModal() {
       if (cards.every(c => c.style.display === 'none')) { const z = $('#qrZone'); if (z) z.style.display = 'none'; }
     });
   });
+}
+/* 海外赞助区:PayPal / Buy Me a Coffee / Ko-fi,任一配置即显示 */
+function intlZone(priceCny) {
+  const pp = SITE_CONFIG.paypal ? (/^https?:\/\//i.test(SITE_CONFIG.paypal) ? SITE_CONFIG.paypal : 'https://paypal.me/' + SITE_CONFIG.paypal) : '';
+  const links = [
+    pp && ['PayPal', pp, '#1F4FA0'],
+    SITE_CONFIG.bmc && ['Buy Me a Coffee', 'https://buymeacoffee.com/' + SITE_CONFIG.bmc, '#A8861A'],
+    SITE_CONFIG.kofi && ['Ko-fi', 'https://ko-fi.com/' + SITE_CONFIG.kofi, '#D52B1E'],
+  ].filter(Boolean);
+  if (!links.length) return '';
+  const usd = (parseFloat(String(priceCny).replace(/[^\d.]/g, '')) / 7.2);
+  const usdTxt = usd ? ('≈ $' + (usd < 2 ? usd.toFixed(1) : Math.round(usd)) + ' USD') : '';
+  return '<div class="intl-zone">' +
+    '<div class="qr-head">🌍 ' + L('海外赞助 International ', 'International sponsorship ') + '<b class="num">' + esc(usdTxt) + '</b></div>' +
+    '<div>' + links.map(x => '<a class="intl-btn" href="' + esc(safeUrl(x[1])) + '" target="_blank" rel="noopener noreferrer" style="border-color:' + x[2] + ';color:' + x[2] + '">' + esc(x[0]) + ' ↗</a>').join('') + '</div>' +
+    '<div class="steps">' + L('支付等值金额后,点击「提交支付凭证」附上交易号(或截图说明),回复解锁码后在下方输入开通。', 'Pay the equivalent amount, then use “Submit payment proof” with your transaction ID — you’ll receive an unlock code to enter below.') + '</div>' +
+    '<button class="linklike" id="payToFb2">📧 ' + L('提交支付凭证 / 领取解锁码', 'Submit payment proof / get unlock code') + '</button>' +
+  '</div>';
 }
 async function sha256hex(s) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
@@ -574,9 +601,9 @@ $('#payModal').addEventListener('click', async e => {
   if (e.target.closest('#ordCancel')) { clearInterval(state.pollTimer); storeDel('wc26_order'); renderPayModal(); return; }
   const prod = e.target.closest('.prod');
   if (prod) { state.paySel = prod.dataset.prod; renderPayModal(); return; }
-  if (e.target.closest('#payToFb')) {
+  if (e.target.closest('#payToFb') || e.target.closest('#payToFb2')) {
     closePay();
-    openFb(L('我已完成赞助转账,请发我解锁码。\n档位:单日 / 全程(请保留一个)\n支付方式:微信 / 支付宝(请保留一个)\n支付单号或转账时间:', 'I have sponsored via QR — please send my unlock code.\nTier: day / season\nMethod: WeChat / Alipay\nTransaction ID or time: '));
+    openFb(L('我已完成赞助转账,请发我解锁码。\n档位:单日 / 全程(请保留一个)\n支付方式:微信 / 支付宝 / PayPal / 其他(请保留一个)\n支付单号或转账时间:', 'I have sponsored — please send my unlock code.\nTier: day / season\nMethod: WeChat / Alipay / PayPal / other\nTransaction ID or time: '));
     return;
   }
   if (e.target.closest('#rdBtn')) {
