@@ -165,8 +165,8 @@ if md_files:
 data = {
     'meta': {'updated': datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).strftime('%Y-%m-%d %H:%M') + ' (UTC+8)'},
     'pay': {'demo': True, 'products': {  # 收款码图就位后把 demo 改为 False,模拟支付按钮即消失
-        'day': {'price': '¥9.9'},
-        'season': {'price': '¥98'},
+        'day': {'price': '¥4.9'},
+        'season': {'price': '¥49'},
     }},
     'codes': codes or {'day': [], 'season': []},
     'teams': teams,
@@ -183,6 +183,28 @@ data = {
 out = 'window.WC = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n'
 with open(os.path.join(ROOT, 'assets/data.js'), 'w') as f:
     f.write(out)
+
+# ---------- 付费内容切片(供自动开通后端 server/app.py 下发;server/paid 已 gitignore) ----------
+# 接入后端后把上面 pay.demo 改 False,并将本段 PAID_IN_CLIENT 改 False:
+# 届时 data.js 不再包含 paid 块与英文版深度分析,付费内容只经后端凭 token 下发。
+PAID_IN_CLIENT = True
+if today:
+    paid_dir = os.path.join(ROOT, 'server/paid')
+    os.makedirs(paid_dir, exist_ok=True)
+    slice_ = {'date': today['date'], 'matches': [
+        {'no': m['no'], 'paid': m.get('paid'),
+         'en_analysis': (m.get('en') or {}).get('analysis')}
+        for m in today['matches'] if m.get('paid')]}
+    with open(os.path.join(paid_dir, today['date'] + '.json'), 'w') as f:
+        json.dump(slice_, f, ensure_ascii=False)
+    if not PAID_IN_CLIENT:
+        for m in today['matches']:
+            m.pop('paid', None)
+            if m.get('en'):
+                m['en'].pop('analysis', None)
+        out = 'window.WC = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n'
+        with open(os.path.join(ROOT, 'assets/data.js'), 'w') as f:
+            f.write(out)
 print('assets/data.js written,', len(out), 'bytes; today =', (today or {}).get('date'),
       '; paid matches =', len([m for m in (today or {}).get('matches', []) if 'paid' in m]),
       '; recaps =', len(data['recaps']),

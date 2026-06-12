@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- 安全策略:GitHub Pages 无法自定义响应头,以下用 meta 尽量收紧。
      脚本仅允许本站与已声明的统计域名(无内联脚本);frame-ancestors 在 meta 中无效,
-     由 assets/app.js 内的 frame-busting 兜底防点击劫持。 -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://gc.zgo.at https://hm.baidu.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.goatcounter.com https://hm.baidu.com; connect-src 'self' https://formspree.io https://*.goatcounter.com https://hm.baidu.com; font-src 'self'; base-uri 'none'; form-action 'self' https://formspree.io">
+     由 assets/app.js 内的 frame-busting 兜底防点击劫持。
+     部署自动开通后端(server/)后,把其 https 域名追加到 connect-src;
+     http://localhost:* 仅用于本机联调,不影响线上安全。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://gc.zgo.at https://hm.baidu.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.goatcounter.com https://hm.baidu.com; connect-src 'self' http://localhost:* https://formspree.io https://*.goatcounter.com https://hm.baidu.com; font-src 'self'; base-uri 'none'; form-action 'self' https://formspree.io">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>WC26 AI 数据分析 · 2026世界杯 AI 大数据预测与赛事数据分析</title>
 <meta name="description" id="metaDesc" content="WC26 AI 数据分析:基于人工智能与大数据的 2026 美加墨世界杯赛事数据分析平台。AI 五维建模、球队实力评分、历史数据统计、比赛复盘与专家观点,全部结论来源可溯。非博彩网站,不提供任何投注功能。">

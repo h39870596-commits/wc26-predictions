@@ -8,12 +8,16 @@ try { if (window.top !== window.self) window.top.location = window.self.location
    goatcounter   : GoatCounter 站点代码(https://www.goatcounter.com 注册,如 'wc26' → wc26.goatcounter.com)
    baiduTongji   : 百度统计代码(https://tongji.baidu.com 注册,hm.js? 后面那串 32 位 ID)
    feedbackEndpoint: Formspree 等表单服务的提交地址(如 'https://formspree.io/f/xxxxxxx'),配置后反馈弹窗出现「直接提交」
-   feedbackEmail : 接收 BUG 反馈的邮箱(换域名/邮箱别名后改这里) */
+   feedbackEmail : 接收 BUG 反馈的邮箱(换域名/邮箱别名后改这里)
+   payApi        : 自动开通后端地址(部署 server/app.py 后填,如 'https://pay.example.com/api')。
+                   配置后:支付按钮变为真实下单→展示动态收款二维码→支付回调后自动开通,无需人工发码;
+                   同时需把该域名加入 index.html CSP 的 connect-src。留空 = 当前模式(静态收款码+解锁码) */
 const SITE_CONFIG = {
   goatcounter: '',
   baiduTongji: '',
   feedbackEndpoint: '',
   feedbackEmail: 'h39870596@gmail.com',
+  payApi: '',
 };
 
 /* ================= helpers ================= */
@@ -25,8 +29,8 @@ const storeGet = k => { try { return window.localStorage.getItem(k); } catch (e)
 const storeSet = (k, v) => { try { window.localStorage.setItem(k, v); } catch (e) {} };
 const storeDel = k => { try { window.localStorage.removeItem(k); } catch (e) {} };
 
-/* legacy demo key → season */
-if (storeGet('wc26_unlocked') === '1') { storeSet('wc26_season', '1'); storeDel('wc26_unlocked'); }
+/* 测试期/旧版的本地解锁标记一律作废(权益键升级为 *2,旧键不再读取并主动清除) */
+['wc26_unlocked', 'wc26_season', 'wc26_day'].forEach(storeDel);
 
 const state = {
   lang: storeGet('wc26_lang') || ((navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en'),
@@ -59,10 +63,29 @@ const vEn = s => {
   return s;
 };
 const kickEn = s => s ? s.replace('当地', 'Local').replace(/\s*·?\s*北京时间/, ' · Beijing ').replace(/(\d{1,2})月(\d{1,2})日/g, (_, a, b) => MON[+a - 1] + ' ' + b) : '';
-const P = (WC.pay && WC.pay.products) || { day: { price: '¥9.9' }, season: { price: '¥98' } };
+const P = (WC.pay && WC.pay.products) || { day: { price: '¥4.9' }, season: { price: '¥49' } };
 
-const ent = () => storeGet('wc26_season') === '1' ? 'season'
-  : (WC.today && storeGet('wc26_day') === WC.today.date ? 'day' : null);
+/* ---- 权益判定:API 模式凭后端签发的 token,静态模式凭本地标记(*2 键) ---- */
+const API = (SITE_CONFIG.payApi || '').replace(/\/$/, '');
+const apiMode = !!API;
+function parseToken(t) {
+  try {
+    const p = String(t).split('.')[0];
+    return JSON.parse(atob(p.replace(/-/g, '+').replace(/_/g, '/')));
+  } catch (e) { return null; }
+}
+function entToken() {
+  const t = storeGet('wc26_token');
+  if (!t) return null;
+  const o = parseToken(t);
+  if (!o) return null;
+  if (o.p === 'season') return (o.exp || 0) > Date.now() ? 'season' : null;
+  if (o.p === 'day') return (WC.today && o.d === WC.today.date && (o.exp || 0) > Date.now()) ? 'day' : null;
+  return null;
+}
+const ent = () => apiMode ? entToken()
+  : (storeGet('wc26_season2') === '1' ? 'season'
+    : (WC.today && storeGet('wc26_day2') === WC.today.date ? 'day' : null));
 
 const played = WC.schedule.filter(m => m.actual);
 
@@ -188,6 +211,8 @@ function renderToday() {
         probBars(p.probs, m.home, m.away) +
         '<div class="analysis">' + esc(analysis) + '</div>' +
         '<div class="pz-foot">' + L('本报告为统计模型输出,仅供研究参考,不构成任何投注建议。', 'Model output for research reference only — not betting advice.') + '</div>';
+    } else if (ent() && apiMode) {
+      h += '<div class="pz-locked"><p>⏳ ' + L('正在校验查看权益并拉取报告…', 'Verifying access & fetching the report…') + '</p></div>';
     } else {
       h += '<div class="pz-locked"><div class="blur-score num">2 - 1</div><p>' + L('赞助支持本站后查看:精确比分 · 胜平负概率 · 模型置信度 · 深度数据分析报告', 'Sponsor the site to view: exact score · outcome probabilities · model confidence · full data-analysis report') + '</p>' +
         '<div class="pz-actions"><button class="btn-gold pay-open" data-prod="day">☕ ' + L('单日赞助 ', 'Sponsor today ') + esc(P.day.price) + '</button>' +
@@ -401,8 +426,8 @@ function renderPayModal() {
       '<div class="prod' + (sel === 'season' ? ' sel' : '') + '" data-prod="season"><span class="rec">' + L('推荐', 'BEST') + '</span><div class="pn">🏆 ' + L('全程赞助', 'Season Sponsor') + '</div><div class="pp num">' + esc(P.season.price) + ' <small>/ ' + L('整届赛事', 'tournament') + '</small></div>' +
         '<div class="pd">' + L('赛事期间每天查看当日全部预测报告,按日更新推送——未来赛果不会提前展示。', 'Every matchday’s full reports through the final, unlocked day by day — future calls are never shown in advance.') + '</div></div>' +
     '</div>' +
-    /* 真实收款码区:把收款码图片放到 assets/qr-wechat.png / assets/qr-alipay.png 即自动展示 */
-    '<div class="qr-zone" id="qrZone">' +
+    /* 静态收款码区(仅非 API 模式):把收款码图片放到 assets/qr-wechat.png / assets/qr-alipay.png 即自动展示 */
+    (apiMode ? '' : '<div class="qr-zone" id="qrZone">' +
       '<div class="qr-head">' + L('扫码赞助 ', 'Scan to sponsor ') + '<b class="num">' + esc(price) + '</b>' + L('(金额请与所选档位一致)', ' (match the selected tier)') + '</div>' +
       '<div class="qr-grid">' +
         '<div class="qr-card"><img class="qr-img" src="assets/qr-wechat.png" alt="WeChat Pay QR"><div class="qr-label" style="color:#09BB07">' + L('微信收款码', 'WeChat Pay') + '</div></div>' +
@@ -410,18 +435,23 @@ function renderPayModal() {
       '</div>' +
       '<div class="steps">' + L('1️⃣ 选择档位,扫码支付对应金额(微信 / 支付宝任选)<br>2️⃣ 点击下方「提交支付凭证」,附上支付单号或截图说明<br>3️⃣ 站长确认收款后回复解锁码,在下方输入即开通', '1️⃣ Pick a tier and pay the matching amount via either QR<br>2️⃣ Tap “Submit payment proof” below with your transaction ID<br>3️⃣ You’ll receive an unlock code — enter it below to activate') + '</div>' +
       '<button class="linklike" id="payToFb">📧 ' + L('提交支付凭证 / 领取解锁码', 'Submit payment proof / get unlock code') + '</button>' +
-    '</div>' +
-    /* 解锁码兑换 */
-    '<div class="redeem-row">' +
+    '</div>') +
+    /* 解锁码兑换(仅非 API 模式) */
+    (apiMode ? '' : '<div class="redeem-row">' +
       '<input id="rdInput" class="fb-input" style="margin:0" placeholder="' + L('已有解锁码?如 WC26-XXXXX-XXXXX', 'Have a code? e.g. WC26-XXXXX-XXXXX') + '">' +
       '<button class="btn-gold" id="rdBtn" style="padding:9px 20px;font-size:13px;flex-shrink:0">' + L('开通', 'Redeem') + '</button>' +
-    '</div>' +
-    (WC.pay && WC.pay.demo ?
+    '</div>') +
+    (apiMode ?
+      '<div class="payrow">' +
+        '<button class="paybtn wx" data-ch="wechat">' + L('微信支付', 'WeChat Pay') + '</button>' +
+        '<button class="paybtn ali" data-ch="alipay">' + L('支付宝', 'Alipay') + '</button>' +
+      '</div>' :
+     (WC.pay && WC.pay.demo ?
       '<div class="demo-note">' + L('演示模式开启中:下方按钮为模拟支付,不产生真实扣款;收款码图片配置好并关闭演示后,此区域将移除。', 'Demo mode: the buttons below simulate payment, nothing is charged. They disappear once real QR codes are configured and demo is switched off.') + '</div>' +
       '<div class="payrow">' +
         '<button class="paybtn wx" data-ch="wechat">' + L('微信支付(模拟)', 'WeChat Pay (demo)') + '</button>' +
         '<button class="paybtn ali" data-ch="alipay">' + L('支付宝(模拟)', 'Alipay (demo)') + '</button>' +
-      '</div>' : '') +
+      '</div>' : '')) +
     '<div class="comp-note">' + L('赞助属自愿支持行为;内容为统计模型输出的数据分析报告,仅供研究参考,不构成投注建议;查看权益开通后不支持退款。', 'Sponsorship is voluntary support; content is model-generated data analysis for research reference only, not betting advice; access is non-refundable once granted.') + '</div>' +
     '<button class="close" id="payClose">' + L('暂不赞助', 'Not now') + '</button>';
   /* 收款码图缺失时隐藏对应卡片;两张都缺则整个二维码区隐藏(CSP 禁内联事件,这里挂监听) */
@@ -438,12 +468,110 @@ async function sha256hex(s) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
   return Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, '0')).join('');
 }
-function openPay(pre) { if (pre) state.paySel = pre; renderPayModal(); $('#payModal').classList.add('on'); }
-function closePay() { $('#payModal').classList.remove('on'); }
+/* 解锁码防爆破:连续 5 次失败锁定 10 分钟(本地节流,码空间 32^10 本身即不可爆破) */
+function redeemLockedMin() {
+  try { const o = JSON.parse(storeGet('wc26_rd') || '{}'); if (o.until && Date.now() < o.until) return Math.ceil((o.until - Date.now()) / 60000); } catch (e) {}
+  return 0;
+}
+function redeemFail() {
+  let o = { n: 0 };
+  try { o = JSON.parse(storeGet('wc26_rd') || '{"n":0}') || { n: 0 }; } catch (e) {}
+  o.n = (o.n || 0) + 1;
+  if (o.n >= 5) { o.until = Date.now() + 10 * 60 * 1000; o.n = 0; }
+  storeSet('wc26_rd', JSON.stringify(o));
+}
+/* ---- API 模式:下单 → 动态二维码 → 轮询支付状态 → token → 拉取报告 ---- */
+let paidLoaded = false;
+async function loadPaidContent() {
+  if (!apiMode || paidLoaded || !WC.today) return;
+  if (!entToken()) return;
+  try {
+    const r = await fetch(API + '/content?date=' + encodeURIComponent(WC.today.date) + '&token=' + encodeURIComponent(storeGet('wc26_token') || ''));
+    if (!r.ok) {
+      if (r.status === 401 || r.status === 403) { storeDel('wc26_token'); renderChrome(); renderToday(); bindReveal(); }
+      return;
+    }
+    const d = await r.json();
+    (d.matches || []).forEach(x => {
+      const m = WC.today.matches.find(mm => mm.no === x.no);
+      if (m && x.paid) { m.paid = x.paid; if (x.en_analysis && m.en) m.en.analysis = x.en_analysis; }
+    });
+    paidLoaded = true;
+    renderToday(); bindReveal();
+  } catch (e) {}
+}
+function renderOrderView(o) {
+  const price = state.paySel === 'season' ? P.season.price : P.day.price;
+  $('#payBody').innerHTML =
+    '<div class="mi">📲</div><h3>' + L('扫码支付 ', 'Scan to pay ') + esc(price) + '</h3>' +
+    '<div class="sub">' + L('用' + (o.channel === 'alipay' ? '支付宝' : '微信') + '扫描下方二维码完成支付,支付成功后自动开通,无需任何操作。', 'Scan with ' + (o.channel === 'alipay' ? 'Alipay' : 'WeChat') + ' — access unlocks automatically after payment.') + '</div>' +
+    (o.qr ? '<img src="' + esc(o.qr) + '" alt="QR" style="width:190px;height:190px;border:1px solid var(--line);border-radius:12px;margin:10px 0">'
+          : '<div class="num" style="font-weight:800;font-size:13px;background:#F2EFE7;border-radius:10px;padding:14px;margin:10px 0;word-break:break-all">' + esc(o.qrText || '') + '</div>') +
+    '<div class="sub" id="ordStatus">⏳ ' + L('等待支付确认…(自动检测,请勿关闭)', 'Waiting for payment… (auto-detecting)') + '</div>' +
+    '<button class="close" id="ordCancel">' + L('取消本次支付', 'Cancel') + '</button>';
+}
+function startPoll(orderId) {
+  clearInterval(state.pollTimer);
+  let n = 0;
+  state.pollTimer = setInterval(async () => {
+    if (++n > 120) { clearInterval(state.pollTimer); return; }
+    try {
+      const r = await fetch(API + '/order/' + encodeURIComponent(orderId) + '/status');
+      if (!r.ok) return;
+      const s = await r.json();
+      if (s.paid && s.token) {
+        clearInterval(state.pollTimer);
+        storeSet('wc26_token', s.token);
+        storeDel('wc26_order');
+        paidLoaded = false;
+        closePay();
+        toast('🎉 ' + L('感谢赞助!<span class="g">查看权益已自动开通</span>', 'Thank you! <span class="g">Access unlocked automatically</span>'));
+        renderChrome(); renderToday(); bindReveal();
+        loadPaidContent();
+      }
+    } catch (e) {}
+  }, 2500);
+}
+async function createOrder(channel) {
+  const last = +(storeGet('wc26_lastorder') || 0);
+  if (Date.now() - last < 30000) { toast(L('操作过于频繁,请稍候再试', 'Too many attempts — wait a moment')); return; }
+  state.payBusy = true;
+  try {
+    const r = await fetch(API + '/order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ product: state.paySel, channel: channel }) });
+    if (r.status === 429) { toast(L('请求过于频繁,请稍后再试', 'Rate limited — try again later')); return; }
+    if (!r.ok) throw new Error('order failed');
+    const o = await r.json();
+    o.channel = channel;
+    storeSet('wc26_lastorder', String(Date.now()));
+    storeSet('wc26_order', JSON.stringify({ id: o.orderId, product: state.paySel, ch: channel, t: Date.now() }));
+    renderOrderView(o);
+    startPoll(o.orderId);
+  } catch (e) {
+    toast(L('下单失败,请稍后再试', 'Could not create the order — try later'));
+  } finally { state.payBusy = false; }
+}
+function openPay(pre) {
+  if (pre) state.paySel = pre;
+  renderPayModal();
+  /* API 模式下若有 30 分钟内未完成的订单,恢复轮询(避免「付了钱没解锁」) */
+  if (apiMode) {
+    try {
+      const pend = JSON.parse(storeGet('wc26_order') || 'null');
+      if (pend && Date.now() - pend.t < 30 * 60 * 1000) {
+        state.paySel = pend.product;
+        renderOrderView({ orderId: pend.id, channel: pend.ch, qr: null, qrText: L('已有进行中的订单,正在确认支付状态…', 'Resuming your pending order…') });
+        startPoll(pend.id);
+      } else if (pend) { storeDel('wc26_order'); }
+    } catch (e) {}
+  }
+  $('#payModal').classList.add('on');
+}
+function closePay() { clearInterval(state.pollTimer); $('#payModal').classList.remove('on'); }
 $('#payModal').addEventListener('click', async e => {
   if (state.payBusy) return; /* 支付进行中:禁止改选/关闭/重复支付 */
   if (e.target === e.currentTarget) return closePay();
   if (e.target.closest('#payClose')) return closePay();
+  if (e.target.closest('#ordCancel')) { clearInterval(state.pollTimer); storeDel('wc26_order'); renderPayModal(); return; }
   const prod = e.target.closest('.prod');
   if (prod) { state.paySel = prod.dataset.prod; renderPayModal(); return; }
   if (e.target.closest('#payToFb')) {
@@ -452,6 +580,8 @@ $('#payModal').addEventListener('click', async e => {
     return;
   }
   if (e.target.closest('#rdBtn')) {
+    const lockedMin = redeemLockedMin();
+    if (lockedMin) { toast(L('尝试过于频繁,请 ' + lockedMin + ' 分钟后再试', 'Too many attempts — retry in ' + lockedMin + ' min')); return; }
     const inp = $('#rdInput');
     const raw = (inp ? inp.value : '').toUpperCase().replace(/[^A-Z0-9]/g, '');
     if (!raw) { toast(L('请先输入解锁码', 'Enter a code first')); return; }
@@ -459,20 +589,23 @@ $('#payModal').addEventListener('click', async e => {
     try { hash = await sha256hex(raw); } catch (err) { toast(L('校验不可用(需 HTTPS 环境)', 'Verification needs HTTPS')); return; }
     const C = WC.codes || {};
     if ((C.season || []).indexOf(hash) >= 0) {
-      storeSet('wc26_season', '1');
+      storeDel('wc26_rd'); storeSet('wc26_season2', '1');
       closePay(); toast('🎉 ' + L('感谢赞助!<span class="g">全程查看权益已开启</span>', 'Thank you! <span class="g">Season access unlocked</span>'));
       renderChrome(); renderToday(); bindReveal();
     } else if ((C.day || []).indexOf(hash) >= 0) {
-      if (WC.today) storeSet('wc26_day', WC.today.date);
+      storeDel('wc26_rd');
+      if (WC.today) storeSet('wc26_day2', WC.today.date);
       closePay(); toast('🎉 ' + L('感谢赞助!<span class="g">今日预测已开启</span>', 'Thank you! <span class="g">Today’s forecasts unlocked</span>'));
       renderChrome(); renderToday(); bindReveal();
     } else {
+      redeemFail();
       toast(L('解锁码无效,请检查输入', 'Invalid code — please check and retry'));
     }
     return;
   }
   const btn = e.target.closest('.paybtn');
   if (btn) {
+    if (apiMode) { await createOrder(btn.dataset.ch); return; }
     const product = state.paySel;
     state.payBusy = true;
     document.querySelectorAll('.paybtn').forEach(x => { x.disabled = true; });
@@ -480,8 +613,8 @@ $('#payModal').addEventListener('click', async e => {
     try {
       const r = await WCPay.checkout(btn.dataset.ch, product);
       if (r.ok) {
-        if (product === 'season') storeSet('wc26_season', '1');
-        else if (WC.today) storeSet('wc26_day', WC.today.date);
+        if (product === 'season') storeSet('wc26_season2', '1');
+        else if (WC.today) storeSet('wc26_day2', WC.today.date);
         closePay();
         toast('🎉 ' + (product === 'season' ? L('感谢赞助!<span class="g">全程查看权益已开启</span>', 'Thank you! <span class="g">Season access unlocked</span>') : L('感谢赞助!<span class="g">今日预测已开启</span>', 'Thank you! <span class="g">Today’s forecasts unlocked</span>')));
         renderChrome(); renderToday(); bindReveal();
@@ -572,3 +705,4 @@ function initAnalytics() {
 function renderAll() { renderChrome(); renderToday(); renderData(); renderReview(); bindReveal(); animateBars(document); }
 renderAll();
 initAnalytics();
+loadPaidContent(); /* API 模式下凭已存 token 拉取当日报告 */

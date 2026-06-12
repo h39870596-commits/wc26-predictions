@@ -2,3 +2,4 @@
 .DS_Store
 private/
 assets/qr-*.png.bak
+server/paid/
