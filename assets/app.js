@@ -99,13 +99,13 @@ const played = WC.schedule.filter(m => m.actual);
 /* ================= chrome (hero/tabs/notice/footer) ================= */
 function renderChrome() {
   document.documentElement.lang = L('zh-CN', 'en');
-  document.title = L('WC26 AI 数据分析 · 2026世界杯 AI 大数据预测与赛事数据分析', 'WC26 AI Analytics · 2026 World Cup AI predictions & data analysis');
+  document.title = L('世界杯最强AI数据分析 · 2026 美加墨世界杯 AI 大数据预测与赛事分析', 'World Cup Ultimate AI Analytics · 2026 FIFA World Cup');
   const md = $('#metaDesc');
   if (md) md.content = L('WC26 AI 数据分析:基于人工智能与大数据的 2026 美加墨世界杯赛事数据分析平台。AI 五维建模、球队实力评分、历史数据统计、比赛复盘与专家观点,全部结论来源可溯。非博彩网站,不提供任何投注功能。',
     'WC26 AI Analytics: an AI & big-data analytics platform for the 2026 FIFA World Cup. Five-dimension team modelling, power ratings, historical stats, match recaps and expert views — fully sourced. Not a betting site.');
   $('#kicker').textContent = 'FIFA WORLD CUP 26™ · ' + L('美国 / 加拿大 / 墨西哥', 'USA / CANADA / MEXICO');
   $('#langBtn').textContent = state.lang === 'zh' ? 'EN' : '中文';
-  $('#h1t').innerHTML = 'WC26 <span class="y">' + L('AI 数据分析', 'AI Analytics') + '</span>';
+  $('#h1t').innerHTML = L('世界杯<span class="y">最强 AI</span> 数据分析', 'World Cup <span class="y">Ultimate AI</span> Analytics');
   $('#heroSub').textContent = L('人工智能 × 大数据驱动的世界杯赛事数据分析平台:多智能体联网调研、多源事实核查,全部结论可溯源。',
     'An AI & big-data World Cup analytics platform: multi-agent web research with multi-source fact-checking — every claim traceable.');
   $('#badges').innerHTML = [

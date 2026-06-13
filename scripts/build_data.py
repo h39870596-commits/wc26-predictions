@@ -164,7 +164,7 @@ if md_files:
 
 data = {
     'meta': {'updated': datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).strftime('%Y-%m-%d %H:%M') + ' (UTC+8)'},
-    'pay': {'demo': True, 'products': {  # 收款码图就位后把 demo 改为 False,模拟支付按钮即消失
+    'pay': {'demo': False, 'products': {  # demo=False:真实收款模式(收款码+解锁码),无模拟支付按钮
         'day': {'price': '¥4.9'},
         'season': {'price': '¥49'},
     }},
