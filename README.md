@@ -31,6 +31,11 @@
 
 **海外赞助**:在 `assets/app.js` 的 `SITE_CONFIG` 填 `paypal`(PayPal.Me 用户名或链接)/ `bmc`(Buy Me a Coffee)/ `kofi`(Ko-fi)任一项,弹窗即显示「国际赞助」区(带美元换算);海外用户支付后同样走「提交凭证→解锁码」流程。PayPal 个人账户即可收款(paypal.com 注册,创建 PayPal.Me 链接)。
 
+**解锁码自动发送**(`scripts/code_mailer.py` + launchd,每 10 分钟一轮,纯本机不耗 Claude 额度):
+自动读取 Gmail 收件箱中未读的「WC26」凭证邮件 → 邮件含 ≥12 位支付单号才发码(否则自动回信索要单号)→ 按"单日/全程"关键词从 `private/codes-private.txt` 取未用码自动回信 → 记账防重复(`private/codes-used.txt`、`private/txn-seen.txt`,日志 `private/mailer.log`)。
+启用:在 Google 账号开启两步验证 → 生成「应用专用密码」→ 写入 `private/mail.env`(`GMAIL_USER=邮箱`、`GMAIL_APP_PASSWORD=16位密码`),下一轮自动生效;停用:`launchctl unload ~/Library/LaunchAgents/com.wc26.codemailer.plist`。
+防滥用:同一单号只发一次、单轮 ≤10 封、每日 ≤30 码;已知边界:个人收款码无对账 API,单号真伪无法 100% 核验(小额可接受,彻底方案见 server/ 商户 API 路线)。
+
 ⚠️ **托管前提:GitHub Pages 免费版要求仓库公开**——把仓库设为 Private 会直接导致整站 404(2026-06-13 发生过一次,已恢复)。若希望"仓库私有 + 网站在线",域名迁移时可改用 Cloudflare Pages(免费、支持私有仓库、自带访问统计与真响应头 CSP)。
 
 已知局限(小流量可接受):无后端核销,同一码可被转发复用——发码请一人一码;预测内容仍在前端 `data.js` 中,查看源码可绕过。
